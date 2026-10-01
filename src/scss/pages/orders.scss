@@ -1,0 +1,213 @@
+//=============================== file orders.php =========================//
+
+//=============================== order-body-bg =========================//
+
+.order-body-bg {
+    min-height: 100%;
+    background: #0a0a0f;
+    padding: 40px 0;
+    .orders-wrapper {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 40px 20px;
+        color: white;
+        height: auto;
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        //================================== order-card ======================================
+        .order-card {
+            background: #151a28;
+            border: 1px solid #232b3e;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+
+            //========================== order-line-header ====================
+
+            .order-line-header {
+                .order-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 15px;
+                    padding: 25px;
+
+                    .order-con {
+                        display: flex;
+                        flex-direction: column;
+                        .order-id {
+                            font-weight: lighter;
+                            font-size: 16px;
+                            color: #8b5cf6;
+                        }
+
+                        .order-date {
+                            display: flex;
+                            align-items: center;
+                            color: #64748b;
+                            font-size: 14px;
+                            margin-top: 20px;
+
+                            i {
+                                font-size: 16px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    .status-badge {
+                        padding: 5px 12px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+
+                        i {
+                            margin-right: 5px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .status-pending {
+                        background: rgba(245, 158, 11, 0.1);
+                        color: #f59e0b;
+                        border: 1px solid #f59e0b;
+                    }
+                    .status-completed {
+                        background: rgba(34, 197, 94, 0.1);
+                        color: #22c55e;
+                        border: 1px solid #22c55e;
+                    }
+                }
+            }
+
+            //============================ order-line-body =======================
+            .order-line-body {
+                border-top: 1px solid #232b3e;
+                .order-body {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 25px;
+
+                    .order-con {
+                        .order-total-label {
+                            color: #94a3b8;
+                            font-size: 14px;
+                            margin-bottom: 10px;
+                        }
+                        .order-total-value {
+                            font-size: 20px;
+                            font-weight: 800;
+                            color: white;
+                        }
+                    }
+
+                    .order-show-date {
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        padding: 10px 20px;
+                        transition: 0.3s;
+
+                        i {
+                            color: #8b5cf6;
+                            font-size: 18px;
+                            transition: 0.3s;
+                        }
+                        .btn-view-detail {
+                            background: transparent;
+                            padding: 0 20px;
+                            border-radius: 8px;
+                            text-decoration: none;
+                            font-size: 14px;
+                            color: #8b5cf6;
+                            transition: 0.3s;
+                        }
+                    }
+                    .order-show-date:hover {
+                        background: #fff;
+                        border-radius: 10px;
+                        color: #0a0a0f;
+
+                        i {
+                            color: #0a0a0f;
+                        }
+
+                        .btn-view-detail {
+                            color: #0a0a0f;
+                        }
+                    }
+                }
+            }
+        }
+        .order-card:hover {
+            border-color: #8b5cf6;
+        }
+
+        //================================== empty-orders =============================
+
+        //======================= Empty State Style ===================
+        .empty-orders {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            text-align: center;
+
+            .empty-icon-circle {
+                width: 100px;
+                height: 100px;
+                background: #1e2536;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 25px;
+                border: 1px solid #232b3e;
+
+                i {
+                    font-size: 48px;
+                    color: #64748b;
+                }
+            }
+
+            h2 {
+                margin-bottom: 10px;
+                font-size: 24px;
+            }
+
+            p {
+                color: #64748b;
+                max-width: 300px;
+                line-height: 1.6;
+            }
+
+            .btn-shopping {
+                background: #8b5cf6;
+                color: white;
+                border: none;
+                padding: 15px 35px;
+                border-radius: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                text-decoration: none;
+                transition: 0.3s;
+                margin-top: 20px;
+                display: inline-block;
+            }
+            .btn-shopping:hover {
+                background: #7c3aed;
+                box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+            }
+        }
+    }
+}

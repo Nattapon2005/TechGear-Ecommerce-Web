@@ -1,0 +1,120 @@
+.auth-body {
+  background: #1f2937;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+.auth-body .auth-card {
+  background: #151a28;
+  border: 1px solid #232b3e;
+  padding: 40px;
+  border-radius: 20px;
+  width: 450px;
+  max-width: 500px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.auth-body .auth-card .auth-logo .auth-logo-login {
+  background: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  font-size: 1.3rem;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: bold;
+}
+.auth-body .auth-card .auth-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.auth-body .auth-card .auth-subtitle {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+.auth-body .auth-card .btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+.auth-body .auth-card .btn-google img {
+  width: 40px;
+}
+.auth-body .auth-card .btn-google:hover {
+  background: #f9fafb;
+}
+.auth-body .auth-card .divider {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-bottom: 25px;
+}
+.auth-body .auth-card .divider::before,
+.auth-body .auth-card .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+.auth-body .auth-card .divider span {
+  padding: 0 10px;
+}
+.auth-body .auth-card form {
+  width: 100%;
+}
+.auth-body .auth-card form .input-group {
+  text-align: center;
+}
+.auth-body .auth-card form .input-group label {
+  font-size: 14px;
+}
+.auth-body .auth-card form .input-group .input-box {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.auth-body .auth-card form .input-group .input-box span {
+  position: absolute;
+  left: 15px;
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+.auth-body .auth-card form .input-group .input-box input {
+  width: 100%;
+  outline: none;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  font-size: 0.95rem;
+  color: #111;
+  background: #3c3c3c;
+}
+.auth-body .auth-card form .input-group .input-box input:focus {
+  border: 2px solid var(--purple);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}/*# sourceMappingURL=login.css.map */

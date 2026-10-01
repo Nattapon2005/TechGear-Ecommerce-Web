@@ -1,0 +1,146 @@
+//======================  file register.php =====================
+
+:root {
+    --primary: #8b5cf6;
+    --bg: #0f172a;
+    --card: #151a28;
+    --border: #232b3e;
+    --text-dim: #94a3b8;
+}
+
+.body-card {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .auth-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 40px;
+        border-radius: 20px;
+        width: 450px;
+        max-width: 500px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        position: relative;
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+
+            .auth-title {
+                font-size: 24px;
+                margin: 0;
+                font-weight: 800;
+            }
+
+            .auth-subtitle {
+                color: var(--text-dim);
+                font-size: 14px;
+                margin-top: 8px;
+            }
+        }
+
+        form {
+            .error-msg {
+                background: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+                padding: 12px;
+                border-radius: 10px;
+                font-size: 13px;
+                margin-bottom: 20px;
+                border: 1px solid #ef4444;
+                text-align: center;
+            }
+
+            //===================== Form Layout ========================
+            .input-group {
+                margin-bottom: 20px;
+
+                label {
+                    display: block;
+                    font-size: 13px;
+                    color: var(--text-dim);
+                    margin-bottom: 8px;
+                }
+
+                .input-box {
+                    position: relative;
+
+                    i {
+                        position: absolute;
+                        left: 15px;
+                        top: 14px;
+                        color: var(--text-dim);
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 12px 12px 12px 45px;
+                        background: #1e2536;
+                        border: 1px solid var(--border);
+                        border-radius: 10px;
+                        color: white;
+                        outline: none;
+                        transition: 0.3s;
+                        box-sizing: border-box;
+                    }
+                    input:focus {
+                        border-color: var(--primary);
+                        box-shadow: 0 0 10px rgba(139, 92, 246, 0.1);
+                    }
+                }
+            }
+
+            .btn-auth {
+                width: 100%;
+                padding: 14px;
+                background: var(--primary);
+                border: none;
+                border-radius: 10px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px;
+                transition: 0.3s;
+            }
+            .btn-auth:hover {
+                background: #7c3aed;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+            }
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--text-dim);
+
+            a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+    }
+}

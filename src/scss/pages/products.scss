@@ -1,0 +1,589 @@
+//================================== file products.scss ===========================
+//==================================   product-header ================================
+
+:root {
+    --bg: #0d1220;
+    --surface: #181f32;
+    --surface2: #1e2840;
+    --hover: #242e4a;
+    --accent: #7c5cfc;
+    --text: #dde4f5;
+    --muted: #7a8bad;
+    --border: rgba(255, 255, 255, 0.07);
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+    --radius: 12px;
+}
+
+.product-body {
+    min-height: 100%;
+    padding: 40px 0;
+    background: #0a0a0f;
+    .mt-100 {
+        margin: 40px auto;
+        padding: 40px 0;
+        height: auto;
+
+        //===============  All Products Page Layout ================
+
+        .product-head {
+            margin-bottom: 40px;
+
+            h1 {
+                color: rgba(255 255 255);
+                font-size: 42px;
+                margin-bottom: 5px;
+                font-weight: 800;
+            }
+
+            p {
+                color: #64748b;
+                font-size: 16px;
+            }
+        }
+
+        //=============================== products-layout ===================
+        .products-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+            width: 100%;
+            margin: 0 auto;
+            // border: 1px solid red;
+
+            .filter-sidebar {
+                // border: 1px solid red;
+                //============== สไตล์ Sidebar Card ==============
+                .filter-card {
+                    background: #0d111c;
+                    border: 1px solid #232b3e;
+                    padding: 30px;
+                    border-radius: 24px;
+                    height: fit-content;
+                    position: sticky;
+                    top: 120px;
+                    // border: 1px solid red;
+
+                    .filter-group {
+                        h3 {
+                            font-size: 16px;
+                            font-weight: 800;
+                            color: white;
+                            margin-bottom: 15px;
+                        }
+
+                        .cat-list {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+
+                            //================ รายการหมวดหมู่และสถานะ Active ================
+                            .cat-link {
+                                color: #94a3b8;
+                                text-decoration: none;
+                                font-size: 14px;
+                                padding: 10px 20px;
+                                border-radius: 14px;
+                                transition: 0.3s;
+                                display: block;
+                                border: 1px solid transparent;
+                            }
+                            .cat-link:hover {
+                                color: white;
+                                background: #1e293b;
+                            }
+
+                            //============== สีม่วงเข้มสำหรับหมวดหมู่ที่ถูกเลือก ===================
+                            .cat-link.active {
+                                background: #262048;
+                                color: #fff;
+                                // border: 1px solid #4c4a8a;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    //===================== show-menu-product ====================
+
+                    .filter-product-con {
+                        margin-top: 40px;
+
+                        h3 {
+                            color: #fff;
+                            font-size: 18px;
+                        }
+
+                        .filter-product-price {
+                            display: flex;
+                            justify-content: space-between;
+                            color: #64748b;
+                            font-size: 13px;
+                        }
+                    }
+
+                    //================ filter-button ===============
+
+                    .filter-button {
+                        width: 100%;
+                        padding: 12px;
+                        background: white;
+                        color: #a7a7a7;
+                        border: none;
+                        border-radius: 12px;
+                        font-weight: 800;
+                        cursor: pointer;
+                        margin-top: 30px;
+                        transition: 0.3s;
+                    }
+                    .filter-button:hover {
+                        color: #0a0a0f;
+                    }
+                }
+            }
+
+            //========================= products-content =====================
+            .products-content {
+                width: 100%;
+
+                //================= สไตล์ Toolbar ด้านบน ==================
+                .toolbar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 30px;
+                    gap: 20px;
+                    width: 100%;
+                    background: #0d111c;
+                    padding: 15px;
+                    border-radius: 10px;
+                    border: 1px solid #232b3e;
+
+                    //======================== search-bar-lg ========================
+                    .search-bar-lg {
+                        display: flex;
+                        align-items: center;
+                        background: #1e2536;
+                        width: 50%;
+                        border-radius: 10px;
+                        padding: 0 10px;
+                        border: 1px solid #3d3d3d;
+                        height: 100%;
+                        .icon {
+                            color: #64748b;
+                            font-size: 20px;
+                        }
+
+                        input {
+                            width: 100%;
+                            border: none;
+                            background: transparent;
+                            padding: 10px 10px;
+                            color: white;
+                            outline: none;
+                            height: 100%;
+                        }
+                    }
+
+                    //====================== sort-box =========================
+
+                    .sort-box {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-right: 20px;
+
+                        .dropdown {
+                            position: relative;
+                            width: 220px;
+                            user-select: none;
+
+                            //======================= selected =====================
+                            .selected {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 8px;
+                                background: var(--surface);
+                                border: 1px solid var(--border);
+                                padding: 10px 14px;
+                                border-radius: var(--radius);
+                                cursor: pointer;
+                                transition:
+                                    background 0.2s,
+                                    border-color 0.2s;
+
+                                h5 {
+                                    font-size: 13.5px;
+                                    font-weight: 600;
+                                    color: var(--text);
+                                    white-space: nowrap;
+                                }
+
+                                .bx-chevron-down {
+                                    font-size: 20px;
+                                    color: var(--muted);
+                                    line-height: 1;
+                                    flex-shrink: 0;
+                                    transition:
+                                        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                                        color 0.2s;
+                                }
+                            }
+
+                            //======================= Options panel =====================
+                            .options {
+                                position: absolute;
+                                top: calc(100% + 6px);
+                                left: 0;
+                                width: 100%;
+                                background: var(--surface);
+                                border: 1px solid var(--border);
+                                border-radius: var(--radius);
+                                box-shadow: var(--shadow);
+                                overflow: hidden;
+                                z-index: 100;
+
+                                opacity: 0;
+                                transform: translateY(-6px) scale(0.98);
+                                pointer-events: none;
+                                transition:
+                                    opacity 0.2s ease,
+                                    transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+
+                                //==================== Individual option =====================
+                                .options-box {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding: 11px 14px;
+                                    font-size: 13.5px;
+                                    font-weight: 500;
+                                    color: var(--muted);
+                                    cursor: pointer;
+                                    transition:
+                                        background 0.15s,
+                                        color 0.15s;
+
+                                    //============ Checkmark icon (Boxicons) ================
+                                    .bx-check {
+                                        font-size: 18px;
+                                        color: var(--accent);
+                                        opacity: 0;
+                                        transition: opacity 0.15s;
+                                    }
+                                }
+                                .options-box + .options-box {
+                                    border-top: 1px solid var(--border);
+                                }
+
+                                .options-box:hover {
+                                    background: var(--hover);
+                                    color: var(--text);
+                                }
+
+                                .options-box.active {
+                                    background: var(--hover);
+                                    color: var(--text);
+                                }
+
+                                .options-box.active .bx-check {
+                                    opacity: 1;
+                                }
+                            }
+
+                            &.selected:hover,
+                            &.open .selected {
+                                background: var(--surface2);
+                                border-color: rgba(124, 92, 252, 0.45);
+                            }
+
+                            &.open .options {
+                                opacity: 1;
+                                transform: translateY(0) scale(1);
+                                pointer-events: all;
+                            }
+                        }
+
+                        /* ────────────────────────────
+                            View-mode toggle (Grid / List)
+                            ──────────────────────────── */
+                        .view-toggle {
+                            display: flex;
+                            background: var(--surface);
+                            border: 1px solid var(--border);
+                            border-radius: var(--radius);
+                            overflow: hidden;
+
+                            .view-btn {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 42px;
+                                height: 42px;
+                                background: transparent;
+                                border: none;
+                                cursor: pointer;
+                                color: var(--muted);
+                                font-size: 20px;
+                                line-height: 1;
+                                transition:
+                                    background 0.15s,
+                                    color 0.15s;
+                            }
+
+                            .view-btn.active {
+                                background: var(--accent);
+                                color: #fff;
+                            }
+
+                            .view-btn:hover:not(.active) {
+                                background: var(--hover);
+                                color: var(--text);
+                            }
+                        }
+                    }
+                }
+
+                //=================== Product Grid และ Card ==========================
+                //=================== product-grid-lg ===================================
+
+                .product-grid-lg {
+                    display: flex;
+                    background: var(--bg-container-black);
+                    color: var(--font-color-hover);
+                    padding: 0 0 80px 0;
+
+                    .container {
+                        width: 100%;
+                        .product-item-con-grid {
+                            display: grid;
+                            gap: 1.25rem;
+
+                            &.grid-view {
+                                grid-template-columns: repeat(3, 1fr);
+                            }
+
+                            &.list-view {
+                                grid-template-columns: 1fr;
+                            }
+
+                            .product-item-grid {
+                                position: relative;
+                                border: 1px solid #232b3e;
+                                // padding: 20px 20px;
+                                border-radius: 10px;
+                                background: #070c1d;
+                                cursor: pointer;
+                                transition:
+                                    transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                                    box-shadow 0.4s ease;
+
+                                .product-item-img {
+                                    background: #05091a;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    overflow: hidden;
+                                    border-radius: 10px;
+                                    width: 100%;
+                                    height: 230px;
+                                    padding: 20px;
+
+                                    .product-img-g {
+                                        overflow: hidden;
+                                        border-radius: 10px;
+
+                                        &.img-grid {
+                                            width: 100%;
+                                        }
+
+                                        &.img-list {
+                                            width: 35%;
+                                        }
+
+                                        img {
+                                            object-fit: cover;
+                                            background-position: center;
+                                            background-size: cover;
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 10px;
+                                            transition: transform 0.7s ease;
+                                            // border: 1px solid red;
+                                        }
+                                    }
+                                }
+
+                                //=================== product-item-title-con ==========================
+                                .product-item-title-con {
+                                    padding: 20px 20px;
+                                    background: #090c20;
+
+                                    .product-item-title {
+                                        p {
+                                            color: var(--btn-color-hero);
+                                            --tw-text-opacity: 1;
+                                            color: rgb(167 139 250 / var(--tw-text-opacity, 1));
+                                            margin-top: 20px;
+                                        }
+
+                                        h4 {
+                                            font-size: 1.25rem;
+                                            font-weight: 700;
+                                            color: var(--font-color-hover);
+                                            margin-top: 15px;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 1;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        .product-show-title {
+                                            .star-con {
+                                                margin-right: 10px;
+                                            }
+
+                                            .star-cont {
+                                                color: var(--font-color);
+                                            }
+
+                                            span {
+                                                margin-top: 15px;
+
+                                                .checked {
+                                                    color: var(--star-color);
+                                                }
+                                            }
+                                        }
+
+                                        .product-price {
+                                            margin-top: 15px;
+
+                                            .product-price-w {
+                                                font-size: 1.5rem;
+                                                font-weight: 700;
+                                            }
+
+                                            .old-price {
+                                                text-decoration: line-through;
+                                                color: var(--font-color);
+                                                font-size: 0.9em;
+                                                margin-left: 5px;
+                                                font-weight: 400;
+                                            }
+                                        }
+                                    }
+
+                                    form {
+                                        .btn-product-item {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            margin-top: 20px;
+                                            background: var(--purple);
+                                            border-radius: 8px;
+                                            width: 100%;
+                                            transition: 0.3s;
+
+                                            button {
+                                                background: transparent;
+                                                color: white;
+                                                font-size: 16px;
+                                                border: none;
+                                                font-weight: 600;
+                                                padding: 14px;
+                                                width: 100%;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                        .btn-product-item:hover {
+                                            background: #9863ed;
+                                        }
+                                    }
+                                }
+
+                                // ================== show-discount-product ======================
+
+                                .show-discount-product {
+                                    position: absolute;
+                                    top: 25px;
+                                    left: -15px;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .new-product {
+                                        display: flex;
+                                        flex-direction: column;
+
+                                        .show-product-box {
+                                            color: #000;
+                                            padding: 5px 20px;
+                                            border-radius: 5px;
+                                            text-transform: uppercase;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            text-align: center;
+                                        }
+
+                                        .show-new-product-box {
+                                            background: #00d2ff;
+                                        }
+
+                                        .discount-product-box {
+                                            background: #f43f5e;
+                                            color: var(--font-color-hover);
+                                        }
+                                    }
+                                }
+
+                                .show-icon-love {
+                                    position: absolute;
+                                    top: 25px;
+                                    right: 5px;
+                                    cursor: pointer;
+                                    z-index: 10;
+
+                                    .icon-love {
+                                        i {
+                                            padding: 10px;
+                                            border-radius: 50%;
+                                            background: #1a2536;
+                                            color: var(--font-color);
+                                            font-size: 20px;
+                                            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease, background 0.2s ease;
+                                        }
+                                        i:hover {
+                                            transform: scale(1.15);
+                                            background: #252b45;
+                                        }
+                                        i.heart-pop {
+                                            animation: popHeart 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                        }
+                                    }
+                                }
+                            }
+
+                            @keyframes popHeart {
+                                0% { transform: scale(1); }
+                                50% { transform: scale(1.6); }
+                                100% { transform: scale(1); }
+                            }
+
+                            // ===== Animation =====
+                            .product-item-grid:hover {
+                                transform: translateY(-12px);
+                                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+                                border-color: rgba(124, 58, 237, 0.5);
+                            }
+
+                            .product-item-grid:hover img {
+                                transform: scale(1.3);
+                            }
+                        }
+                    }
+                }
+
+                //============================= end product-grid-lg ===================================
+            }
+        }
+    }
+}

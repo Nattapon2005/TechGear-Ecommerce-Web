@@ -1,0 +1,16 @@
+/* layout */
+@use "layout/navbar";
+@use "layout/footer";
+
+/* pages */
+@use "pages/index";
+@use "pages/products";
+@use "pages/login";
+@use "pages/register";
+@use "pages/account";
+@use "pages/orders";
+@use "pages/order-detail";
+@use "pages/wishlist";
+@use "pages/categories";
+@use "pages/about";
+@use "pages/contact";

@@ -1,0 +1,406 @@
+//=============================  body-account =========================
+
+.body-account {
+    min-height: 100%;
+    background: #0a0a0f;
+    padding: 40px 0;
+
+    .account-wrapper {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 40px 20px;
+        color: white;
+        font-family: "Inter", sans-serif;
+        height: auto;
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .account-grid {
+            display: grid;
+            grid-template-columns: 25% 70%;
+            gap: 5%;
+
+            //============================ Sidebar Profile Card ====================
+            .profile-sidebar {
+                background: #0f141e;
+                padding: 40px 30px;
+                border-radius: 16px;
+                border: 1px solid #1e2536;
+                text-align: center;
+                z-index: 22;
+
+                .avatar-container {
+                    position: relative;
+                    width: 110px;
+                    height: 110px;
+                    margin: 0 auto 20px;
+
+                    .profile-img-circle {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        background: #3b82f6;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 45px;
+                        font-weight: 800;
+                        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+                        overflow: hidden;
+                        border: 3px solid #1e293b;
+                    }
+                }
+
+                .sidebar-name {
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: white;
+                }
+                .sidebar-email {
+                    color: #64748b;
+                    font-size: 13px;
+                    margin-top: 5px;
+                    margin-bottom: 30px;
+                }
+
+                //================================= profile-links =============================
+
+                .profile-links {
+                    text-align: left;
+                    border-top: 1px solid #1e2536;
+                    padding-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        color: #e2e8f0;
+                        text-decoration: none;
+                        padding: 12px 15px;
+                        transition: 0.3s;
+                        font-size: 14px;
+                        border-radius: 10px;
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                        }
+
+                        i.bx-chevron-right {
+                            color: #64748b;
+                        }
+                    }
+                    a:hover {
+                        background: #1e293b;
+                    }
+
+                    .logout-container {
+                        border-top: 1px solid #1e2536;
+                        margin-top: 10px;
+                        padding-top: 10px;
+
+                        .logout-btn {
+                            color: #e44a4a;
+                        }
+                        .logout-btn:hover {
+                            color: #fd9494;
+                            background: #251523;
+                        }
+                    }
+                }
+            }
+
+            //=========================== Main Content Area ============================
+            .content-box {
+                background: #0f141e;
+                padding: 40px 30px;
+                border-radius: 16px;
+                border: 1px solid #1e2536;
+                height: 100%;
+                text-align: center;
+                z-index: 22;
+
+                //=========================== Main alert-success  ============================
+                .alert-success {
+                    background: rgba(34, 197, 94, 0.1);
+                    border: 1px solid #22c55e;
+                    color: #22c55e;
+                    padding: 12px 15px;
+                    border-radius: 8px;
+                    margin-bottom: 25px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+
+                //=====================  View Mode content-box-con ========================
+                .content-box-con {
+                    display: flex;
+
+                    .content-box-con-profile {
+                        width: 100%;
+                        //=================== box-header ==========================
+                        .box-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 30px;
+
+                            .box-title {
+                                margin: 0;
+                                font-size: 18px;
+                                font-weight: 700;
+                                color: white;
+                                padding: 8px 0;
+                            }
+
+                            //=================== View Mode Styles ==========================
+                            .btn-edit {
+                                background: transparent;
+                                border: none;
+                                color: #8b5cf6;
+                                font-size: 14px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+                                padding: 8px 15px;
+                                transition: 0.2s;
+
+                                i {
+                                    margin-right: 10px;
+                                }
+                            }
+                            .btn-edit:hover {
+                                color: #000;
+                                background: #fff;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+
+                    //=================== info-row ==========================
+                    .info-row {
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+                        margin-bottom: 25px;
+
+                        .icon-box {
+                            width: 42px;
+                            height: 42px;
+                            border-radius: 10px;
+                            background: #1a1f2e;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #8b5cf6;
+                            font-size: 20px;
+                            flex-shrink: 0;
+                        }
+
+                        .info-text {
+                            label {
+                                display: flex;
+                                align-items: center;
+                                font-size: 12px;
+                                color: #64748b;
+                                margin-bottom: 4px;
+                            }
+
+                            .info-text-user {
+                                font-size: 15px;
+                                color: white;
+                                font-weight: 500;
+                            }
+
+                            .not-set {
+                                color: #cbd5e1;
+                                font-style: italic;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+
+                //========================== edit-mode =======================
+
+                .edit-mode-con {
+                    display: none;
+
+                    .content-box-con-edit {
+                        width: 100%;
+                        form {
+                            .box-header {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-bottom: 30px;
+
+                                .box-title {
+                                    margin: 0;
+                                    font-size: 18px;
+                                    font-weight: 700;
+                                    color: white;
+                                    padding: 8px 0;
+                                }
+                                //========================= Edit Mode Styles (Form) ===========================
+                                .edit-actions {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 15px;
+
+                                    .btn-cancel {
+                                        background: transparent;
+                                        border: none;
+                                        color: #94a3b8;
+                                        font-size: 14px;
+                                        cursor: pointer;
+                                        transition: 0.2s;
+                                        border-radius: 5px;
+                                        padding: 8px 15px;
+                                    }
+                                    .btn-cancel:hover {
+                                        color: #000;
+                                        background: #fff;
+                                    }
+
+                                    .btn-save {
+                                        background: #8b5cf6;
+                                        color: white;
+                                        border: none;
+                                        padding: 8px 16px;
+                                        border-radius: 8px;
+                                        cursor: pointer;
+                                        font-weight: 600;
+                                        font-size: 13px;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 5px;
+                                        transition: 0.3s;
+
+                                        i {
+                                            font-size: 18px;
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                    .btn-save:hover {
+                                        background: #7c3aed;
+                                    }
+                                }
+                            }
+
+                            //================================= avatar-profile-img-go =============================
+
+                            .avatar-profile-img-go {
+                                text-align: center;
+                                margin-bottom: 35px;
+
+                                .avatar-container {
+                                    position: relative;
+                                    width: 110px;
+                                    height: 110px;
+                                    margin: 0 auto 20px;
+                                    cursor: pointer;
+
+                                    .profile-img-circle {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                                        background: #3b82f6;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 45px;
+                                        font-weight: 800;
+                                        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+                                        overflow: hidden;
+                                        border: 3px solid #1e293b;
+                                    }
+
+                                    .upload-overlay {
+                                        position: absolute;
+                                        bottom: 0;
+                                        right: 0;
+                                        background: #8b5cf6;
+                                        width: 32px;
+                                        height: 32px;
+                                        border-radius: 50%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border: 3px solid #0f172a;
+                                        color: white;
+                                        font-size: 16px;
+                                    }
+                                }
+
+                                .profile-button {
+                                    color: #64748b;
+                                    font-size: 13px;
+                                    margin-top: 10px;
+                                }
+                            }
+                            //========================= Edit Mode form-group ===========================
+                            .form-group {
+                                margin-bottom: 20px;
+
+                                label {
+                                    display: flex;
+                                    font-size: 13px;
+                                    color: white;
+                                    margin-bottom: 8px;
+                                    font-weight: 500;
+                                }
+
+                                .form-input {
+                                    width: 100%;
+                                    padding: 12px 15px;
+                                    background: #151a28;
+                                    border: 1px solid #1e2536;
+                                    color: white;
+                                    border-radius: 8px;
+                                    font-family: inherit;
+                                    font-size: 14px;
+                                    box-sizing: border-box;
+                                    outline: none;
+                                    transition: 0.3s;
+                                }
+                                .form-input:focus {
+                                    border-color: #8b5cf6;
+                                }
+
+                                .form-input[readonly] {
+                                    opacity: 0.6;
+                                    cursor: not-allowed;
+                                }
+                            }
+
+                            .form-row {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 20px;
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
