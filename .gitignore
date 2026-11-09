@@ -7,6 +7,11 @@
 *.sln
 *.sw?
 
+
+# Deployment Documentation
+DEPLOYMENT.md
+Project_Completion_Report.md
+
 # OS generated files
 .DS_Store
 .DS_Store?

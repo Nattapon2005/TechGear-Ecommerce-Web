@@ -87,15 +87,15 @@ include 'page/navbar.php';
 <style>
 /* High-Tech UI Styles */
 .body-account {
-    background: radial-gradient(circle at top right, #111827 0%, #030712 100%);
+    background: radial-gradient(circle at top right, #131518 0%, #0b0c0e 100%);
     min-height: 100vh;
     padding-top: 100px;
 }
 .content-box {
     background: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.1), inset 0 0 20px rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(201, 172, 130, 0.3);
+    box-shadow: 0 0 40px rgba(201, 172, 130, 0.1), inset 0 0 20px rgba(201, 172, 130, 0.05);
     border-radius: 20px;
     padding: 40px;
     position: relative;
@@ -105,7 +105,7 @@ include 'page/navbar.php';
     content: '';
     position: absolute;
     top: -50%; left: -50%; width: 200%; height: 200%;
-    background: conic-gradient(from 0deg, transparent 0%, rgba(139,92,246,0.1) 25%, transparent 50%);
+    background: conic-gradient(from 0deg, transparent 0%, rgba(201, 172, 130,0.1) 25%, transparent 50%);
     animation: rotate 10s linear infinite;
     z-index: 0;
     pointer-events: none;
@@ -115,41 +115,41 @@ include 'page/navbar.php';
 .content-box-con { position: relative; z-index: 1; }
 
 .box-title {
-    color: #fff;
+    color: #f3f1ec;
     font-size: 24px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 25px;
-    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    text-shadow: 0 0 10px rgba(201, 172, 130, 0.5);
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.box-title i { color: #8b5cf6; }
+.box-title i { color: #c9ac82; }
 
 .form-group { position: relative; margin-bottom: 25px; }
 .form-input {
     width: 100%;
     padding: 16px 20px;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(19, 21, 24, 0.6);
     border: 1px solid rgba(148, 163, 184, 0.2);
     border-radius: 12px;
-    color: #00ffcc;
+    color: #c9ac82;
     font-size: 15px;
     font-family: monospace;
     outline: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-input:focus {
-    border-color: #00ffcc;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3), inset 0 0 10px rgba(0, 255, 204, 0.1);
-    background: rgba(15, 23, 42, 0.9);
+    border-color: #c9ac82;
+    box-shadow: 0 0 15px rgba(201, 172, 130, 0.3), inset 0 0 10px rgba(201, 172, 130, 0.1);
+    background: rgba(19, 21, 24, 0.9);
 }
 .form-group label {
     display: block;
     margin-bottom: 10px;
-    color: #8b5cf6;
+    color: #c9ac82;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -170,7 +170,7 @@ include 'page/navbar.php';
     justify-content: center;
     gap: 15px;
     cursor: pointer;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(19, 21, 24, 0.8);
     padding: 20px 15px;
     border-radius: 16px;
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -186,13 +186,13 @@ include 'page/navbar.php';
 .payment-label:hover::after { transform: translateX(100%); }
 .payment-label:hover {
     transform: translateY(-5px);
-    border-color: #8b5cf6;
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+    border-color: #c9ac82;
+    box-shadow: 0 10px 20px rgba(201, 172, 130, 0.2);
 }
 .payment-label:has(input:checked) {
-    border-color: #00ffcc;
-    background: rgba(0, 255, 204, 0.05);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2), inset 0 0 15px rgba(0, 255, 204, 0.1);
+    border-color: #c9ac82;
+    background: rgba(201, 172, 130, 0.05);
+    box-shadow: 0 0 20px rgba(201, 172, 130, 0.2), inset 0 0 15px rgba(201, 172, 130, 0.1);
 }
 .payment-label input[type="radio"] { display: none; }
 
@@ -212,17 +212,17 @@ include 'page/navbar.php';
 .payment-name {
     font-weight: 700;
     font-size: 14px;
-    color: #94a3b8;
+    color: #8d9098;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s;
 }
-.payment-label:has(input:checked) .payment-name { color: #00ffcc; }
+.payment-label:has(input:checked) .payment-name { color: #c9ac82; }
 
 /* Button */
 .btn-place-order {
-    background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #b89563 0%, #8a6f4d 100%);
+    color: #17130d;
     border: none;
     padding: 18px;
     border-radius: 14px;
@@ -249,13 +249,13 @@ include 'page/navbar.php';
 .btn-place-order:hover::before { left: 100%; }
 .btn-place-order:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 15px 30px rgba(184, 149, 99, 0.4);
 }
 
 /* Sidebar styling tweak */
 .profile-sidebar {
-    background: rgba(15, 23, 42, 0.8) !important;
-    border: 1px solid rgba(139, 92, 246, 0.2) !important;
+    background: rgba(19, 21, 24, 0.8) !important;
+    border: 1px solid rgba(201, 172, 130, 0.2) !important;
     backdrop-filter: blur(10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     padding: 30px !important;
@@ -271,7 +271,7 @@ include 'page/navbar.php';
     transition: 0.3s;
 }
 .summary-item:hover {
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(201, 172, 130, 0.1);
 }
 </style>
 
@@ -325,9 +325,9 @@ include 'page/navbar.php';
                             <label class="payment-label">
                                 <input type="radio" name="payment_method" value="<?= htmlspecialchars($pm['name']) ?>" <?= $first ? 'checked' : '' ?>>
                                 <?php if(!empty($pm['image_url'])): ?>
-                                    <img src="<?= htmlspecialchars($pm['image_url']) ?>" alt="<?= htmlspecialchars($pm['name']) ?>" class="bank-logo" style="background:#fff; padding:5px; border-radius:8px;">
+                                    <img src="<?= htmlspecialchars($pm['image_url']) ?>" alt="<?= htmlspecialchars($pm['name']) ?>" class="bank-logo" style="background:#f3f1ec; padding:5px; border-radius:8px;">
                                 <?php else: ?>
-                                    <i class="<?= htmlspecialchars($pm['icon_class'] ?? 'bx bx-credit-card') ?>" style="font-size: 36px; color: #a78bfa; margin-bottom: 5px;"></i>
+                                    <i class="<?= htmlspecialchars($pm['icon_class'] ?? 'bx bx-credit-card') ?>" style="font-size: 36px; color: #d9c7a8; margin-bottom: 5px;"></i>
                                 <?php endif; ?>
                                 <span class="payment-name"><?= htmlspecialchars($pm['name']) ?></span>
                             </label>
@@ -345,7 +345,7 @@ include 'page/navbar.php';
             </main>
             
             <aside class="profile-sidebar" style="height: fit-content; margin-top: 0;">
-                <h3 class="sidebar-name" style="text-align: left; margin-bottom: 25px; border-bottom: 1px solid rgba(148, 163, 184, 0.2); padding-bottom: 15px; color: #fff;">Order Summary</h3>
+                <h3 class="sidebar-name" style="text-align: left; margin-bottom: 25px; border-bottom: 1px solid rgba(148, 163, 184, 0.2); padding-bottom: 15px; color: #f3f1ec;">Order Summary</h3>
                 
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
                     <?php 
@@ -354,28 +354,28 @@ include 'page/navbar.php';
                         $total += $item['price'] * $item['qty'];
                     ?>
                     <div class="summary-item">
-                        <img src="<?= htmlspecialchars($item['image']) ?>" style="width:60px; height:60px; border-radius:10px; object-fit:contain; background: #fff; padding: 2px;">
+                        <img src="<?= htmlspecialchars($item['image']) ?>" style="width:60px; height:60px; border-radius:10px; object-fit:contain; background: #f3f1ec; padding: 2px;">
                         <div style="flex:1;">
-                            <div style="font-size:14px; font-weight:bold; color:#f8fafc; margin-bottom:4px;"><?= htmlspecialchars($item['name']) ?></div>
-                            <div style="font-size:13px; color:#94a3b8;">$<?= number_format($item['price'], 2) ?> x <?= $item['qty'] ?></div>
+                            <div style="font-size:14px; font-weight:bold; color:#f3f1ec; margin-bottom:4px;"><?= htmlspecialchars($item['name']) ?></div>
+                            <div style="font-size:13px; color:#8d9098;">$<?= number_format($item['price'], 2) ?> x <?= $item['qty'] ?></div>
                         </div>
-                        <div style="font-weight:900; color:#00ffcc; font-size:15px;">$<?= number_format($item['price'] * $item['qty'], 2) ?></div>
+                        <div style="font-weight:900; color:#c9ac82; font-size:15px;">$<?= number_format($item['price'] * $item['qty'], 2) ?></div>
                     </div>
                     <?php endforeach; ?>
                 </div>
                 
                 <div style="border-top: 1px dashed rgba(148, 163, 184, 0.3); padding-top: 25px;">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; color:#94a3b8; font-size:15px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; color:#8d9098; font-size:15px;">
                         <span>Subtotal</span>
-                        <span style="color: #fff;">$<?= number_format($total, 2) ?></span>
+                        <span style="color: #f3f1ec;">$<?= number_format($total, 2) ?></span>
                     </div>
-                    <div style="display:flex; justify-content:space-between; margin-bottom:20px; color:#94a3b8; font-size:15px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:20px; color:#8d9098; font-size:15px;">
                         <span>Shipping Fee</span>
-                        <span style="color:#00ffcc; font-weight:bold;">Free</span>
+                        <span style="color:#c9ac82; font-weight:bold;">Free</span>
                     </div>
-                    <div style="display:flex; justify-content:space-between; margin-top:20px; padding-top: 20px; border-top: 1px solid rgba(148, 163, 184, 0.2); font-size: 20px; font-weight:900; color:#f8fafc;">
+                    <div style="display:flex; justify-content:space-between; margin-top:20px; padding-top: 20px; border-top: 1px solid rgba(148, 163, 184, 0.2); font-size: 20px; font-weight:900; color:#f3f1ec;">
                         <span>Total</span>
-                        <span style="color:#8b5cf6;">$<?= number_format($total, 2) ?></span>
+                        <span style="color:#c9ac82;">$<?= number_format($total, 2) ?></span>
                     </div>
                 </div>
             </aside>

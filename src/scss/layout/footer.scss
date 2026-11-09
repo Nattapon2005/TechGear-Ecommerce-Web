@@ -1,7 +1,7 @@
 //=============================================  main-footer  ==============================================================
 
 .main-footer {
-    background: #020617;
+    background: #0e1012;
     padding: 80px 8% 30px;
     border-top: 1px solid var(--border);
     font-size: 0.9rem;
@@ -36,7 +36,7 @@
 
         .f-col {
             h4 {
-                color: #fff;
+                color: #f3f1ec;
                 font-size: 1.1rem;
                 margin-bottom: 25px;
                 font-weight: 700;
@@ -74,14 +74,14 @@
                     border: 1px solid var(--border);
                     padding: 10px 15px;
                     border-radius: 8px;
-                    color: #fff;
+                    color: #f3f1ec;
                     width: 100%;
                     outline: none;
                 }
 
                 button {
                     background: var(--purple);
-                    color: #fff;
+                    color: #17130d;
                     border: none;
                     padding: 10px 20px;
                     border-radius: 8px;
@@ -90,7 +90,7 @@
                     transition: 0.3s;
                 }
                 button:hover {
-                    background: #6d28d9;
+                    background: #a3814f;
                 }
             }
         }
@@ -104,18 +104,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #666;
+        color: #6f737b;
         font-size: 0.85rem;
 
         .f-links {
             a {
-                color: #666;
+                color: #6f737b;
                 text-decoration: none;
                 margin-left: 20px;
                 transition: 0.3s;
             }
             a:hover {
-                color: #fff;
+                color: #f3f1ec;
             }
         }
     }

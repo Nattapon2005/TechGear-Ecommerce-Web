@@ -61,7 +61,7 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
 <style>
 /* High-Tech UI for Account */
 .body-account {
-    background: radial-gradient(circle at top right, #111827 0%, #030712 100%);
+    background: radial-gradient(circle at top right, #131518 0%, #0b0c0e 100%);
     min-height: 100vh;
     padding: 100px 20px 40px;
 }
@@ -70,11 +70,11 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     margin: 0 auto;
 }
 .page-title {
-    color: #fff;
+    color: #f3f1ec;
     font-size: 28px;
     font-weight: 800;
     margin-bottom: 30px;
-    text-shadow: 0 0 15px rgba(139,92,246,0.6);
+    text-shadow: 0 0 15px rgba(201, 172, 130,0.6);
 }
 
 .account-grid {
@@ -87,11 +87,11 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
 .profile-sidebar {
     background: rgba(17, 24, 39, 0.6);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(201, 172, 130, 0.3);
     border-radius: 20px;
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 0 30px rgba(139,92,246,0.1);
+    box-shadow: 0 0 30px rgba(201, 172, 130,0.1);
 }
 .avatar-container {
     width: 120px;
@@ -101,13 +101,13 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     cursor: pointer;
     border-radius: 50%;
     padding: 4px;
-    background: linear-gradient(135deg, #7c3aed, #00ffcc);
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+    background: linear-gradient(135deg, #b89563, #c9ac82);
+    box-shadow: 0 0 20px rgba(184, 149, 99, 0.4);
 }
 .profile-img-circle {
     width: 100%;
     height: 100%;
-    background: #1e293b;
+    background: #24282e;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -115,16 +115,16 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     justify-content: center;
     font-size: 40px;
     font-weight: 900;
-    color: #00ffcc;
+    color: #c9ac82;
 }
 .sidebar-name {
-    color: #fff;
+    color: #f3f1ec;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 .sidebar-email {
-    color: #94a3b8;
+    color: #8d9098;
     font-size: 13px;
     margin-bottom: 30px;
 }
@@ -134,7 +134,7 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    color: #cbd5e1;
+    color: #d6d2c9;
     text-decoration: none;
     border-radius: 12px;
     margin-bottom: 10px;
@@ -142,26 +142,26 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     transition: 0.3s;
 }
 .profile-links a:hover {
-    background: rgba(139, 92, 246, 0.15);
-    color: #00ffcc;
+    background: rgba(201, 172, 130, 0.15);
+    color: #c9ac82;
     transform: translateX(5px);
 }
 .profile-links a span { display: flex; align-items: center; gap: 10px; font-weight: 500; }
 .logout-btn {
-    background: rgba(244, 63, 94, 0.1) !important;
-    color: #fb7185 !important;
-    border: 1px solid rgba(244, 63, 94, 0.2);
+    background: rgba(217, 138, 145, 0.1) !important;
+    color: #d98a91 !important;
+    border: 1px solid rgba(217, 138, 145, 0.2);
 }
-.logout-btn:hover { background: rgba(244, 63, 94, 0.2) !important; color: #fff !important; }
+.logout-btn:hover { background: rgba(217, 138, 145, 0.2) !important; color: #f3f1ec !important; }
 
 /* Main Content */
 .content-box {
     background: rgba(17, 24, 39, 0.6);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(201, 172, 130, 0.3);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 0 30px rgba(139,92,246,0.1);
+    box-shadow: 0 0 30px rgba(201, 172, 130,0.1);
 }
 .box-header {
     display: flex;
@@ -171,10 +171,10 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     border-bottom: 1px dashed rgba(148, 163, 184, 0.2);
     padding-bottom: 20px;
 }
-.box-title { color: #fff; font-size: 22px; font-weight: 700; }
+.box-title { color: #f3f1ec; font-size: 22px; font-weight: 700; }
 .btn-edit {
-    background: linear-gradient(135deg, #7c3aed, #3b82f6);
-    color: #fff;
+    background: linear-gradient(135deg, #b89563, #8a6f4d);
+    color: #17130d;
     border: none;
     padding: 8px 20px;
     border-radius: 8px;
@@ -185,7 +185,7 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     align-items: center;
     gap: 8px;
 }
-.btn-edit:hover { box-shadow: 0 5px 15px rgba(124,58,237,0.4); transform: translateY(-2px); }
+.btn-edit:hover { box-shadow: 0 5px 15px rgba(184, 149, 99,0.4); transform: translateY(-2px); }
 
 .info-row {
     display: flex;
@@ -197,42 +197,42 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     border-radius: 12px;
     transition: 0.3s;
 }
-.info-row:hover { background: rgba(139,92,246,0.05); border-left: 3px solid #00ffcc; }
+.info-row:hover { background: rgba(201, 172, 130,0.05); border-left: 3px solid #c9ac82; }
 .icon-box {
     width: 45px;
     height: 45px;
-    background: rgba(139, 92, 246, 0.1);
-    color: #a78bfa;
+    background: rgba(201, 172, 130, 0.1);
+    color: #d9c7a8;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
 }
-.info-text label { color: #94a3b8; font-size: 12px; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block; }
-.info-text div { color: #f8fafc; font-size: 15px; font-weight: 500; }
-.not-set { color: #f59e0b !important; font-style: italic; }
+.info-text label { color: #8d9098; font-size: 12px; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block; }
+.info-text div { color: #f3f1ec; font-size: 15px; font-weight: 500; }
+.not-set { color: #c9ac82 !important; font-style: italic; }
 
 /* Edit Mode styling overrides */
-.form-group label { color: #8b5cf6; font-size: 13px; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block; }
+.form-group label { color: #c9ac82; font-size: 13px; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block; }
 .form-input {
     width: 100%;
     padding: 15px;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(19, 21, 24, 0.6);
     border: 1px solid rgba(148, 163, 184, 0.2);
     border-radius: 10px;
-    color: #00ffcc;
+    color: #c9ac82;
     font-size: 15px;
     outline: none;
     transition: 0.3s;
     margin-bottom: 20px;
 }
-.form-input:focus { border-color: #00ffcc; box-shadow: 0 0 10px rgba(0,255,204,0.2); }
+.form-input:focus { border-color: #c9ac82; box-shadow: 0 0 10px rgba(201, 172, 130,0.2); }
 .edit-actions { display: flex; gap: 10px; }
-.btn-cancel { background: transparent; border: 1px solid #64748b; color: #cbd5e1; padding: 8px 20px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-.btn-cancel:hover { background: rgba(255,255,255,0.1); color: #fff; }
-.btn-save { background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 8px 25px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
-.btn-save:hover { box-shadow: 0 5px 15px rgba(16,185,129,0.4); transform: translateY(-2px); }
+.btn-cancel { background: transparent; border: 1px solid #7f838b; color: #d6d2c9; padding: 8px 20px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+.btn-cancel:hover { background: rgba(255,255,255,0.1); color: #f3f1ec; }
+.btn-save { background: linear-gradient(135deg, #7fae8f, #6e9b7c); color: #f3f1ec; border: none; padding: 8px 25px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
+.btn-save:hover { box-shadow: 0 5px 15px rgba(127, 174, 143,0.4); transform: translateY(-2px); }
 
 .avatar-profile-img-go { text-align: center; margin-bottom: 30px; }
 .upload-overlay {
@@ -243,13 +243,13 @@ $display_initial = strtoupper(mb_substr($user_data['username'] ?? $user_data['em
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #f3f1ec;
     font-size: 24px;
     opacity: 0;
     transition: 0.3s;
 }
 .avatar-container:hover .upload-overlay { opacity: 1; }
-.profile-button { color: #94a3b8; font-size: 13px; margin-top: 10px; }
+.profile-button { color: #8d9098; font-size: 13px; margin-top: 10px; }
 </style>
 
 <div class="body-account">

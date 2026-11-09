@@ -81,7 +81,7 @@ if ($qc) while($r = mysqli_fetch_assoc($qc)) $categories[] = $r;
 <style>
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:16px;}
 .cat-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .3s;animation:fadeSlideUp .5s both;display:flex;align-items:stretch;}
-.cat-card:hover{border-color:rgba(124,92,252,.3);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3);}
+.cat-card:hover{border-color:rgba(201, 172, 130,.3);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3);}
 .cat-card-img{width:100px;min-height:100px;flex-shrink:0;background:var(--bg3);overflow:hidden;}
 .cat-card-img img{width:100%;height:100%;object-fit:cover;}
 .cat-card-body{padding:16px;flex:1;display:flex;flex-direction:column;justify-content:center;}

@@ -96,7 +96,7 @@ $pending_orders = $cnt_pending;
 .status-tabs{display:flex;gap:8px;flex-wrap:wrap;}
 .status-tab{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--border);transition:all .25s;}
 .status-tab:hover{border-color:var(--purple);color:var(--purple-lt);}
-.status-tab.active{background:rgba(124,92,252,.15);color:var(--purple-lt);border-color:rgba(124,92,252,.3);}
+.status-tab.active{background:rgba(201, 172, 130,.15);color:var(--purple-lt);border-color:rgba(201, 172, 130,.3);}
 .status-tab .count{margin-left:4px;font-size:10px;opacity:.7;}
 
 /* Tracking Timeline */
@@ -196,9 +196,9 @@ $pending_orders = $cnt_pending;
                             <img src="../<?= htmlspecialchars($o['slip_image']) ?>" class="img-thumb slip-img" onclick="window.open('../<?= htmlspecialchars($o['slip_image']) ?>')">
                             <?php
                             $ss = $o['slip_status'] ?? 'pending';
-                            if($ss === 'pending') echo '<div style="font-size:10px;color:#fbbf24;margin-top:4px;">⏳ รอตรวจ</div>';
-                            elseif($ss === 'approved') echo '<div style="font-size:10px;color:#34d399;margin-top:4px;">✅ อนุมัติ</div>';
-                            elseif($ss === 'rejected') echo '<div style="font-size:10px;color:#fb7185;margin-top:4px;">❌ ปฏิเสธ</div>';
+                            if($ss === 'pending') echo '<div style="font-size:10px;color:#c9ac82;margin-top:4px;">⏳ รอตรวจ</div>';
+                            elseif($ss === 'approved') echo '<div style="font-size:10px;color:#8fbfa3;margin-top:4px;">✅ อนุมัติ</div>';
+                            elseif($ss === 'rejected') echo '<div style="font-size:10px;color:#d98a91;margin-top:4px;">❌ ปฏิเสธ</div>';
                             ?>
                         <?php else: ?>
                             <span style="font-size:11px;color:var(--muted);">ยังไม่แนบ</span>

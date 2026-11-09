@@ -2,14 +2,14 @@
 
 .body-account {
     min-height: 100%;
-    background: #0a0a0f;
+    background: #0b0c0e;
     padding: 40px 0;
 
     .account-wrapper {
         max-width: 1000px;
         margin: 40px auto;
         padding: 40px 20px;
-        color: white;
+        color: #f3f1ec;
         font-family: "Inter", sans-serif;
         height: auto;
 
@@ -27,10 +27,10 @@
 
             //============================ Sidebar Profile Card ====================
             .profile-sidebar {
-                background: #0f141e;
+                background: #131518;
                 padding: 40px 30px;
                 border-radius: 16px;
-                border: 1px solid #1e2536;
+                border: 1px solid #1c2025;
                 text-align: center;
                 z-index: 22;
 
@@ -45,15 +45,15 @@
                         height: 100%;
                         border-radius: 50%;
                         object-fit: cover;
-                        background: #3b82f6;
+                        background: #8a6f4d;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         font-size: 45px;
                         font-weight: 800;
-                        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+                        box-shadow: 0 0 20px rgba(184, 149, 99, 0.3);
                         overflow: hidden;
-                        border: 3px solid #1e293b;
+                        border: 3px solid #24282e;
                     }
                 }
 
@@ -61,10 +61,10 @@
                     margin: 0;
                     font-size: 18px;
                     font-weight: 700;
-                    color: white;
+                    color: #f3f1ec;
                 }
                 .sidebar-email {
-                    color: #64748b;
+                    color: #7f838b;
                     font-size: 13px;
                     margin-top: 5px;
                     margin-bottom: 30px;
@@ -74,7 +74,7 @@
 
                 .profile-links {
                     text-align: left;
-                    border-top: 1px solid #1e2536;
+                    border-top: 1px solid #1c2025;
                     padding-top: 20px;
                     display: flex;
                     flex-direction: column;
@@ -84,7 +84,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        color: #e2e8f0;
+                        color: #e9e5dd;
                         text-decoration: none;
                         padding: 12px 15px;
                         transition: 0.3s;
@@ -98,23 +98,23 @@
                         }
 
                         i.bx-chevron-right {
-                            color: #64748b;
+                            color: #7f838b;
                         }
                     }
                     a:hover {
-                        background: #1e293b;
+                        background: #24282e;
                     }
 
                     .logout-container {
-                        border-top: 1px solid #1e2536;
+                        border-top: 1px solid #1c2025;
                         margin-top: 10px;
                         padding-top: 10px;
 
                         .logout-btn {
-                            color: #e44a4a;
+                            color: #d98a91;
                         }
                         .logout-btn:hover {
-                            color: #fd9494;
+                            color: #e6b3b7;
                             background: #251523;
                         }
                     }
@@ -123,19 +123,19 @@
 
             //=========================== Main Content Area ============================
             .content-box {
-                background: #0f141e;
+                background: #131518;
                 padding: 40px 30px;
                 border-radius: 16px;
-                border: 1px solid #1e2536;
+                border: 1px solid #1c2025;
                 height: 100%;
                 text-align: center;
                 z-index: 22;
 
                 //=========================== Main alert-success  ============================
                 .alert-success {
-                    background: rgba(34, 197, 94, 0.1);
-                    border: 1px solid #22c55e;
-                    color: #22c55e;
+                    background: rgba(127, 174, 143, 0.1);
+                    border: 1px solid #7fae8f;
+                    color: #7fae8f;
                     padding: 12px 15px;
                     border-radius: 8px;
                     margin-bottom: 25px;
@@ -163,7 +163,7 @@
                                 margin: 0;
                                 font-size: 18px;
                                 font-weight: 700;
-                                color: white;
+                                color: #f3f1ec;
                                 padding: 8px 0;
                             }
 
@@ -171,7 +171,7 @@
                             .btn-edit {
                                 background: transparent;
                                 border: none;
-                                color: #8b5cf6;
+                                color: #c9ac82;
                                 font-size: 14px;
                                 font-weight: 600;
                                 cursor: pointer;
@@ -186,8 +186,8 @@
                                 }
                             }
                             .btn-edit:hover {
-                                color: #000;
-                                background: #fff;
+                                color: #17130d;
+                                background: #f3f1ec;
                                 border-radius: 5px;
                             }
                         }
@@ -204,11 +204,11 @@
                             width: 42px;
                             height: 42px;
                             border-radius: 10px;
-                            background: #1a1f2e;
+                            background: #1c2025;
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            color: #8b5cf6;
+                            color: #c9ac82;
                             font-size: 20px;
                             flex-shrink: 0;
                         }
@@ -218,18 +218,18 @@
                                 display: flex;
                                 align-items: center;
                                 font-size: 12px;
-                                color: #64748b;
+                                color: #7f838b;
                                 margin-bottom: 4px;
                             }
 
                             .info-text-user {
                                 font-size: 15px;
-                                color: white;
+                                color: #f3f1ec;
                                 font-weight: 500;
                             }
 
                             .not-set {
-                                color: #cbd5e1;
+                                color: #d6d2c9;
                                 font-style: italic;
                                 font-weight: 400;
                             }
@@ -255,7 +255,7 @@
                                     margin: 0;
                                     font-size: 18px;
                                     font-weight: 700;
-                                    color: white;
+                                    color: #f3f1ec;
                                     padding: 8px 0;
                                 }
                                 //========================= Edit Mode Styles (Form) ===========================
@@ -267,7 +267,7 @@
                                     .btn-cancel {
                                         background: transparent;
                                         border: none;
-                                        color: #94a3b8;
+                                        color: #8d9098;
                                         font-size: 14px;
                                         cursor: pointer;
                                         transition: 0.2s;
@@ -275,13 +275,13 @@
                                         padding: 8px 15px;
                                     }
                                     .btn-cancel:hover {
-                                        color: #000;
-                                        background: #fff;
+                                        color: #17130d;
+                                        background: #f3f1ec;
                                     }
 
                                     .btn-save {
-                                        background: #8b5cf6;
-                                        color: white;
+                                        background: #c9ac82;
+                                        color: #17130d;
                                         border: none;
                                         padding: 8px 16px;
                                         border-radius: 8px;
@@ -299,7 +299,7 @@
                                         }
                                     }
                                     .btn-save:hover {
-                                        background: #7c3aed;
+                                        background: #b89563;
                                     }
                                 }
                             }
@@ -322,36 +322,36 @@
                                         height: 100%;
                                         border-radius: 50%;
                                         object-fit: cover;
-                                        background: #3b82f6;
+                                        background: #8a6f4d;
                                         display: flex;
                                         align-items: center;
                                         justify-content: center;
                                         font-size: 45px;
                                         font-weight: 800;
-                                        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+                                        box-shadow: 0 0 20px rgba(184, 149, 99, 0.3);
                                         overflow: hidden;
-                                        border: 3px solid #1e293b;
+                                        border: 3px solid #24282e;
                                     }
 
                                     .upload-overlay {
                                         position: absolute;
                                         bottom: 0;
                                         right: 0;
-                                        background: #8b5cf6;
+                                        background: #c9ac82;
                                         width: 32px;
                                         height: 32px;
                                         border-radius: 50%;
                                         display: flex;
                                         align-items: center;
                                         justify-content: center;
-                                        border: 3px solid #0f172a;
-                                        color: white;
+                                        border: 3px solid #131518;
+                                        color: #f3f1ec;
                                         font-size: 16px;
                                     }
                                 }
 
                                 .profile-button {
-                                    color: #64748b;
+                                    color: #7f838b;
                                     font-size: 13px;
                                     margin-top: 10px;
                                 }
@@ -363,7 +363,7 @@
                                 label {
                                     display: flex;
                                     font-size: 13px;
-                                    color: white;
+                                    color: #f3f1ec;
                                     margin-bottom: 8px;
                                     font-weight: 500;
                                 }
@@ -371,9 +371,9 @@
                                 .form-input {
                                     width: 100%;
                                     padding: 12px 15px;
-                                    background: #151a28;
-                                    border: 1px solid #1e2536;
-                                    color: white;
+                                    background: #131518;
+                                    border: 1px solid #1c2025;
+                                    color: #f3f1ec;
                                     border-radius: 8px;
                                     font-family: inherit;
                                     font-size: 14px;
@@ -382,7 +382,7 @@
                                     transition: 0.3s;
                                 }
                                 .form-input:focus {
-                                    border-color: #8b5cf6;
+                                    border-color: #c9ac82;
                                 }
 
                                 .form-input[readonly] {

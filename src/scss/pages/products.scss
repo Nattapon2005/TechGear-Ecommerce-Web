@@ -1,23 +1,27 @@
 //================================== file products.scss ===========================
 //==================================   product-header ================================
 
+// Palette: deep ink surfaces + warm off-white type + a muted brass accent.
+// Deliberately restrained — no neon glow, no saturated gradients.
 :root {
-    --bg: #0d1220;
-    --surface: #181f32;
-    --surface2: #1e2840;
-    --hover: #242e4a;
-    --accent: #7c5cfc;
-    --text: #dde4f5;
-    --muted: #7a8bad;
-    --border: rgba(255, 255, 255, 0.07);
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+    --bg: #0b0c0e;
+    --surface: #131518;
+    --surface2: #191c20;
+    --hover: #202429;
+    --accent: #c9ac82;
+    --accent-soft: rgba(201, 172, 130, 0.12);
+    --text: #f3f1ec;
+    --muted: #8d9098;
+    --border: rgba(255, 255, 255, 0.06);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
     --radius: 12px;
 }
 
 .product-body {
     min-height: 100%;
     padding: 40px 0;
-    background: #0a0a0f;
+    background: var(--bg);
+
     .mt-100 {
         margin: 40px auto;
         padding: 40px 0;
@@ -26,18 +30,21 @@
         //===============  All Products Page Layout ================
 
         .product-head {
-            margin-bottom: 40px;
+            margin-bottom: 36px;
 
             h1 {
-                color: rgba(255 255 255);
-                font-size: 42px;
-                margin-bottom: 5px;
-                font-weight: 800;
+                color: var(--text);
+                font-size: 40px;
+                line-height: 1.1;
+                letter-spacing: -0.03em;
+                margin-bottom: 8px;
+                font-weight: 700;
             }
 
             p {
-                color: #64748b;
-                font-size: 16px;
+                color: var(--muted);
+                font-size: 15px;
+                font-weight: 400;
             }
         }
 
@@ -48,55 +55,54 @@
             gap: 40px;
             width: 100%;
             margin: 0 auto;
-            // border: 1px solid red;
 
             .filter-sidebar {
-                // border: 1px solid red;
                 //============== สไตล์ Sidebar Card ==============
                 .filter-card {
-                    background: #0d111c;
-                    border: 1px solid #232b3e;
-                    padding: 30px;
-                    border-radius: 24px;
+                    background: var(--surface);
+                    border: 0;
+                    padding: 26px 22px;
+                    border-radius: 16px;
                     height: fit-content;
                     position: sticky;
                     top: 120px;
-                    // border: 1px solid red;
 
                     .filter-group {
                         h3 {
-                            font-size: 16px;
-                            font-weight: 800;
-                            color: white;
-                            margin-bottom: 15px;
+                            font-size: 13px;
+                            font-weight: 600;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                            color: var(--muted);
+                            margin-bottom: 14px;
                         }
 
                         .cat-list {
                             display: flex;
                             flex-direction: column;
-                            gap: 8px;
+                            gap: 4px;
 
                             //================ รายการหมวดหมู่และสถานะ Active ================
                             .cat-link {
-                                color: #94a3b8;
+                                color: var(--muted);
                                 text-decoration: none;
                                 font-size: 14px;
-                                padding: 10px 20px;
-                                border-radius: 14px;
-                                transition: 0.3s;
+                                padding: 9px 13px;
+                                border-radius: 9px;
+                                transition: background 0.2s ease, color 0.2s ease;
                                 display: block;
-                                border: 1px solid transparent;
-                            }
-                            .cat-link:hover {
-                                color: white;
-                                background: #1e293b;
+                                border: 0;
                             }
 
-                            //============== สีม่วงเข้มสำหรับหมวดหมู่ที่ถูกเลือก ===================
+                            .cat-link:hover {
+                                color: var(--text);
+                                background: var(--hover);
+                            }
+
+                            //============== สี brass อ่อนสำหรับหมวดหมู่ที่ถูกเลือก ===================
                             .cat-link.active {
-                                background: #262048;
-                                color: #fff;
-                                // border: 1px solid #4c4a8a;
+                                background: var(--accent-soft);
+                                color: #e8d8bd;
                                 font-weight: 600;
                             }
                         }
@@ -105,18 +111,25 @@
                     //===================== show-menu-product ====================
 
                     .filter-product-con {
-                        margin-top: 40px;
+                        margin-top: 32px;
+                        padding-top: 24px;
+                        border-top: 1px solid var(--border);
 
                         h3 {
-                            color: #fff;
-                            font-size: 18px;
+                            color: var(--text);
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+
+                        input[type="range"] {
+                            accent-color: var(--accent);
                         }
 
                         .filter-product-price {
                             display: flex;
                             justify-content: space-between;
-                            color: #64748b;
-                            font-size: 13px;
+                            color: var(--muted);
+                            font-size: 12px;
                         }
                     }
 
@@ -124,18 +137,21 @@
 
                     .filter-button {
                         width: 100%;
-                        padding: 12px;
-                        background: white;
-                        color: #a7a7a7;
-                        border: none;
-                        border-radius: 12px;
-                        font-weight: 800;
+                        padding: 11px 14px;
+                        background: rgba(255, 255, 255, 0.04);
+                        color: var(--muted);
+                        border: 0;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        font-weight: 500;
                         cursor: pointer;
-                        margin-top: 30px;
-                        transition: 0.3s;
+                        margin-top: 26px;
+                        transition: background 0.2s ease, color 0.2s ease;
                     }
+
                     .filter-button:hover {
-                        color: #0a0a0f;
+                        color: var(--text);
+                        background: var(--hover);
                     }
                 }
             }
@@ -149,37 +165,48 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin-bottom: 30px;
-                    gap: 20px;
+                    margin-bottom: 26px;
+                    gap: 16px;
                     width: 100%;
-                    background: #0d111c;
-                    padding: 15px;
-                    border-radius: 10px;
-                    border: 1px solid #232b3e;
+                    background: var(--surface);
+                    padding: 10px 12px;
+                    border-radius: 14px;
+                    border: 0;
 
                     //======================== search-bar-lg ========================
                     .search-bar-lg {
                         display: flex;
                         align-items: center;
-                        background: #1e2536;
+                        background: var(--surface2);
                         width: 50%;
                         border-radius: 10px;
-                        padding: 0 10px;
-                        border: 1px solid #3d3d3d;
-                        height: 100%;
+                        padding: 0 12px;
+                        border: 0;
+                        height: 44px;
+                        transition: background 0.2s ease;
+
+                        &:focus-within {
+                            background: var(--hover);
+                        }
+
                         .icon {
-                            color: #64748b;
-                            font-size: 20px;
+                            color: var(--muted);
+                            font-size: 19px;
                         }
 
                         input {
                             width: 100%;
                             border: none;
                             background: transparent;
-                            padding: 10px 10px;
-                            color: white;
+                            padding: 0 10px;
+                            color: var(--text);
+                            font-size: 14px;
                             outline: none;
                             height: 100%;
+
+                            &::placeholder {
+                                color: #6f737b;
+                            }
                         }
                     }
 
@@ -188,8 +215,8 @@
                     .sort-box {
                         display: flex;
                         align-items: center;
-                        gap: 10px;
-                        margin-right: 20px;
+                        gap: 8px;
+                        margin-right: 2px;
 
                         .dropdown {
                             position: relative;
@@ -202,18 +229,16 @@
                                 align-items: center;
                                 justify-content: space-between;
                                 gap: 8px;
-                                background: var(--surface);
-                                border: 1px solid var(--border);
-                                padding: 10px 14px;
-                                border-radius: var(--radius);
+                                background: var(--surface2);
+                                border: 0;
+                                padding: 11px 14px;
+                                border-radius: 10px;
                                 cursor: pointer;
-                                transition:
-                                    background 0.2s,
-                                    border-color 0.2s;
+                                transition: background 0.2s ease;
 
                                 h5 {
                                     font-size: 13.5px;
-                                    font-weight: 600;
+                                    font-weight: 500;
                                     color: var(--text);
                                     white-space: nowrap;
                                 }
@@ -223,21 +248,19 @@
                                     color: var(--muted);
                                     line-height: 1;
                                     flex-shrink: 0;
-                                    transition:
-                                        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                                        color 0.2s;
+                                    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
                                 }
                             }
 
                             //======================= Options panel =====================
                             .options {
                                 position: absolute;
-                                top: calc(100% + 6px);
+                                top: calc(100% + 8px);
                                 left: 0;
                                 width: 100%;
-                                background: var(--surface);
-                                border: 1px solid var(--border);
-                                border-radius: var(--radius);
+                                background: var(--surface2);
+                                border: 0;
+                                border-radius: 12px;
                                 box-shadow: var(--shadow);
                                 overflow: hidden;
                                 z-index: 100;
@@ -245,9 +268,7 @@
                                 opacity: 0;
                                 transform: translateY(-6px) scale(0.98);
                                 pointer-events: none;
-                                transition:
-                                    opacity 0.2s ease,
-                                    transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+                                transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 
                                 //==================== Individual option =====================
                                 .options-box {
@@ -256,12 +277,10 @@
                                     justify-content: space-between;
                                     padding: 11px 14px;
                                     font-size: 13.5px;
-                                    font-weight: 500;
+                                    font-weight: 400;
                                     color: var(--muted);
                                     cursor: pointer;
-                                    transition:
-                                        background 0.15s,
-                                        color 0.15s;
+                                    transition: background 0.15s, color 0.15s;
 
                                     //============ Checkmark icon (Boxicons) ================
                                     .bx-check {
@@ -270,9 +289,6 @@
                                         opacity: 0;
                                         transition: opacity 0.15s;
                                     }
-                                }
-                                .options-box + .options-box {
-                                    border-top: 1px solid var(--border);
                                 }
 
                                 .options-box:hover {
@@ -292,8 +308,7 @@
 
                             &.selected:hover,
                             &.open .selected {
-                                background: var(--surface2);
-                                border-color: rgba(124, 92, 252, 0.45);
+                                background: var(--hover);
                             }
 
                             &.open .options {
@@ -308,9 +323,9 @@
                             ──────────────────────────── */
                         .view-toggle {
                             display: flex;
-                            background: var(--surface);
-                            border: 1px solid var(--border);
-                            border-radius: var(--radius);
+                            background: var(--surface2);
+                            border: 0;
+                            border-radius: 10px;
                             overflow: hidden;
 
                             .view-btn {
@@ -325,14 +340,12 @@
                                 color: var(--muted);
                                 font-size: 20px;
                                 line-height: 1;
-                                transition:
-                                    background 0.15s,
-                                    color 0.15s;
+                                transition: background 0.15s, color 0.15s;
                             }
 
                             .view-btn.active {
-                                background: var(--accent);
-                                color: #fff;
+                                background: var(--accent-soft);
+                                color: var(--accent);
                             }
 
                             .view-btn:hover:not(.active) {
@@ -348,15 +361,16 @@
 
                 .product-grid-lg {
                     display: flex;
-                    background: var(--bg-container-black);
-                    color: var(--font-color-hover);
+                    background: transparent;
+                    color: var(--text);
                     padding: 0 0 80px 0;
 
                     .container {
                         width: 100%;
+
                         .product-item-con-grid {
                             display: grid;
-                            gap: 1.25rem;
+                            gap: 1.5rem;
 
                             &.grid-view {
                                 grid-template-columns: repeat(3, 1fr);
@@ -368,106 +382,117 @@
 
                             .product-item-grid {
                                 position: relative;
-                                border: 1px solid #232b3e;
-                                // padding: 20px 20px;
-                                border-radius: 10px;
-                                background: #070c1d;
+                                border: 1px solid rgba(255, 255, 255, 0.04);
+                                padding: 14px;
+                                border-radius: 16px;
+                                background: var(--surface);
+                                background-image: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgba(201, 172, 130, 0.1), transparent 62%);
                                 cursor: pointer;
-                                transition:
-                                    transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                                    box-shadow 0.4s ease;
+                                transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background-image 0.35s ease;
 
                                 .product-item-img {
-                                    background: #05091a;
+                                    background: #0f1114;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
                                     overflow: hidden;
-                                    border-radius: 10px;
+                                    border-radius: 12px;
                                     width: 100%;
-                                    height: 230px;
-                                    padding: 20px;
+                                    aspect-ratio: 4 / 3;
+                                    height: auto;
+                                    padding: 12px;
 
                                     .product-img-g {
+                                        display: block;
                                         overflow: hidden;
                                         border-radius: 10px;
-
-                                        &.img-grid {
-                                            width: 100%;
-                                        }
+                                        width: 100%;
+                                        height: 100%;
 
                                         &.img-list {
-                                            width: 35%;
+                                            width: 100%;
                                         }
 
                                         img {
                                             object-fit: cover;
-                                            background-position: center;
-                                            background-size: cover;
+                                            object-position: center;
                                             width: 100%;
                                             height: 100%;
                                             border-radius: 10px;
-                                            transition: transform 0.7s ease;
-                                            // border: 1px solid red;
+                                            transition: transform 0.6s ease;
                                         }
                                     }
                                 }
 
                                 //=================== product-item-title-con ==========================
                                 .product-item-title-con {
-                                    padding: 20px 20px;
-                                    background: #090c20;
+                                    padding: 18px 6px 6px;
+                                    background: transparent;
 
                                     .product-item-title {
                                         p {
-                                            color: var(--btn-color-hero);
-                                            --tw-text-opacity: 1;
-                                            color: rgb(167 139 250 / var(--tw-text-opacity, 1));
-                                            margin-top: 20px;
+                                            color: var(--muted);
+                                            font-size: 11px;
+                                            font-weight: 600;
+                                            letter-spacing: 0.12em;
+                                            text-transform: uppercase;
+                                            margin-top: 0;
                                         }
 
                                         h4 {
-                                            font-size: 1.25rem;
-                                            font-weight: 700;
-                                            color: var(--font-color-hover);
-                                            margin-top: 15px;
+                                            font-size: 1.02rem;
+                                            line-height: 1.45;
+                                            font-weight: 600;
+                                            color: var(--text);
+                                            margin-top: 8px;
                                             display: -webkit-box;
-                                            -webkit-line-clamp: 1;
+                                            -webkit-line-clamp: 2;
                                             -webkit-box-orient: vertical;
                                             overflow: hidden;
                                         }
 
                                         .product-show-title {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 2px;
+                                            margin-top: 12px;
+
                                             .star-con {
-                                                margin-right: 10px;
+                                                margin-right: 6px;
+                                                line-height: 1;
                                             }
 
                                             .star-cont {
-                                                color: var(--font-color);
+                                                color: var(--muted);
+                                                font-size: 12px;
                                             }
 
                                             span {
-                                                margin-top: 15px;
-
                                                 .checked {
-                                                    color: var(--star-color);
+                                                    color: var(--accent);
+                                                }
+
+                                                .star-bg {
+                                                    color: #4a4d53;
                                                 }
                                             }
                                         }
 
                                         .product-price {
-                                            margin-top: 15px;
+                                            margin-top: 14px;
 
                                             .product-price-w {
-                                                font-size: 1.5rem;
+                                                font-size: 1.25rem;
                                                 font-weight: 700;
+                                                letter-spacing: -0.01em;
+                                                color: var(--text);
                                             }
 
                                             .old-price {
                                                 text-decoration: line-through;
-                                                color: var(--font-color);
-                                                font-size: 0.9em;
-                                                margin-left: 5px;
+                                                color: var(--muted);
+                                                font-size: 0.85em;
+                                                margin-left: 6px;
                                                 font-weight: 400;
                                             }
                                         }
@@ -478,25 +503,35 @@
                                             display: flex;
                                             align-items: center;
                                             justify-content: center;
-                                            margin-top: 20px;
-                                            background: var(--purple);
-                                            border-radius: 8px;
+                                            margin-top: 18px;
+                                            background: #eeeae2;
+                                            border-radius: 10px;
                                             width: 100%;
-                                            transition: 0.3s;
+                                            transition: background 0.2s ease, transform 0.2s ease;
 
                                             button {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                gap: 7px;
                                                 background: transparent;
-                                                color: white;
-                                                font-size: 16px;
+                                                color: #17130d;
+                                                font-size: 13.5px;
                                                 border: none;
                                                 font-weight: 600;
-                                                padding: 14px;
+                                                letter-spacing: 0.01em;
+                                                padding: 12px;
                                                 width: 100%;
                                                 cursor: pointer;
+
+                                                i {
+                                                    font-size: 17px;
+                                                }
                                             }
                                         }
+
                                         .btn-product-item:hover {
-                                            background: #9863ed;
+                                            background: #ddd6c8;
                                         }
                                     }
                                 }
@@ -505,8 +540,8 @@
 
                                 .show-discount-product {
                                     position: absolute;
-                                    top: 25px;
-                                    left: -15px;
+                                    top: 26px;
+                                    left: 26px;
                                     display: flex;
                                     justify-content: space-between;
 
@@ -515,46 +550,58 @@
                                         flex-direction: column;
 
                                         .show-product-box {
-                                            color: #000;
-                                            padding: 5px 20px;
-                                            border-radius: 5px;
+                                            color: var(--text);
+                                            padding: 5px 10px;
+                                            border-radius: 6px;
                                             text-transform: uppercase;
-                                            font-size: 12px;
-                                            font-weight: 700;
+                                            letter-spacing: 0.08em;
+                                            font-size: 10px;
+                                            font-weight: 600;
                                             text-align: center;
+                                            backdrop-filter: blur(6px);
                                         }
 
                                         .show-new-product-box {
-                                            background: #00d2ff;
+                                            background: rgba(143, 174, 155, 0.18);
+                                            color: #b3cbbd;
                                         }
 
                                         .discount-product-box {
-                                            background: #f43f5e;
-                                            color: var(--font-color-hover);
+                                            background: rgba(201, 140, 124, 0.18);
+                                            color: #d9b0a5;
                                         }
                                     }
                                 }
 
                                 .show-icon-love {
                                     position: absolute;
-                                    top: 25px;
-                                    right: 5px;
+                                    top: 26px;
+                                    right: 26px;
                                     cursor: pointer;
                                     z-index: 10;
 
                                     .icon-love {
                                         i {
-                                            padding: 10px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 34px;
+                                            height: 34px;
+                                            padding: 0;
                                             border-radius: 50%;
-                                            background: #1a2536;
-                                            color: var(--font-color);
-                                            font-size: 20px;
-                                            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease, background 0.2s ease;
+                                            background: rgba(11, 12, 14, 0.6);
+                                            backdrop-filter: blur(6px);
+                                            color: #b9bcc3;
+                                            font-size: 18px;
+                                            transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
                                         }
+
                                         i:hover {
-                                            transform: scale(1.15);
-                                            background: #252b45;
+                                            transform: scale(1.08);
+                                            background: rgba(11, 12, 14, 0.85);
+                                            color: var(--text);
                                         }
+
                                         i.heart-pop {
                                             animation: popHeart 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                                         }
@@ -564,19 +611,19 @@
 
                             @keyframes popHeart {
                                 0% { transform: scale(1); }
-                                50% { transform: scale(1.6); }
+                                50% { transform: scale(1.35); }
                                 100% { transform: scale(1); }
                             }
 
                             // ===== Animation =====
                             .product-item-grid:hover {
-                                transform: translateY(-12px);
-                                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-                                border-color: rgba(124, 58, 237, 0.5);
+                                transform: translateY(-4px);
+                                box-shadow: var(--shadow);
+                                border-color: rgba(255, 255, 255, 0.09);
                             }
 
                             .product-item-grid:hover img {
-                                transform: scale(1.3);
+                                transform: scale(1.04);
                             }
                         }
                     }

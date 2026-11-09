@@ -33,28 +33,51 @@ function toggleProfile() {
 // ฟังก์ชันอัปเดตตะกร้าแบบไม่รีเฟรชหน้า (เพิ่มใหม่)
 async function updateQty(action, index) {
     try {
-        // ส่งคำสั่งไปที่ update_cart.php หลังบ้านเงียบๆ
+        // Send the change to the backend silently
         const response = await fetch(`update_cart.php?action=${action}&id=${index}&ajax=1`);
 
         if (response.ok) {
-            // อัปเดตข้อมูลใน cartData (ฝั่งหน้าจอ) ทันทีเพื่อให้เห็นผลเร็ว
+            let removedItem = null;
+
+            // Update local cart immediately so the UI feels instant
             if (action === 'increase') {
                 cartData[index].qty++;
             } else if (action === 'decrease') {
                 if (cartData[index].qty > 1) {
                     cartData[index].qty--;
                 } else {
-                    cartData.splice(index, 1); // ถ้าเหลือ 1 แล้วกดลด ให้ลบออก
+                    removedItem = cartData[index];
+                    cartData.splice(index, 1); // qty was 1 -> remove
                 }
             } else if (action === 'remove') {
+                removedItem = cartData[index];
                 cartData.splice(index, 1);
             }
 
-            // วาดตะกร้าใหม่ทันทีโดยที่ Sidebar ยังเปิดอยู่
+            // Redraw the cart while keeping the sidebar open
             renderCart();
+
+            if (removedItem) {
+                const cartIcon = document.querySelector('.menu-login-icon-tow');
+                const countEl = document.querySelector('.count-cart');
+                [cartIcon, countEl].forEach((el) => {
+                    if (!el) return;
+                    el.classList.remove('cart-bump');
+                    void el.offsetWidth;
+                    el.classList.add('cart-bump');
+                    setTimeout(() => el.classList.remove('cart-bump'), 650);
+                });
+
+                if (window.showToast) {
+                    window.showToast('Item Removed', (removedItem.name || 'Item') + ' removed from your cart.', 'remove', 'bx-trash');
+                }
+            }
         }
     } catch (error) {
         console.error("Update failed:", error);
+        if (window.showToast) {
+            window.showToast('Could not update cart', 'Please try again.', 'remove', 'bx-error-circle');
+        }
     }
 }
 

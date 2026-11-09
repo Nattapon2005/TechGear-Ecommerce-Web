@@ -4,13 +4,13 @@
 
 .order-body-bg {
     min-height: 100%;
-    background: #0a0a0f;
+    background: #0b0c0e;
     padding: 40px 0;
     .orders-wrapper {
         max-width: 1000px;
         margin: 40px auto;
         padding: 40px 20px;
-        color: white;
+        color: #f3f1ec;
         height: auto;
 
         .page-title {
@@ -21,8 +21,8 @@
 
         //================================== order-card ======================================
         .order-card {
-            background: #151a28;
-            border: 1px solid #232b3e;
+            background: #131518;
+            border: 1px solid #24282e;
             border-radius: 16px;
             margin-bottom: 25px;
             transition: 0.3s;
@@ -43,13 +43,13 @@
                         .order-id {
                             font-weight: lighter;
                             font-size: 16px;
-                            color: #8b5cf6;
+                            color: #c9ac82;
                         }
 
                         .order-date {
                             display: flex;
                             align-items: center;
-                            color: #64748b;
+                            color: #7f838b;
                             font-size: 14px;
                             margin-top: 20px;
 
@@ -76,21 +76,21 @@
                     }
 
                     .status-pending {
-                        background: rgba(245, 158, 11, 0.1);
-                        color: #f59e0b;
-                        border: 1px solid #f59e0b;
+                        background: rgba(201, 172, 130, 0.1);
+                        color: #c9ac82;
+                        border: 1px solid #c9ac82;
                     }
                     .status-completed {
-                        background: rgba(34, 197, 94, 0.1);
-                        color: #22c55e;
-                        border: 1px solid #22c55e;
+                        background: rgba(127, 174, 143, 0.1);
+                        color: #7fae8f;
+                        border: 1px solid #7fae8f;
                     }
                 }
             }
 
             //============================ order-line-body =======================
             .order-line-body {
-                border-top: 1px solid #232b3e;
+                border-top: 1px solid #24282e;
                 .order-body {
                     display: flex;
                     justify-content: space-between;
@@ -99,14 +99,14 @@
 
                     .order-con {
                         .order-total-label {
-                            color: #94a3b8;
+                            color: #8d9098;
                             font-size: 14px;
                             margin-bottom: 10px;
                         }
                         .order-total-value {
                             font-size: 20px;
                             font-weight: 800;
-                            color: white;
+                            color: #f3f1ec;
                         }
                     }
 
@@ -118,7 +118,7 @@
                         transition: 0.3s;
 
                         i {
-                            color: #8b5cf6;
+                            color: #c9ac82;
                             font-size: 18px;
                             transition: 0.3s;
                         }
@@ -128,28 +128,28 @@
                             border-radius: 8px;
                             text-decoration: none;
                             font-size: 14px;
-                            color: #8b5cf6;
+                            color: #c9ac82;
                             transition: 0.3s;
                         }
                     }
                     .order-show-date:hover {
-                        background: #fff;
+                        background: #f3f1ec;
                         border-radius: 10px;
-                        color: #0a0a0f;
+                        color: #0b0c0e;
 
                         i {
-                            color: #0a0a0f;
+                            color: #0b0c0e;
                         }
 
                         .btn-view-detail {
-                            color: #0a0a0f;
+                            color: #0b0c0e;
                         }
                     }
                 }
             }
         }
         .order-card:hover {
-            border-color: #8b5cf6;
+            border-color: #c9ac82;
         }
 
         //================================== empty-orders =============================
@@ -166,17 +166,17 @@
             .empty-icon-circle {
                 width: 100px;
                 height: 100px;
-                background: #1e2536;
+                background: #1c2025;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 25px;
-                border: 1px solid #232b3e;
+                border: 1px solid #24282e;
 
                 i {
                     font-size: 48px;
-                    color: #64748b;
+                    color: #7f838b;
                 }
             }
 
@@ -186,14 +186,14 @@
             }
 
             p {
-                color: #64748b;
+                color: #7f838b;
                 max-width: 300px;
                 line-height: 1.6;
             }
 
             .btn-shopping {
-                background: #8b5cf6;
-                color: white;
+                background: #c9ac82;
+                color: #17130d;
                 border: none;
                 padding: 15px 35px;
                 border-radius: 10px;
@@ -205,8 +205,8 @@
                 display: inline-block;
             }
             .btn-shopping:hover {
-                background: #7c3aed;
-                box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+                background: #b89563;
+                box-shadow: 0 5px 15px rgba(184, 149, 99, 0.3);
             }
         }
     }

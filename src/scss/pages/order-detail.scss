@@ -1,31 +1,31 @@
 //=============================== file order-detail ========================
 .body-order-detail-wrapper {
     min-height: 100%;
-    background: #0a0a0f;
+    background: #0b0c0e;
     padding: 40px 0;
 
     .order-detail-wrapper {
         max-width: 900px;
         margin: 40px auto;
         padding: 0 20px;
-        color: white;
+        color: #f3f1ec;
 
         //========================== breadcrumb ====================
         .breadcrumb {
-            color: #8b92a5;
+            color: #8d9098;
             font-size: 14px;
             margin-bottom: 20px;
 
             a {
-                color: #8b92a5;
+                color: #8d9098;
                 text-decoration: none;
                 transition: 0.2s;
             }
             a:hover {
-                color: white;
+                color: #f3f1ec;
             }
             span {
-                color: white;
+                color: #f3f1ec;
             }
         }
 
@@ -43,7 +43,7 @@
                     margin: 0;
                 }
                 .order-date {
-                    color: #64748b;
+                    color: #7f838b;
                     font-size: 14px;
                     margin-top: 5px;
                 }
@@ -51,8 +51,8 @@
 
             .btn-print {
                 background: transparent;
-                border: 1px solid #4c4a8a;
-                color: #a78bfa;
+                border: 1px solid #3a3329;
+                color: #d9c7a8;
                 padding: 10px 20px;
                 border-radius: 8px;
                 cursor: pointer;
@@ -63,9 +63,9 @@
                 font-weight: bold;
             }
             .btn-print:hover {
-                background: rgba(139, 92, 246, 0.1);
-                border-color: #8b5cf6;
-                color: white;
+                background: rgba(201, 172, 130, 0.1);
+                border-color: #c9ac82;
+                color: #f3f1ec;
             }
         }
 
@@ -78,8 +78,8 @@
             margin-bottom: 30px;
 
             .info-card {
-                background: #151a28;
-                border: 1px solid #232b3e;
+                background: #131518;
+                border: 1px solid #24282e;
                 padding: 25px;
                 border-radius: 16px;
 
@@ -87,19 +87,19 @@
                     margin-top: 0;
                     margin-bottom: 15px;
                     font-size: 16px;
-                    color: #8b5cf6;
+                    color: #c9ac82;
                     display: flex;
                     align-items: center;
                     gap: 8px;
                 }
 
                 .info-data {
-                    color: #e2e8f0;
+                    color: #e9e5dd;
                     font-size: 14px;
                     line-height: 1.6;
 
                     strong {
-                        color: white;
+                        color: #f3f1ec;
                         font-size: 15px;
                         display: block;
                         margin-bottom: 5px;

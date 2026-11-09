@@ -1,17 +1,17 @@
 //======================  file register.php =====================
 
 :root {
-    --primary: #8b5cf6;
-    --bg: #0f172a;
-    --card: #151a28;
-    --border: #232b3e;
-    --text-dim: #94a3b8;
+    --primary: #c9ac82;
+    --bg: #0b0c0e;
+    --card: #131518;
+    --border: #24282e;
+    --text-dim: #8d9098;
 }
 
 .body-card {
     font-family: "Inter", sans-serif;
     background: var(--bg);
-    color: white;
+    color: #f3f1ec;
     margin: 0;
     display: flex;
     align-items: center;
@@ -61,13 +61,13 @@
 
         form {
             .error-msg {
-                background: rgba(239, 68, 68, 0.1);
-                color: #ef4444;
+                background: rgba(217, 138, 145, 0.1);
+                color: #d98a91;
                 padding: 12px;
                 border-radius: 10px;
                 font-size: 13px;
                 margin-bottom: 20px;
-                border: 1px solid #ef4444;
+                border: 1px solid #d98a91;
                 text-align: center;
             }
 
@@ -95,17 +95,17 @@
                     input {
                         width: 100%;
                         padding: 12px 12px 12px 45px;
-                        background: #1e2536;
+                        background: #1c2025;
                         border: 1px solid var(--border);
                         border-radius: 10px;
-                        color: white;
+                        color: #f3f1ec;
                         outline: none;
                         transition: 0.3s;
                         box-sizing: border-box;
                     }
                     input:focus {
                         border-color: var(--primary);
-                        box-shadow: 0 0 10px rgba(139, 92, 246, 0.1);
+                        box-shadow: 0 0 10px rgba(201, 172, 130, 0.1);
                     }
                 }
             }
@@ -116,7 +116,7 @@
                 background: var(--primary);
                 border: none;
                 border-radius: 10px;
-                color: white;
+                color: #17130d;
                 font-weight: bold;
                 cursor: pointer;
                 font-size: 16px;
@@ -124,9 +124,9 @@
                 transition: 0.3s;
             }
             .btn-auth:hover {
-                background: #7c3aed;
+                background: #b89563;
                 transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+                box-shadow: 0 5px 15px rgba(184, 149, 99, 0.3);
             }
         }
 

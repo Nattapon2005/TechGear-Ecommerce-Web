@@ -25,7 +25,7 @@ $has_orders = ($result->num_rows > 0);
 
 <style>
 .order-body-bg {
-    background: radial-gradient(circle at top right, #111827 0%, #030712 100%);
+    background: radial-gradient(circle at top right, #131518 0%, #0b0c0e 100%);
     min-height: 100vh;
     padding: 100px 20px 40px;
 }
@@ -34,11 +34,11 @@ $has_orders = ($result->num_rows > 0);
     margin: 0 auto;
 }
 .page-title {
-    color: #fff;
+    color: #f3f1ec;
     font-size: 28px;
     font-weight: 800;
     margin-bottom: 30px;
-    text-shadow: 0 0 15px rgba(139,92,246,0.6);
+    text-shadow: 0 0 15px rgba(201, 172, 130,0.6);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -46,7 +46,7 @@ $has_orders = ($result->num_rows > 0);
 .page-title::before {
     content: '\eb71'; /* bx-package */
     font-family: 'boxicons';
-    color: #8b5cf6;
+    color: #c9ac82;
     font-size: 32px;
 }
 
@@ -54,21 +54,21 @@ $has_orders = ($result->num_rows > 0);
 .order-card {
     background: rgba(17, 24, 39, 0.6);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(201, 172, 130, 0.3);
     border-radius: 16px;
     margin-bottom: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 20px rgba(139,92,246,0.05);
+    box-shadow: 0 0 20px rgba(201, 172, 130,0.05);
 }
 .order-card:hover {
     transform: translateY(-5px);
-    border-color: #a78bfa;
-    box-shadow: 0 10px 30px rgba(139,92,246,0.2), inset 0 0 20px rgba(139,92,246,0.1);
+    border-color: #d9c7a8;
+    box-shadow: 0 10px 30px rgba(201, 172, 130,0.2), inset 0 0 20px rgba(201, 172, 130,0.1);
 }
 
 .order-line-header {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(19, 21, 24, 0.8);
     padding: 15px 25px;
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -80,11 +80,11 @@ $has_orders = ($result->num_rows > 0);
 .order-id {
     font-size: 18px;
     font-weight: 800;
-    color: #00ffcc;
+    color: #c9ac82;
     letter-spacing: 1px;
 }
 .order-date {
-    color: #cbd5e1;
+    color: #d6d2c9;
     font-size: 13px;
     margin-left: 15px;
     display: inline-flex;
@@ -102,10 +102,10 @@ $has_orders = ($result->num_rows > 0);
     align-items: center;
     gap: 5px;
 }
-.status-pending { background: rgba(245,158,11,0.2); color: #f59e0b; border: 1px solid rgba(245,158,11,0.5); }
-.status-completed { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.5); }
-.status-shipped { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.5); }
-.status-cancelled { background: rgba(244,63,94,0.2); color: #fb7185; border: 1px solid rgba(244,63,94,0.5); }
+.status-pending { background: rgba(201, 172, 130,0.2); color: #c9ac82; border: 1px solid rgba(201, 172, 130,0.5); }
+.status-completed { background: rgba(127, 174, 143,0.2); color: #8fbfa3; border: 1px solid rgba(127, 174, 143,0.5); }
+.status-shipped { background: rgba(201, 172, 130,0.2); color: #d9c7a8; border: 1px solid rgba(201, 172, 130,0.5); }
+.status-cancelled { background: rgba(217, 138, 145,0.2); color: #d98a91; border: 1px solid rgba(217, 138, 145,0.5); }
 
 .order-line-body {
     padding: 25px;
@@ -117,7 +117,7 @@ $has_orders = ($result->num_rows > 0);
 }
 .order-total-label {
     font-size: 13px;
-    color: #94a3b8;
+    color: #8d9098;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -125,7 +125,7 @@ $has_orders = ($result->num_rows > 0);
 .order-total-value {
     font-size: 24px;
     font-weight: 900;
-    color: #fff;
+    color: #f3f1ec;
     text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
@@ -133,7 +133,7 @@ $has_orders = ($result->num_rows > 0);
     display: flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, #220c49ff, #161e63ff);
+    background: linear-gradient(135deg, #1c1a16, #1a1c20);
     padding: 10px 20px;
     border-radius: 12px;
     cursor: pointer;
@@ -141,11 +141,11 @@ $has_orders = ($result->num_rows > 0);
 }
 .order-show-date:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(124,58,237,0.4);
+    box-shadow: 0 10px 20px rgba(184, 149, 99,0.4);
 }
-.order-show-date i { color: #fff; font-size: 18px; }
+.order-show-date i { color: #f3f1ec; font-size: 18px; }
 .btn-view-detail {
-    color: #fff;
+    color: #f3f1ec;
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
@@ -159,27 +159,27 @@ $has_orders = ($result->num_rows > 0);
     border-radius: 20px;
     padding: 60px 20px;
     text-align: center;
-    color: #fff;
+    color: #f3f1ec;
 }
 .empty-icon-circle {
     width: 80px;
     height: 80px;
-    background: rgba(139, 92, 246, 0.1);
-    border: 2px solid #8b5cf6;
+    background: rgba(201, 172, 130, 0.1);
+    border: 2px solid #c9ac82;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 40px;
-    color: #a78bfa;
-    box-shadow: 0 0 30px rgba(139,92,246,0.3);
+    color: #d9c7a8;
+    box-shadow: 0 0 30px rgba(201, 172, 130,0.3);
 }
 .empty-orders h2 { font-size: 24px; margin-bottom: 10px; }
-.empty-orders p { color: #cbd5e1; margin-bottom: 30px; font-size: 15px; }
+.empty-orders p { color: #d6d2c9; margin-bottom: 30px; font-size: 15px; }
 .btn-shopping {
-    background: #00ffcc;
-    color: #030712;
+    background: #c9ac82;
+    color: #0b0c0e;
     padding: 12px 30px;
     border-radius: 30px;
     text-decoration: none;
@@ -190,7 +190,7 @@ $has_orders = ($result->num_rows > 0);
 }
 .btn-shopping:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,255,204,0.4);
+    box-shadow: 0 10px 20px rgba(201, 172, 130,0.4);
 }
 </style>
 

@@ -14,7 +14,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <a href="orders.php" class="nav-item <?= $current_page === 'orders.php' ? 'active' : '' ?>">
             <i class='bx bxs-receipt'></i> Orders
             <?php if(isset($pending_orders) && $pending_orders > 0): ?>
-                <span class="badge-nav" style="background:rgba(244,63,94,.2);color:#fb7185;"><?= $pending_orders ?></span>
+                <span class="badge-nav" style="background:rgba(217, 138, 145,.2);color:#d98a91;"><?= $pending_orders ?></span>
             <?php endif; ?>
         </a>
 

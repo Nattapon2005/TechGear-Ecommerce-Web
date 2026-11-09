@@ -13,7 +13,7 @@ $cat_query = mysqli_query($conn, $sql);
         .scroll-sequence-section {
             position: relative;
             height: 350vh; /* Scroll length */
-            background: #000;
+            background: #0b0c0e;
             margin-top: -80px; /* Offset for navbar */
         }
 
@@ -23,7 +23,7 @@ $cat_query = mysqli_query($conn, $sql);
             height: 100vh;
             width: 100%;
             overflow: hidden;
-            background: #000;
+            background: #0b0c0e;
         }
 
         canvas#hero-lightpass {
@@ -47,7 +47,7 @@ $cat_query = mysqli_query($conn, $sql);
             justify-content: center;
             align-items: center;
             z-index: 10;
-            color: white;
+            color: #f3f1ec;
             text-align: center;
             pointer-events: none;
         }
@@ -61,7 +61,7 @@ $cat_query = mysqli_query($conn, $sql);
             transition: opacity 0.4s ease, transform 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 2px;
-            background: linear-gradient(to right, #00f3ff, #ff00ea);
+            background: linear-gradient(to right, #c9ac82, #8a6f4d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -86,7 +86,7 @@ $cat_query = mysqli_query($conn, $sql);
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
+            color: #f3f1ec;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -240,8 +240,8 @@ $cat_query = mysqli_query($conn, $sql);
     <!--========================= End Hero-Section ==========================-->
 
     <!--========================= Hero-Section 2 (Scroll Sequence 2) ==========================-->
-    <div class="scroll-sequence-section" id="scrollSequence2" style="margin-top: 0; background: #050505;">
-        <div class="sticky-container" style="background: #050505;">
+    <div class="scroll-sequence-section" id="scrollSequence2" style="margin-top: 0; background: #0b0c0e;">
+        <div class="sticky-container" style="background: #0b0c0e;">
             <canvas id="hero-head-bob"></canvas>
             <div class="scroll-text-overlay" id="textOverlay2">
                 <h1 id="mainTitle2">Pro Series</h1>
@@ -526,12 +526,13 @@ $cat_query = mysqli_query($conn, $sql);
             ?>
                 <div class="product-item-grid">
                     <div class="product-item-img">
-                        <a href="product-detail.php?id=<?php echo $prod_id; ?>">
-                            <img src="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>" alt="">
+                        <a href="product-detail.php?id=<?php echo $prod_id; ?>" class="product-img-g img-grid">
+                            <img src="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>" alt="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>" loading="lazy">
                         </a>
                         <div class="cat-overlay"></div>
 
                     </div>
+                    <div class="product-item-title-con">
                     <div class="product-item-title">
                         <p>
                             <?php echo htmlspecialchars($row['p_brand'] ?? ''); ?>
@@ -564,11 +565,10 @@ $cat_query = mysqli_query($conn, $sql);
                             <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>">
                             <input type="hidden" name="product_price" value="<?php echo $row['p_price'] ?? 0; ?>">
                             <input type="hidden" name="product_image" value="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>">
-                            <button type="submit">
-                                Add to cart
-                            </button>
+                            <button type="submit"><i class='bx bx-cart-add'></i> Add to cart</button>
                         </div>
                     </form>
+                    </div>
 
 
                     <div class="show-discount-product">
@@ -589,7 +589,7 @@ $cat_query = mysqli_query($conn, $sql);
                     ?>
                     <div class="show-icon-love" onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist(<?= $prod_id ?>, this)">
                         <div class="icon-love">
-                            <i class="<?= $is_wished ? 'bxf' : 'bx' ?> bx-heart" style="<?= $is_wished ? 'color: #f43f5e;' : '' ?>"></i>
+                            <i class="<?= $is_wished ? 'bxf' : 'bx' ?> bx-heart" style="<?= $is_wished ? 'color: #d98a91;' : '' ?>"></i>
                         </div>
                     </div>
 

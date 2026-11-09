@@ -91,18 +91,18 @@ $cnt_cust = (int)mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM us
 <style>
 .user-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
 .user-stat{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center;transition:all .3s;animation:fadeSlideUp .5s both;}
-.user-stat:hover{border-color:rgba(124,92,252,.3);transform:translateY(-2px);}
+.user-stat:hover{border-color:rgba(201, 172, 130,.3);transform:translateY(-2px);}
 .user-stat-value{font-size:28px;font-weight:800;margin-bottom:4px;}
 .user-stat-label{font-size:12px;color:var(--muted);font-weight:600;}
 
-.user-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#6340e0);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0;transition:transform .3s;}
+.user-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#8a6f4d);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#17130d;flex-shrink:0;transition:transform .3s;}
 .admin-table tbody tr:hover .user-avatar{transform:scale(1.15) rotate(-5deg);}
 .user-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 
 .role-tabs{display:flex;gap:8px;}
 .role-tab{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--border);transition:all .25s;}
 .role-tab:hover{border-color:var(--purple);color:var(--purple-lt);}
-.role-tab.active{background:rgba(124,92,252,.15);color:var(--purple-lt);border-color:rgba(124,92,252,.3);}
+.role-tab.active{background:rgba(201, 172, 130,.15);color:var(--purple-lt);border-color:rgba(201, 172, 130,.3);}
 </style>
 </head>
 <body>

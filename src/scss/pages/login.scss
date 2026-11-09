@@ -1,15 +1,15 @@
 .auth-body {
-    background: #1f2937;
+    background: #0b0c0e;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     // border: 1px solid red;
-    color: #fff;
+    color: #f3f1ec;
 
     .auth-card {
-        background: #151a28;
-        border: 1px solid #232b3e;
+        background: #131518;
+        border: 1px solid #24282e;
         padding: 40px;
         border-radius: 20px;
         width: 450px;
@@ -18,7 +18,7 @@
 
         .auth-logo {
             .auth-logo-login {
-                background: #fff;
+                background: #f3f1ec;
                 width: 70px;
                 height: 70px;
                 border-radius: 50%;
@@ -27,7 +27,7 @@
                 font-size: 1.3rem;
                 align-items: center;
                 justify-content: center;
-                color: #000;
+                color: #17130d;
                 font-weight: bold;
             }
         }
@@ -36,12 +36,12 @@
             font-size: 32px;
             font-weight: 800;
             margin-bottom: 20px;
-            color: white;
+            color: #f3f1ec;
             text-align: center;
         }
 
         .auth-subtitle {
-            color: #6b7280;
+            color: #7f838b;
             font-size: 0.9rem;
             margin-bottom: 30px;
             text-align: center;
@@ -55,10 +55,10 @@
             gap: 10px;
             width: 100%;
             padding: 12px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #d6d2c9;
             border-radius: 12px;
-            background: #fff;
-            color: #374151;
+            background: #f3f1ec;
+            color: #4b4f56;
             font-weight: 600;
             cursor: pointer;
             margin-bottom: 25px;
@@ -70,13 +70,13 @@
         }
 
         .btn-google:hover {
-            background: #f9fafb;
+            background: #eeeae2;
         }
 
         .divider {
             display: flex;
             align-items: center;
-            color: #9ca3af;
+            color: #8d9098;
             font-size: 0.8rem;
             margin-bottom: 25px;
         }
@@ -86,7 +86,7 @@
             content: "";
             flex: 1;
             height: 1px;
-            background: #e5e7eb;
+            background: #d6d2c9;
         }
 
         .divider {
@@ -101,7 +101,7 @@
                 text-align: center;
                 label {
                     font-size: 14px;
-                    color: #94a3b8;
+                    color: #8d9098;
                 }
 
                 .input-box {
@@ -116,7 +116,7 @@
                     span {
                         position: absolute;
                         left: 15px;
-                        color: #94a3b8;
+                        color: #8d9098;
                         font-size: 1.1rem;
                         // border: 2px solid blue;
                     }
@@ -124,16 +124,16 @@
                     input {
                         width: 100%;
                         padding: 12px 12px 12px 45px;
-                        background: #1e2536;
-                        border: 1px solid #232b3e;
+                        background: #1c2025;
+                        border: 1px solid #24282e;
                         border-radius: 10px;
-                        color: white;
+                        color: #f3f1ec;
                         outline: none;
                         transition: 0.3s;
                     }
                     input:focus {
-                        border-color: #8b5cf6;
-                        box-shadow: 0 0 10px rgba(139, 92, 246, 0.1);
+                        border-color: #c9ac82;
+                        box-shadow: 0 0 10px rgba(201, 172, 130, 0.1);
                     }
                 }
             }
@@ -141,19 +141,17 @@
             .btn-auth {
                 width: 100%;
                 padding: 14px;
-                background: #8b5cf6;
-                border: none;
-                border-radius: 10px;
-                color: white;
+                background: #c9ac82;
+                color: #17130d;
                 font-weight: bold;
                 cursor: pointer;
                 font-size: 16px;
                 transition: 0.3s;
             }
             .btn-auth:hover {
-                background: #7c3aed;
+                background: #b89563;
                 transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+                box-shadow: 0 5px 15px rgba(184, 149, 99, 0.3);
             }
         }
 
@@ -166,15 +164,15 @@
                 font-weight: 600;
                 text-decoration: none;
                 margin-top: 20px;
-                color: #6b7280;
+                color: #7f838b;
 
                 span {
-                    color: #6b7280;
+                    color: #7f838b;
                 }
             }
 
             .auth-end {
-                color: #8b5cf6;
+                color: #c9ac82;
             }
         }
     }

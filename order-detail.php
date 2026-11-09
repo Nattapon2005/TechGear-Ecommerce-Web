@@ -25,7 +25,7 @@ $res_order = mysqli_query($conn, $sql_order);
 $order = mysqli_fetch_assoc($res_order);
 
 if (!$order) {
-    die("<div style='text-align:center; padding:100px; color:white; font-family:sans-serif;'><h2><i class='bx bx-error' style='color:#f43f5e;font-size:40px;'></i><br>ไม่พบคำสั่งซื้อนี้ หรือคุณไม่มีสิทธิ์เข้าถึง</h2><a href='orders.php' style='color:#8b5cf6;'>กลับหน้าคำสั่งซื้อของฉัน</a></div>");
+    die("<div style='text-align:center; padding:100px; color: #f3f1ec; font-family:sans-serif;'><h2><i class='bx bx-error' style='color:#d98a91;font-size:40px;'></i><br>ไม่พบคำสั่งซื้อนี้ หรือคุณไม่มีสิทธิ์เข้าถึง</h2><a href='orders.php' style='color:#c9ac82;'>กลับหน้าคำสั่งซื้อของฉัน</a></div>");
 }
 
 // 2. ดึง Tracking data
@@ -53,7 +53,7 @@ include 'page/navbar.php';
 <style>
 /* ===== Tracking Specific Styles ===== */
 .tracking-section {
-    background: linear-gradient(145deg, #0f1117, #191c28);
+    background: linear-gradient(145deg, #0b0c0e, #131518);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px;
     padding: 28px;
@@ -82,7 +82,7 @@ include 'page/navbar.php';
     left: 40px;
     right: 40px;
     height: 4px;
-    background: #191c28;
+    background: #131518;
     border-radius: 2px;
     z-index: 0;
 }
@@ -92,7 +92,7 @@ include 'page/navbar.php';
     top: 20px;
     left: 40px;
     height: 4px;
-    background: linear-gradient(90deg, #7c5cfc, #a78bfa, #14b8a6);
+    background: linear-gradient(90deg, #c9ac82, #d9c7a8, #8a6f4d);
     border-radius: 2px;
     z-index: 1;
     transition: width 1s cubic-bezier(.4,0,.2,1);
@@ -122,47 +122,47 @@ include 'page/navbar.php';
     font-size: 18px;
     margin-bottom: 10px;
     transition: all .5s cubic-bezier(.4,0,.2,1);
-    border: 3px solid #191c28;
+    border: 3px solid #131518;
 }
 .step-icon.active {
-    background: linear-gradient(135deg, #7c5cfc, #a78bfa);
-    color: #fff;
-    border-color: #7c5cfc;
-    box-shadow: 0 0 20px rgba(124,92,252,.4);
+    background: linear-gradient(135deg, #c9ac82, #d9c7a8);
+    color: #17130d;
+    border-color: #c9ac82;
+    box-shadow: 0 0 20px rgba(201, 172, 130,.4);
     animation: pulseStep 2s infinite;
 }
 .step-icon.done {
-    background: #10b981;
-    color: #fff;
-    border-color: #10b981;
-    box-shadow: 0 0 12px rgba(16,185,129,.3);
+    background: #7fae8f;
+    color: #17130d;
+    border-color: #7fae8f;
+    box-shadow: 0 0 12px rgba(127, 174, 143,.3);
 }
 .step-icon.waiting {
-    background: #191c28;
-    color: #64748b;
-    border-color: #21253a;
+    background: #131518;
+    color: #7f838b;
+    border-color: #24282e;
 }
 .step-icon.cancelled {
-    background: #f43f5e;
-    color: #fff;
-    border-color: #f43f5e;
-    box-shadow: 0 0 12px rgba(244,63,94,.3);
+    background: #d98a91;
+    color: #17130d;
+    border-color: #d98a91;
+    box-shadow: 0 0 12px rgba(217, 138, 145,.3);
 }
 @keyframes pulseStep {
-    0%, 100% { box-shadow: 0 0 15px rgba(124,92,252,.3); }
-    50% { box-shadow: 0 0 30px rgba(124,92,252,.5), 0 0 50px rgba(124,92,252,.2); }
+    0%, 100% { box-shadow: 0 0 15px rgba(201, 172, 130,.3); }
+    50% { box-shadow: 0 0 30px rgba(201, 172, 130,.5), 0 0 50px rgba(201, 172, 130,.2); }
 }
 .step-label {
     font-size: 12px;
     font-weight: 600;
-    color: #94a3b8;
+    color: #8d9098;
     text-align: center;
 }
-.step-label.active { color: #a78bfa; }
-.step-label.done { color: #34d399; }
+.step-label.active { color: #d9c7a8; }
+.step-label.done { color: #8fbfa3; }
 .step-time {
     font-size: 10px;
-    color: #94a3b8;
+    color: #8d9098;
     margin-top: 4px;
     text-align: center;
 }
@@ -180,7 +180,7 @@ include 'page/navbar.php';
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #7c5cfc, #191c28);
+    background: linear-gradient(180deg, #c9ac82, #131518);
 }
 .tl-item {
     position: relative;
@@ -193,7 +193,7 @@ include 'page/navbar.php';
     animation: fadeSlideUp .5s both;
 }
 .tl-item:hover {
-    border-color: rgba(124,92,252,.2);
+    border-color: rgba(201, 172, 130,.2);
     background: rgba(25,28,40,.9);
     transform: translateX(4px);
 }
@@ -204,19 +204,19 @@ include 'page/navbar.php';
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #7c5cfc;
-    border: 3px solid #0f1117;
+    background: #c9ac82;
+    border: 3px solid #0b0c0e;
     z-index: 1;
 }
-.tl-dot.green { background: #10b981; }
-.tl-dot.amber { background: #f59e0b; }
-.tl-dot.red { background: #f43f5e; }
-.tl-dot.first { box-shadow: 0 0 12px rgba(124,92,252,.5); animation: pulseStep 2s infinite; }
+.tl-dot.green { background: #7fae8f; }
+.tl-dot.amber { background: #c9ac82; }
+.tl-dot.red { background: #d98a91; }
+.tl-dot.first { box-shadow: 0 0 12px rgba(201, 172, 130,.5); animation: pulseStep 2s infinite; }
 .tl-status { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-.tl-loc { font-size: 12px; color: #94a3b8; }
+.tl-loc { font-size: 12px; color: #8d9098; }
 .tl-loc i { font-size: 12px; vertical-align: -1px; }
-.tl-desc { font-size: 12px; color: #cbd5e1; margin-top: 6px; }
-.tl-time { font-size: 11px; color: #94a3b8; margin-top: 6px; }
+.tl-desc { font-size: 12px; color: #d6d2c9; margin-top: 6px; }
+.tl-time { font-size: 11px; color: #8d9098; margin-top: 6px; }
 
 /* Map */
 #trackingMap {
@@ -231,20 +231,20 @@ include 'page/navbar.php';
     width: 100%;
     height: 300px;
     border-radius: 14px;
-    background: linear-gradient(145deg, #0f1117, #191c28);
+    background: linear-gradient(145deg, #0b0c0e, #131518);
     border: 1px solid rgba(255,255,255,.06);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #94a3b8;
+    color: #8d9098;
     margin-top: 16px;
 }
-.map-placeholder i { font-size: 40px; margin-bottom: 8px; color: #21253a; }
+.map-placeholder i { font-size: 40px; margin-bottom: 8px; color: #24282e; }
 
 /* ===== Redesigned UI Elements ===== */
 .body-order-detail-wrapper {
-    background: radial-gradient(circle at top right, #111827 0%, #030712 100%);
+    background: radial-gradient(circle at top right, #131518 0%, #0b0c0e 100%);
     min-height: 100vh;
     padding: 100px 20px 40px;
 }
@@ -253,16 +253,16 @@ include 'page/navbar.php';
     margin: 0 auto;
 }
 .breadcrumb {
-    color: #94a3b8;
+    color: #8d9098;
     font-size: 14px;
     margin-bottom: 20px;
 }
 .breadcrumb a {
-    color: #8b5cf6;
+    color: #c9ac82;
     text-decoration: none;
     transition: 0.3s;
 }
-.breadcrumb a:hover { color: #00ffcc; text-shadow: 0 0 10px rgba(0,255,204,0.5); }
+.breadcrumb a:hover { color: #c9ac82; text-shadow: 0 0 10px rgba(201, 172, 130,0.5); }
 
 .header-box {
     display: flex;
@@ -270,23 +270,23 @@ include 'page/navbar.php';
     align-items: center;
     background: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(201, 172, 130, 0.3);
     border-radius: 16px;
     padding: 20px 30px;
     margin-bottom: 24px;
-    box-shadow: 0 0 30px rgba(139,92,246,0.1);
+    box-shadow: 0 0 30px rgba(201, 172, 130,0.1);
 }
 .page-title {
-    color: #fff;
+    color: #f3f1ec;
     font-size: 24px;
     font-weight: 800;
     margin: 0 0 5px 0;
-    text-shadow: 0 0 10px rgba(139,92,246,0.5);
+    text-shadow: 0 0 10px rgba(201, 172, 130,0.5);
 }
-.order-date { color: #cbd5e1; font-size: 14px; }
+.order-date { color: #d6d2c9; font-size: 14px; }
 .btn-print {
-    background: linear-gradient(135deg, #7c3aed, #3b82f6);
-    color: white;
+    background: linear-gradient(135deg, #b89563, #8a6f4d);
+    color: #17130d;
     border: none;
     padding: 12px 24px;
     border-radius: 10px;
@@ -294,7 +294,7 @@ include 'page/navbar.php';
     cursor: pointer;
     transition: 0.3s;
 }
-.btn-print:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(124,58,237,0.3); }
+.btn-print:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 149, 99,0.3); }
 
 /* Info Grid (Cards) */
 .info-grid {
@@ -304,17 +304,17 @@ include 'page/navbar.php';
     margin-bottom: 24px;
 }
 .info-card {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(19, 21, 24, 0.7);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(148, 163, 184, 0.2);
     border-radius: 16px;
     padding: 24px;
     transition: 0.3s;
 }
-.info-card:hover { border-color: rgba(139,92,246,0.5); box-shadow: 0 10px 30px rgba(139,92,246,0.1); }
+.info-card:hover { border-color: rgba(201, 172, 130,0.5); box-shadow: 0 10px 30px rgba(201, 172, 130,0.1); }
 .info-card h3 {
     margin: 0 0 15px 0;
-    color: #fff;
+    color: #f3f1ec;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -322,17 +322,17 @@ include 'page/navbar.php';
     border-bottom: 1px dashed rgba(148,163,184,0.3);
     padding-bottom: 15px;
 }
-.info-card h3 i { color: #a78bfa; font-size: 20px; }
-.info-data { color: #cbd5e1; font-size: 14px; line-height: 1.6; }
+.info-card h3 i { color: #d9c7a8; font-size: 20px; }
+.info-data { color: #d6d2c9; font-size: 14px; line-height: 1.6; }
 
 /* Items Box */
 .items-card {
     background: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(201, 172, 130, 0.3);
     border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 0 30px rgba(139,92,246,0.1);
+    box-shadow: 0 0 30px rgba(201, 172, 130,0.1);
 }
 .items-table {
     width: 100%;
@@ -340,7 +340,7 @@ include 'page/navbar.php';
 }
 .items-table th {
     text-align: left;
-    color: #94a3b8;
+    color: #8d9098;
     font-size: 13px;
     text-transform: uppercase;
     padding: 10px 15px;
@@ -356,10 +356,10 @@ include 'page/navbar.php';
     height: 60px;
     border-radius: 10px;
     object-fit: contain;
-    background: #fff;
+    background: #f3f1ec;
     padding: 2px;
 }
-.prod-name { color: #f8fafc; font-weight: 600; font-size: 14px; }
+.prod-name { color: #f3f1ec; font-weight: 600; font-size: 14px; }
 
 .summary-box {
     margin-top: 30px;
@@ -372,14 +372,14 @@ include 'page/navbar.php';
 .sum-row {
     display: flex;
     justify-content: space-between;
-    color: #94a3b8;
+    color: #8d9098;
     margin-bottom: 15px;
     font-size: 14px;
 }
 .sum-total {
     display: flex;
     justify-content: space-between;
-    color: #fff;
+    color: #f3f1ec;
     font-weight: 800;
     font-size: 20px;
     padding-top: 15px;
@@ -393,30 +393,30 @@ include 'page/navbar.php';
     font-weight: 700;
     text-transform: uppercase;
 }
-.status-pending { background: rgba(245,158,11,0.2); color: #f59e0b; border: 1px solid rgba(245,158,11,0.5); }
-.status-processing { background: rgba(56,189,248,0.2); color: #38bdf8; border: 1px solid rgba(56,189,248,0.5); }
-.status-shipped { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.5); }
-.status-completed { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.5); }
-.status-cancelled { background: rgba(244,63,94,0.2); color: #fb7185; border: 1px solid rgba(244,63,94,0.5); }
+.status-pending { background: rgba(201, 172, 130,0.2); color: #c9ac82; border: 1px solid rgba(201, 172, 130,0.5); }
+.status-processing { background: rgba(201, 172, 130,0.2); color: #c9ac82; border: 1px solid rgba(201, 172, 130,0.5); }
+.status-shipped { background: rgba(201, 172, 130,0.2); color: #d9c7a8; border: 1px solid rgba(201, 172, 130,0.5); }
+.status-completed { background: rgba(127, 174, 143,0.2); color: #8fbfa3; border: 1px solid rgba(127, 174, 143,0.5); }
+.status-cancelled { background: rgba(217, 138, 145,0.2); color: #d98a91; border: 1px solid rgba(217, 138, 145,0.5); }
 
 /* Print Styles */
 @media print {
-    body { background: #fff !important; color: #000 !important; }
+    body { background: #f3f1ec !important; color: #17130d !important; }
     header, footer, .breadcrumb, .btn-print, .cancel-form, .tracking-section, .slip-upload-section, .leaflet-control-container, #trackingMap { display: none !important; }
     .body-order-detail-wrapper { padding: 0 !important; background: transparent !important; }
     .order-detail-wrapper { width: 100% !important; max-width: 100% !important; box-shadow: none !important; border: none !important; background: transparent !important; margin: 0 !important; padding: 0 !important; }
     .header-box { display: flex !important; justify-content: space-between !important; border-bottom: 2px solid #000 !important; padding-bottom: 20px !important; margin-bottom: 20px !important; }
-    .header-box-title h1 { color: #000 !important; font-size: 24px !important; }
+    .header-box-title h1 { color: #17130d !important; font-size: 24px !important; }
     .order-date { color: #333 !important; }
     .detail-grid { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
     .info-card { background: transparent !important; border: 1px solid #ccc !important; box-shadow: none !important; break-inside: avoid; }
-    .info-card h3 { color: #000 !important; border-bottom: 1px solid #ccc !important; padding-bottom: 5px !important; }
-    .info-card p, .info-card span { color: #000 !important; }
+    .info-card h3 { color: #17130d !important; border-bottom: 1px solid #ccc !important; padding-bottom: 5px !important; }
+    .info-card p, .info-card span { color: #17130d !important; }
     .order-items { margin-top: 20px !important; }
     .item-card { background: transparent !important; border: 1px solid #ccc !important; display: flex !important; }
-    .item-info h4, .item-price, .item-qty { color: #000 !important; }
+    .item-info h4, .item-price, .item-qty { color: #17130d !important; }
     .item-img { filter: none !important; }
-    .sum-row, .sum-total { color: #000 !important; }
+    .sum-row, .sum-total { color: #17130d !important; }
     .sum-total { border-top: 2px solid #000 !important; margin-top: 10px !important; padding-top: 10px !important; }
 }
 </style>
@@ -439,14 +439,14 @@ include 'page/navbar.php';
         <!-- ===== TRACKING SECTION (Shopee-style) ===== -->
         <div class="tracking-section">
             <h3 style="font-size:16px; font-weight:700; margin-bottom:6px;">
-                <i class='bx bxs-truck' style="color:#a78bfa;"></i> การติดตามพัสดุ
+                <i class='bx bxs-truck' style="color:#d9c7a8;"></i> การติดตามพัสดุ
             </h3>
-            <p style="font-size:12px; color:#64748b; margin-bottom:20px;">ติดตามสถานะการจัดส่งสินค้าแบบ Real-time</p>
+            <p style="font-size:12px; color:#7f838b; margin-bottom:20px;">ติดตามสถานะการจัดส่งสินค้าแบบ Real-time</p>
 
             <?php if($is_cancelled): ?>
-                <div style="text-align:center; padding:20px; background:rgba(244,63,94,.08); border-radius:12px; border:1px solid rgba(244,63,94,.2);">
-                    <i class='bx bx-x-circle' style="font-size:36px; color:#f43f5e;"></i>
-                    <div style="font-size:14px; font-weight:700; color:#fb7185; margin-top:8px;">คำสั่งซื้อถูกยกเลิก</div>
+                <div style="text-align:center; padding:20px; background:rgba(217, 138, 145,.08); border-radius:12px; border:1px solid rgba(217, 138, 145,.2);">
+                    <i class='bx bx-x-circle' style="font-size:36px; color:#d98a91;"></i>
+                    <div style="font-size:14px; font-weight:700; color:#d98a91; margin-top:8px;">คำสั่งซื้อถูกยกเลิก</div>
                 </div>
             <?php else: ?>
                 <!-- Progress Steps -->
@@ -489,7 +489,7 @@ include 'page/navbar.php';
 
             <!-- Map -->
             <?php if(!$is_cancelled && $current_step >= 2): ?>
-                <h4 style="font-size:13px; font-weight:600; color:#a78bfa; margin-bottom:8px;">
+                <h4 style="font-size:13px; font-weight:600; color:#d9c7a8; margin-bottom:8px;">
                     <i class='bx bx-map'></i> ตำแหน่งพัสดุ Real-time
                 </h4>
                 <div id="trackingMap"></div>
@@ -502,7 +502,7 @@ include 'page/navbar.php';
 
             <!-- Tracking Timeline -->
             <?php if(!empty($tracking)): ?>
-                <h4 style="font-size:13px; font-weight:600; color:#14b8a6; margin:24px 0 12px;">
+                <h4 style="font-size:13px; font-weight:600; color:#8a6f4d; margin:24px 0 12px;">
                     <i class='bx bx-time-five bx-clock'></i> ประวัติการอัปเดต
                 </h4>
                 <div class="tracking-timeline">
@@ -533,15 +533,15 @@ include 'page/navbar.php';
                     Shipping Address
                 </h3>
                 <div class="info-data">
-                    <strong style="color: #00ffcc; font-size: 16px; display: block; margin-bottom: 8px;">
+                    <strong style="color: #c9ac82; font-size: 16px; display: block; margin-bottom: 8px;">
                         <?= htmlspecialchars($order['fullname'] ?? 'N/A')  ?>
                     </strong>
-                    <div style="margin-bottom: 15px; color: #cbd5e1;">
-                        <i class='bx bx-map' style="color:#a78bfa;"></i> <?= nl2br(htmlspecialchars($order['address'] ?? 'N/A' )) ?>
+                    <div style="margin-bottom: 15px; color: #d6d2c9;">
+                        <i class='bx bx-map' style="color:#d9c7a8;"></i> <?= nl2br(htmlspecialchars($order['address'] ?? 'N/A' )) ?>
                     </div>
-                    <div style="display: flex; gap: 20px; color: #94a3b8;">
-                        <span><i class='bx bx-phone' style="color:#a78bfa;"></i> <?= htmlspecialchars($order['phone'] ?? 'N/A') ?></span>
-                        <span><i class='bx bx-envelope' style="color:#a78bfa;"></i> <?= htmlspecialchars($order['email'] ?? 'N/A') ?></span>
+                    <div style="display: flex; gap: 20px; color: #8d9098;">
+                        <span><i class='bx bx-phone' style="color:#d9c7a8;"></i> <?= htmlspecialchars($order['phone'] ?? 'N/A') ?></span>
+                        <span><i class='bx bx-envelope' style="color:#d9c7a8;"></i> <?= htmlspecialchars($order['email'] ?? 'N/A') ?></span>
                     </div>
                 </div>
             </div>
@@ -550,10 +550,10 @@ include 'page/navbar.php';
                 <h3><i class='bx bx-credit-card-front'></i> Payment Summary</h3>
                 <div class="info-data">
                     <div style="margin-bottom: 10px;">
-                        <span style="color:#64748b;">Method:</span> <strong style="color:white;"><?= htmlspecialchars($order['payment_method']) ?></strong>
+                        <span style="color:#7f838b;">Method:</span> <strong style="color: #f3f1ec;"><?= htmlspecialchars($order['payment_method']) ?></strong>
                     </div>
                     <div style="margin-bottom: 10px;">
-                        <span style="color:#64748b;">Status:</span>
+                        <span style="color:#7f838b;">Status:</span>
                         <?php $status_class = strtolower($order['order_status']); ?>
                         <span class="status-badge status-<?= $status_class ?>"><?= htmlspecialchars($order['order_status']) ?></span>
                     </div>
@@ -564,35 +564,35 @@ include 'page/navbar.php';
                     if (str_contains($method, 'bank') || str_contains($method, 'promptpay') || $method == '') {
                     ?>
                         <?php if(empty($order['slip_image'])) { ?>
-                            <div style="margin-top: 15px; border-top: 1px dashed #232b3e; padding-top: 15px;">
-                                <h4 style="color: #a78bfa; margin-top: 0; margin-bottom: 15px; text-align: center; font-size: 14px;">สแกน QR Code ชำระเงิน</h4>
+                            <div style="margin-top: 15px; border-top: 1px dashed #24282e; padding-top: 15px;">
+                                <h4 style="color: #d9c7a8; margin-top: 0; margin-bottom: 15px; text-align: center; font-size: 14px;">สแกน QR Code ชำระเงิน</h4>
                                 <div style="text-align: center; margin-bottom: 15px;">
-                                    <img src="https://promptpay.io/0948124542/<?= $order['total_amount'] ?>.png" style="width: 130px; border-radius: 10px; background: white; padding: 10px;">
+                                    <img src="https://promptpay.io/0948124542/<?= $order['total_amount'] ?>.png" style="width: 130px; border-radius: 10px; background: #f3f1ec; padding: 10px;">
                                 </div>
 
                                 <form action="upload_slip.php" method="POST" enctype="multipart/form-data" style="text-align: center;">
                                     <input type="hidden" name="order_id" value="<?= htmlspecialchars($order['order_id']) ?>">
-                                    <label style="display: block; background: rgba(139, 92, 246, 0.1); border: 1px dashed #8b5cf6; padding: 15px; border-radius: 12px; cursor: pointer; margin-bottom: 10px; transition: 0.3s;">
-                                        <i class='bx bx-cloud-upload' style="font-size: 28px; color: #a78bfa;"></i>
-                                        <div style="font-size: 12px; color: #e2e8f0; margin-top: 5px;">คลิกเพื่อเลือกรูปสลิป (JPG, PNG)</div>
+                                    <label style="display: block; background: rgba(201, 172, 130, 0.1); border: 1px dashed #c9ac82; padding: 15px; border-radius: 12px; cursor: pointer; margin-bottom: 10px; transition: 0.3s;">
+                                        <i class='bx bx-cloud-upload' style="font-size: 28px; color: #d9c7a8;"></i>
+                                        <div style="font-size: 12px; color: #e9e5dd; margin-top: 5px;">คลิกเพื่อเลือกรูปสลิป (JPG, PNG)</div>
                                         <input type="file" name="slip_image" accept="image/*" required style="display: none;" onchange="document.getElementById('filename-<?= $order['order_id'] ?>').innerText = this.files[0].name">
-                                        <div id="filename-<?= $order['order_id'] ?>" style="font-size: 11px; color: #22c55e; margin-top: 5px; font-weight: bold;"></div>
+                                        <div id="filename-<?= $order['order_id'] ?>" style="font-size: 11px; color: #7fae8f; margin-top: 5px; font-weight: bold;"></div>
                                     </label>
-                                    <button type="submit" style="width: 100%; background: #8b5cf6; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">ยืนยันการโอนเงิน</button>
+                                    <button type="submit" style="width: 100%; background: #c9ac82; color: #17130d; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">ยืนยันการโอนเงิน</button>
                                 </form>
                             </div>
                         <?php } else { ?>
-                            <div style="margin-top:15px; padding-top:15px; border-top:1px dashed #232b3e; text-align: center;">
-                                <h4 style="color: #22c55e; margin-top: 0; margin-bottom: 10px; font-size: 13px;"><i class='bx bx-check-circle'></i> อัปโหลดหลักฐานแล้ว</h4>
+                            <div style="margin-top:15px; padding-top:15px; border-top:1px dashed #24282e; text-align: center;">
+                                <h4 style="color: #7fae8f; margin-top: 0; margin-bottom: 10px; font-size: 13px;"><i class='bx bx-check-circle'></i> อัปโหลดหลักฐานแล้ว</h4>
                                 <a href="<?= htmlspecialchars($order['slip_image']) ?>" target="_blank">
-                                    <img src="<?= htmlspecialchars($order['slip_image']) ?>" style="max-width: 100px; border-radius: 8px; border: 1px solid #4c4a8a; opacity: 0.8;">
+                                    <img src="<?= htmlspecialchars($order['slip_image']) ?>" style="max-width: 100px; border-radius: 8px; border: 1px solid #3a3329; opacity: 0.8;">
                                 </a>
                                 <div style="font-size:12px; margin-top: 10px;">
                                     <?php 
                                     $s_status = $order['slip_status'] ?? 'pending';
-                                    if($s_status == 'pending') echo "<span style='color:#fbbf24;'><i class='bx bx-time-five bx-clock'></i> กำลังรอแอดมินตรวจสอบ</span>";
-                                    elseif($s_status == 'approved') echo "<span style='color:#22c55e;'><i class='bx bx-check-shield'></i> ตรวจสอบสลิปถูกต้อง</span>";
-                                    elseif($s_status == 'rejected') echo "<span style='color:#f43f5e;'><i class='bx bx-x-circle'></i> สลิปถูกปฏิเสธ กรุณาติดต่อแอดมิน</span>";
+                                    if($s_status == 'pending') echo "<span style='color:#c9ac82;'><i class='bx bx-time-five bx-clock'></i> กำลังรอแอดมินตรวจสอบ</span>";
+                                    elseif($s_status == 'approved') echo "<span style='color:#7fae8f;'><i class='bx bx-check-shield'></i> ตรวจสอบสลิปถูกต้อง</span>";
+                                    elseif($s_status == 'rejected') echo "<span style='color:#d98a91;'><i class='bx bx-x-circle'></i> สลิปถูกปฏิเสธ กรุณาติดต่อแอดมิน</span>";
                                     ?>
                                 </div>
                             </div>
@@ -603,7 +603,7 @@ include 'page/navbar.php';
         </div>
 
         <div class="items-card">
-            <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 18px; color: white;"><i class='bx bx-package'></i> Items Ordered</h3>
+            <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 18px; color: #f3f1ec;"><i class='bx bx-package'></i> Items Ordered</h3>
             <div style="overflow-x: auto;">
                 <table class="items-table">
                     <thead>
@@ -632,14 +632,14 @@ include 'page/navbar.php';
                                     <?php if($img_src): ?>
                                         <img src="<?= htmlspecialchars($img_src) ?>" class="prod-img">
                                     <?php else: ?>
-                                        <div class="prod-img" style="display:flex;align-items:center;justify-content:center;color:#64748b;"><i class='bx bx-image'></i></div>
+                                        <div class="prod-img" style="display:flex;align-items:center;justify-content:center;color:#7f838b;"><i class='bx bx-image'></i></div>
                                     <?php endif; ?>
                                     <span class="prod-name"><?= htmlspecialchars($item['p_name'] ?? 'Unknown Product') ?></span>
                                 </div>
                             </td>
-                            <td style="text-align: center; color: #94a3b8;">$<?= number_format($item['price'], 2) ?></td>
-                            <td style="text-align: center; font-weight: bold; color: #94a3b8;">x<?= $item['quantity'] ?></td>
-                            <td style="text-align: right; font-weight: bold; color: white;">$<?= number_format($item['price'] * $item['quantity'], 2) ?></td>
+                            <td style="text-align: center; color: #8d9098;">$<?= number_format($item['price'], 2) ?></td>
+                            <td style="text-align: center; font-weight: bold; color: #8d9098;">x<?= $item['quantity'] ?></td>
+                            <td style="text-align: right; font-weight: bold; color: #f3f1ec;">$<?= number_format($item['price'] * $item['quantity'], 2) ?></td>
                         </tr>
                         <?php 
                             endwhile; 
@@ -652,15 +652,15 @@ include 'page/navbar.php';
             <div class="summary-box">
                 <div class="sum-row">
                     <span>Subtotal</span>
-                    <span style="color:white;">$<?= number_format($order['total_amount'], 2) ?></span>
+                    <span style="color: #f3f1ec;">$<?= number_format($order['total_amount'], 2) ?></span>
                 </div>
                 <div class="sum-row">
                     <span>Shipping Fee</span>
-                    <span style="color:#22c55e;">Free</span>
+                    <span style="color:#7fae8f;">Free</span>
                 </div>
                 <div class="sum-total">
                     <span>Total</span>
-                    <span style="color:#8b5cf6;">$<?= number_format($order['total_amount'], 2) ?></span>
+                    <span style="color:#c9ac82;">$<?= number_format($order['total_amount'], 2) ?></span>
                 </div>
             </div>
         </div>
@@ -712,21 +712,21 @@ if (routePoints.length > 0) {
 // Custom icon
 const activeIcon = L.divIcon({
     className: '',
-    html: '<div style="width:24px;height:24px;background:linear-gradient(135deg,#7c5cfc,#a78bfa);border-radius:50%;border:3px solid #fff;box-shadow:0 0 20px rgba(124,92,252,.6);animation:pulse 2s infinite;"></div>',
+    html: '<div style="width:24px;height:24px;background:linear-gradient(135deg,#c9ac82,#d9c7a8);border-radius:50%;border:3px solid #f3f1ec;box-shadow:0 0 20px rgba(201, 172, 130,.6);animation:pulse 2s infinite;"></div>',
     iconSize: [24, 24],
     iconAnchor: [12, 12],
 });
 
 const warehouseIcon = L.divIcon({
     className: '',
-    html: '<div style="width:18px;height:18px;background:#10b981;border-radius:50%;border:2px solid #fff;box-shadow:0 0 10px rgba(16,185,129,.5);"></div>',
+    html: '<div style="width:18px;height:18px;background:#7fae8f;border-radius:50%;border:2px solid #f3f1ec;box-shadow:0 0 10px rgba(127, 174, 143,.5);"></div>',
     iconSize: [18, 18],
     iconAnchor: [9, 9],
 });
 
 const passedIcon = L.divIcon({
     className: '',
-    html: '<div style="width:12px;height:12px;background:#64748b;border-radius:50%;border:2px solid #94a3b8;"></div>',
+    html: '<div style="width:12px;height:12px;background:#7f838b;border-radius:50%;border:2px solid #8d9098;"></div>',
     iconSize: [12, 12],
     iconAnchor: [6, 6],
 });
@@ -748,7 +748,7 @@ routePoints.forEach((point, i) => {
 // Draw route line
 if (latLngs.length > 1) {
     L.polyline(latLngs, {
-        color: '#7c5cfc',
+        color: '#c9ac82',
         weight: 3,
         opacity: 0.7,
         dashArray: '8, 8',
@@ -759,7 +759,7 @@ if (latLngs.length > 1) {
 
 // Animate pulse CSS
 const style = document.createElement('style');
-style.textContent = `@keyframes pulse{0%,100%{box-shadow:0 0 15px rgba(124,92,252,.4);}50%{box-shadow:0 0 30px rgba(124,92,252,.8),0 0 50px rgba(124,92,252,.3);}}`;
+style.textContent = `@keyframes pulse{0%,100%{box-shadow:0 0 15px rgba(201, 172, 130,.4);}50%{box-shadow:0 0 30px rgba(201, 172, 130,.8),0 0 50px rgba(201, 172, 130,.3);}}`;
 document.head.appendChild(style);
 </script>
 <?php endif; ?>

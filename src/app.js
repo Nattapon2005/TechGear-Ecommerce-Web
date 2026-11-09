@@ -23,6 +23,10 @@ function toggleWishlist(productId, element) {
     const icon = element.querySelector('i');
     if (!icon) return;
 
+    const card = element.closest('.product-item-grid');
+    const productNameEl = card ? card.querySelector('.product-item-title h4') : null;
+    const productName = productNameEl ? productNameEl.textContent.trim() : 'Item';
+
     // Check current state before modifying
     const isCurrentlyAdded = icon.classList.contains('bxf');
 
@@ -36,7 +40,7 @@ function toggleWishlist(productId, element) {
         // Was NOT added, so we ADD it
         icon.classList.remove('bx');
         icon.classList.add('bxf');
-        icon.style.setProperty('color', '#f43f5e', 'important');
+        icon.style.setProperty('color', '#d98a91', 'important');
     } else {
         // Was ADDED, so we REMOVE it
         icon.classList.remove('bxf');
@@ -59,19 +63,32 @@ function toggleWishlist(productId, element) {
         if (data.status === 'added') {
             const badge = document.querySelector('.wishlist-badge');
             if (badge) badge.style.display = 'block';
+
+            // navbar heart feedback
+            const heartIcon = document.querySelector('.menu-login-icon-one');
+            if (heartIcon) {
+                heartIcon.classList.remove('wishlist-bump');
+                void heartIcon.offsetWidth;
+                heartIcon.classList.add('wishlist-bump');
+            }
+
+            if (window.showToast) {
+                window.showToast('Added to Wishlist', productName + ' saved for later.', 'wishlist', 'bx-heart');
+            }
         } else if (data.status === 'removed') {
+            if (window.showToast) {
+                window.showToast('Removed from Wishlist', productName + ' removed from your wishlist.', 'remove', 'bx-trash');
+            }
+
             // If removed on the wishlist page, fade out and remove the element
             if (window.location.pathname.includes('wishlist.php')) {
                 const gridItem = element.closest('.product-item-grid');
                 if (gridItem) {
-                    gridItem.style.transition = '0.3s';
-                    gridItem.style.opacity = '0';
+                    gridItem.classList.add('is-removing');
                     setTimeout(() => {
                         gridItem.remove();
-                        if (document.querySelectorAll('.product-item-grid').length === 0) {
-                            location.reload();
-                        }
-                    }, 300);
+                        updateWishlistCountUI();
+                    }, 380);
                 }
             }
         }
@@ -88,9 +105,40 @@ function toggleWishlist(productId, element) {
             // We tried to remove, but it failed, so revert to solid
             icon.classList.remove('bx');
             icon.classList.add('bxf');
-            icon.style.setProperty('color', '#f43f5e', 'important');
+            icon.style.setProperty('color', '#d98a91', 'important');
+        }
+
+        if (window.showToast) {
+            window.showToast('Something went wrong', 'Could not update your wishlist. Please try again.', 'remove', 'bx-error-circle');
         }
     });
+}
+
+// Update the wishlist header count and empty state without a full page reload.
+function updateWishlistCountUI() {
+    const countEl = document.getElementById('wishlist-count');
+    const cards = document.querySelectorAll('.wishlist-grid-container .product-item-grid');
+
+    if (countEl) countEl.textContent = cards.length;
+
+    if (cards.length === 0) {
+        const grid = document.querySelector('.wishlist-grid-container');
+        const empty = document.getElementById('wishlistEmpty');
+        if (grid) grid.style.display = 'none';
+        if (empty) {
+            empty.style.display = '';
+            empty.classList.add('is-shown');
+        }
+    }
+}
+
+// Used by the explicit trash button on the wishlist page.
+function removeFromWishlist(productId, element) {
+    const card = element.closest('.product-item-grid');
+    const heart = card ? card.querySelector('.show-icon-love') : null;
+    if (heart) {
+        toggleWishlist(productId, heart);
+    }
 }
 
 

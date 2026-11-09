@@ -1,0 +1,544 @@
+//=============================================  shared motion system  ==============================================================
+// Restrained, premium motion that fits the "Midnight Ink + Muted Brass" theme.
+// Nothing neon, nothing bouncy — just soft entrances, fades and micro-interactions.
+
+@keyframes motionRevealUp {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes motionFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes motionSheen {
+    from {
+        left: -60%;
+    }
+    to {
+        left: 120%;
+    }
+}
+
+@keyframes motionBrassPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(201, 172, 130, 0.35);
+    }
+    60% {
+        box-shadow: 0 0 0 9px rgba(201, 172, 130, 0);
+    }
+}
+
+// =============================================  scroll reveal  ==============================================================
+
+.js-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.js-reveal.reveal-scale {
+    transform: scale(0.96) translateY(16px);
+}
+
+.js-reveal.reveal-left {
+    transform: translateX(-28px);
+}
+
+.js-reveal.reveal-right {
+    transform: translateX(28px);
+}
+
+.js-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+// =============================================  scroll progress bar  ==============================================================
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, #8a6f4d, #c9ac82 55%, #e8d8bd);
+    box-shadow: 0 0 12px rgba(201, 172, 130, 0.35);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+// =============================================  navbar  ==============================================================
+
+.navbar {
+    .nav-bar-head ul li {
+        position: relative;
+
+        a {
+            position: relative;
+            display: inline-block;
+            transition: color 0.25s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -6px;
+                height: 1.5px;
+                border-radius: 2px;
+                background: linear-gradient(90deg, #c9ac82, #8a6f4d);
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .logo a {
+        transition: color 0.25s ease, letter-spacing 0.35s ease;
+    }
+
+    .logo a:hover {
+        letter-spacing: 0.02em;
+    }
+
+    .menu-login-icon-one i,
+    .menu-login-icon-tow i {
+        transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .menu-login-icon-one:hover i,
+    .menu-login-icon-tow:hover i {
+        transform: translateY(-2px);
+        color: #c9ac82;
+    }
+
+    // cart / wishlist badge pulse
+    .count-cart,
+    .count-wishlist {
+        animation: motionBrassPulse 2.6s ease-out infinite;
+    }
+}
+
+// =============================================  product cards (home + all products)  ==============================================================
+
+.product-item-con-grid {
+    transition: opacity 0.25s ease;
+
+    &.is-loading {
+        opacity: 0.35;
+        pointer-events: none;
+    }
+}
+
+.product-item .product-item-con .product-item-grid,
+.product-grid-lg .product-item-con-grid .product-item-grid {
+    background-image: radial-gradient(
+        320px circle at var(--mx, 50%) var(--my, 0%),
+        rgba(201, 172, 130, 0.1),
+        transparent 62%
+    );
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background-image 0.35s ease;
+
+    .product-img-g img {
+        transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+}
+
+.product-item .product-item-img,
+.product-grid-lg .product-item-img {
+    position: relative;
+}
+
+// soft brass glow ring around the image on hover
+.product-item .product-item-grid:hover .product-item-img,
+.product-grid-lg .product-item-grid:hover .product-item-img {
+    box-shadow: inset 0 0 0 1px rgba(201, 172, 130, 0.18);
+}
+
+// wishlist heart keeps its pop but eases back in
+.product-item .show-icon-love .icon-love i,
+.product-grid-lg .show-icon-love .icon-love i {
+    transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+// =============================================  buttons  ==============================================================
+
+.btn-product-item,
+.pd-add-cart,
+.btn-auth,
+.btn-primary,
+.btn-checkout {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-product-item::after,
+.pd-add-cart::after,
+.btn-auth::after,
+.btn-checkout::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+    left: -60%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-18deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-product-item:hover::after,
+.pd-add-cart:hover::after,
+.btn-auth:hover::after,
+.btn-checkout:hover::after {
+    opacity: 1;
+    animation: motionSheen 0.7s ease;
+}
+
+// =============================================  auth pages  ==============================================================
+
+.auth-card {
+    position: relative;
+}
+
+// subtle brass halo drifting behind the auth card
+.auth-body::before,
+.body-card::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 520px;
+    height: 520px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(201, 172, 130, 0.08), transparent 68%);
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: 0;
+    animation: motionFloat 9s ease-in-out infinite;
+}
+
+.auth-body .auth-card,
+.body-card .auth-card {
+    position: relative;
+    z-index: 1;
+}
+
+// =============================================  product detail  ==============================================================
+
+.pd-image-col img {
+    transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.pd-image-col:hover img {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.pd-add-cart {
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pd-add-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(201, 172, 130, 0.25);
+}
+
+// =============================================  orders / account  ==============================================================
+
+.order-card,
+.info-card,
+.items-card,
+.summary-box,
+.content-box,
+.profile-sidebar {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.order-card:hover,
+.info-card:hover {
+    border-color: rgba(201, 172, 130, 0.2);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+}
+
+// =============================================  footer  ==============================================================
+
+.main-footer .footer-grid > * {
+    transition: transform 0.3s ease;
+}
+
+.main-footer .social-icons a,
+.main-footer .footer-links a {
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+// =============================================  toast / interactive feedback  ==============================================================
+
+.toast-stack {
+    position: fixed;
+    top: 92px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .toast-stack {
+        top: 78px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .ui-toast {
+        min-width: 0;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+.ui-toast {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 260px;
+    max-width: 340px;
+    padding: 13px 16px 14px;
+    border-radius: 13px;
+    background: #17191d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+    color: #f3f1ec;
+    overflow: hidden;
+    pointer-events: auto;
+    transform: translateX(120%);
+    opacity: 0;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+        opacity 0.35s ease;
+}
+
+.ui-toast.is-showing {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.ui-toast.is-hiding {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.ui-toast__icon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    background: rgba(201, 172, 130, 0.12);
+    color: #c9ac82;
+}
+
+.ui-toast__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.3;
+}
+
+.ui-toast__title {
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.ui-toast__msg {
+    font-size: 12px;
+    color: #8d9098;
+}
+
+.ui-toast__bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #c9ac82, #8a6f4d);
+    transform-origin: 0 50%;
+    animation: toastBar 3.1s linear forwards;
+}
+
+// wishlist / removed
+.ui-toast--wishlist .ui-toast__icon,
+.ui-toast--remove .ui-toast__icon {
+    background: rgba(217, 138, 145, 0.14);
+    color: #d98a91;
+}
+
+.ui-toast--wishlist .ui-toast__bar,
+.ui-toast--remove .ui-toast__bar {
+    background: linear-gradient(90deg, #d98a91, #b06a70);
+}
+
+// added to cart
+.ui-toast--success .ui-toast__icon {
+    background: rgba(127, 174, 143, 0.15);
+    color: #8fbfa3;
+}
+
+.ui-toast--success .ui-toast__bar {
+    background: linear-gradient(90deg, #7fae8f, #6e9b7c);
+}
+
+@keyframes toastBar {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+// cart / wishlist badge micro-feedback
+.menu-login-icon-tow.cart-bump i {
+    animation: cartBump 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.count-cart.cart-bump {
+    animation: countPop 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+}
+
+.menu-login-icon-one.wishlist-bump i {
+    animation: wishPop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes cartBump {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+    30% {
+        transform: translateY(-4px) scale(1.14);
+    }
+    60% {
+        transform: translateY(0) scale(0.96);
+    }
+}
+
+@keyframes countPop {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.3);
+    }
+}
+
+@keyframes wishPop {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.28);
+        color: #d98a91;
+    }
+    65% {
+        transform: scale(0.94);
+    }
+}
+
+// "added" state for add-to-cart buttons
+.btn-product-item.is-added {
+    background: #7fae8f !important;
+}
+
+.btn-product-item.is-added button {
+    color: #17130d !important;
+}
+
+.pd-add-cart.is-added {
+    background: #7fae8f !important;
+    color: #17130d !important;
+}
+
+// =============================================  reduced motion  ==============================================================
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-progress {
+        display: none;
+    }
+
+    .js-reveal,
+    .js-reveal.reveal-scale,
+    .js-reveal.reveal-left,
+    .js-reveal.reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .auth-body::before,
+    .body-card::before,
+    .count-cart,
+    .count-wishlist {
+        animation: none !important;
+    }
+
+    .btn-product-item::after,
+    .pd-add-cart::after,
+    .btn-auth::after,
+    .btn-checkout::after {
+        display: none;
+    }
+
+    .ui-toast {
+        transition: none !important;
+    }
+
+    .ui-toast__bar {
+        animation: none !important;
+    }
+
+    .menu-login-icon-tow.cart-bump i,
+    .count-cart.cart-bump,
+    .menu-login-icon-one.wishlist-bump i {
+        animation: none !important;
+    }
+}

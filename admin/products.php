@@ -100,7 +100,7 @@ $total = count($products);
 <style>
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px;}
 .prod-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);animation:fadeSlideUp .5s both;}
-.prod-card:hover{border-color:rgba(124,92,252,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3);}
+.prod-card:hover{border-color:rgba(201, 172, 130,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3);}
 .prod-card-img{width:100%;height:180px;object-fit:cover;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
 .prod-card-img img{width:100%;height:100%;object-fit:cover;}
 .prod-card-body{padding:16px;}
@@ -110,13 +110,13 @@ $total = count($products);
 .prod-card-price{font-size:18px;font-weight:800;color:var(--green);}
 .prod-card-stock{font-size:11px;font-weight:600;}
 .prod-card-actions{display:flex;gap:6px;}
-.tag-badge{position:absolute;top:12px;right:12px;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(124,92,252,.85);color:#fff;backdrop-filter:blur(4px);}
+.tag-badge{position:absolute;top:12px;right:12px;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(201, 172, 130,.85);color:#f3f1ec;backdrop-filter:blur(4px);}
 .prod-card-img-wrap{position:relative;}
 
 /* View Toggle */
 .view-toggle{display:flex;gap:4px;}
 .view-toggle button{width:34px;height:34px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
-.view-toggle button.active{background:rgba(124,92,252,.15);color:var(--purple-lt);border-color:rgba(124,92,252,.3);}
+.view-toggle button.active{background:rgba(201, 172, 130,.15);color:var(--purple-lt);border-color:rgba(201, 172, 130,.3);}
 </style>
 </head>
 <body>

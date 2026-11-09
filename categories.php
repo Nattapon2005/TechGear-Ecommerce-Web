@@ -87,8 +87,8 @@ if ($cat_query) {
             width: 56px;
             height: 56px;
             border-radius: 14px;
-            background: rgba(139, 92, 246, 0.08);
-            border: 1px solid rgba(139, 92, 246, 0.15);
+            background: rgba(201, 172, 130, 0.08);
+            border: 1px solid rgba(201, 172, 130, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -99,9 +99,9 @@ if ($cat_query) {
             transition: all .3s;
         }
         .floating-icon:hover {
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(201, 172, 130, 0.2);
             color: rgba(167, 139, 250, 0.9);
-            border-color: rgba(139, 92, 246, 0.4);
+            border-color: rgba(201, 172, 130, 0.4);
             transform: scale(1.2);
             pointer-events: auto;
         }

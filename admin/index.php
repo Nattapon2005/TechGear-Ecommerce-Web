@@ -143,22 +143,22 @@ if ($has_orders) {
 <style>
   /* ===== CSS Variables ===== */
   :root {
-    --bg:        #08090e;
-    --bg2:       #0f1117;
-    --bg3:       #191c28;
-    --bg4:       #21253a;
+    --bg:        #0b0c0e;
+    --bg2:       #131518;
+    --bg3:       #191c20;
+    --bg4:       #24282e;
     --border:    rgba(255,255,255,0.06);
-    --purple:    #7c5cfc;
-    --purple-lt: #a78bfa;
-    --purple-glow: rgba(124,92,252,.35);
-    --teal:      #14b8a6;
-    --amber:     #f59e0b;
-    --red:       #f43f5e;
-    --green:     #10b981;
-    --blue:      #3b82f6;
-    --cyan:      #06b6d4;
-    --text:      #f1f5f9;
-    --muted:     #64748b;
+    --purple:    #c9ac82;
+    --purple-lt: #d9c7a8;
+    --purple-glow: rgba(201, 172, 130,.35);
+    --teal:      #8a6f4d;
+    --amber:     #c9ac82;
+    --red:       #d98a91;
+    --green:     #7fae8f;
+    --blue:      #8a6f4d;
+    --cyan:      #8a6f4d;
+    --text:      #f3f1ec;
+    --muted:     #7f838b;
     --sidebar-w: 250px;
     --radius:    16px;
   }
@@ -218,7 +218,7 @@ if ($has_orders) {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(124,92,252,.15), rgba(124,92,252,.05));
+    background: linear-gradient(135deg, rgba(201, 172, 130,.15), rgba(201, 172, 130,.05));
     opacity: 0;
     transition: opacity .25s;
     border-radius: 12px;
@@ -226,16 +226,16 @@ if ($has_orders) {
   .nav-item:hover { color: var(--text); transform: translateX(4px); }
   .nav-item:hover::before { opacity: 1; }
   .nav-item.active { 
-    background: linear-gradient(135deg, rgba(124,92,252,.2), rgba(124,92,252,.08)); 
+    background: linear-gradient(135deg, rgba(201, 172, 130,.2), rgba(201, 172, 130,.08)); 
     color: var(--purple-lt); 
-    box-shadow: 0 0 20px rgba(124,92,252,.1);
+    box-shadow: 0 0 20px rgba(201, 172, 130,.1);
   }
   .nav-item.active i { color: var(--purple); }
   .nav-item i { font-size:18px; flex-shrink:0; position: relative; z-index: 1; }
   .nav-item span, .nav-item:not(i) { position: relative; z-index: 1; }
-  .nav-item.danger { color: #f43f5e88; }
+  .nav-item.danger { color: #d98a9188; }
   .nav-item.danger:hover { color: var(--red); transform: translateX(4px); }
-  .nav-item.danger:hover::before { background: linear-gradient(135deg, rgba(244,63,94,.15), rgba(244,63,94,.05)); opacity: 1; }
+  .nav-item.danger:hover::before { background: linear-gradient(135deg, rgba(217, 138, 145,.15), rgba(217, 138, 145,.05)); opacity: 1; }
   .badge-nav { margin-left:auto; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; position: relative; z-index: 1; }
   .sidebar-footer { padding:16px; border-top:1px solid var(--border); }
   .admin-card { 
@@ -253,7 +253,7 @@ if ($has_orders) {
 
   @keyframes pulse-dot {
     0%, 100% { box-shadow: 0 0 6px var(--green); }
-    50% { box-shadow: 0 0 14px var(--green), 0 0 24px rgba(16,185,129,.3); }
+    50% { box-shadow: 0 0 14px var(--green), 0 0 24px rgba(127, 174, 143,.3); }
   }
 
   /* ===== Main ===== */
@@ -313,7 +313,7 @@ if ($has_orders) {
     color: var(--text); 
     border-color: var(--purple); 
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(124,92,252,.2);
+    box-shadow: 0 4px 15px rgba(201, 172, 130,.2);
   }
   .notif-badge { position:absolute; top:7px; right:7px; width:8px; height:8px; border-radius:50%; background: var(--red); border:2px solid var(--bg); animation: pulse-dot 2s infinite; }
   .date-chip { 
@@ -323,7 +323,7 @@ if ($has_orders) {
     backdrop-filter: blur(10px);
     transition: all .25s;
   }
-  .date-chip:hover { border-color: rgba(124,92,252,.3); }
+  .date-chip:hover { border-color: rgba(201, 172, 130,.3); }
 
   /* ===== Entrance Animations ===== */
   @keyframes fadeSlideDown {
@@ -369,16 +369,16 @@ if ($has_orders) {
   .stat-card:nth-child(4) { animation-delay: .4s; }
 
   .stat-card:hover { 
-    border-color: var(--card-accent, rgba(124,92,252,.4));
-    box-shadow: 0 8px 32px var(--card-shadow, rgba(124,92,252,.15)),
-                0 0 60px var(--card-shadow, rgba(124,92,252,.05));
+    border-color: var(--card-accent, rgba(201, 172, 130,.4));
+    box-shadow: 0 8px 32px var(--card-shadow, rgba(201, 172, 130,.15)),
+                0 0 60px var(--card-shadow, rgba(201, 172, 130,.05));
   }
 
   /* Animated gradient border on hover */
   .stat-card::before { 
     content:''; position:absolute; top:0; right:0; 
     width:90px; height:90px; border-radius:50%; 
-    background: var(--accent, rgba(124,92,252,.1)); 
+    background: var(--accent, rgba(201, 172, 130,.1)); 
     transform: translate(20px,-20px); 
     transition: all .5s cubic-bezier(.4,0,.2,1);
   }
@@ -418,10 +418,10 @@ if ($has_orders) {
     transition: all .25s;
   }
   .stat-card:hover .stat-badge { transform: translateX(3px); }
-  .badge-up   { background:rgba(16,185,129,.12); color:#34d399; }
-  .badge-down { background:rgba(244,63,94,.12); color:#fb7185; }
-  .badge-warn { background:rgba(245,158,11,.12); color:#fbbf24; }
-  .badge-info { background:rgba(124,92,252,.12); color: var(--purple-lt); }
+  .badge-up   { background:rgba(127, 174, 143,.12); color:#8fbfa3; }
+  .badge-down { background:rgba(217, 138, 145,.12); color:#d98a91; }
+  .badge-warn { background:rgba(201, 172, 130,.12); color:#c9ac82; }
+  .badge-info { background:rgba(201, 172, 130,.12); color: var(--purple-lt); }
 
   /* Progress bar */
   .prog-wrap { margin-top:14px; }
@@ -453,7 +453,7 @@ if ($has_orders) {
   .chart-card:nth-child(3) { animation-delay: .5s; }
 
   .chart-card:hover { 
-    border-color: rgba(124,92,252,.25); 
+    border-color: rgba(201, 172, 130,.25); 
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0,0,0,.3);
   }
@@ -479,7 +479,7 @@ if ($has_orders) {
   }
   .data-table tr:last-child td { border-bottom:none; }
   .data-table tr { transition: all .25s; }
-  .data-table tr:hover td { background:rgba(124,92,252,.04); }
+  .data-table tr:hover td { background:rgba(201, 172, 130,.04); }
   .data-table tr:hover { transform: scale(1.01); }
 
   /* Status pill */
@@ -489,11 +489,11 @@ if ($has_orders) {
     transition: all .25s;
   }
   .data-table tr:hover .status-pill { transform: scale(1.05); }
-  .status-pending    { background:rgba(245,158,11,.15); color:#fbbf24; }
-  .status-processing { background:rgba(124,92,252,.15); color:var(--purple-lt); }
-  .status-shipped    { background:rgba(20,184,166,.15);  color:#2dd4bf; }
-  .status-completed  { background:rgba(16,185,129,.15);  color:#34d399; }
-  .status-cancelled  { background:rgba(244,63,94,.15);   color:#fb7185; }
+  .status-pending    { background:rgba(201, 172, 130,.15); color:#c9ac82; }
+  .status-processing { background:rgba(201, 172, 130,.15); color:var(--purple-lt); }
+  .status-shipped    { background:rgba(138, 111, 77,.15);  color:#8fbfa3; }
+  .status-completed  { background:rgba(127, 174, 143,.15);  color:#8fbfa3; }
+  .status-cancelled  { background:rgba(217, 138, 145,.15);   color:#d98a91; }
 
   /* Product mini row */
   .prod-row { display:flex; align-items:center; gap:10px; }
@@ -517,8 +517,8 @@ if ($has_orders) {
     justify-content:center; flex-shrink:0;
     transition: all .3s;
   }
-  .rank-1 { background: linear-gradient(135deg, rgba(245,158,11,.3), rgba(245,158,11,.1)); color:#fbbf24; }
-  .data-table tr:hover .rank-1 { box-shadow: 0 0 12px rgba(245,158,11,.3); }
+  .rank-1 { background: linear-gradient(135deg, rgba(201, 172, 130,.3), rgba(201, 172, 130,.1)); color:#c9ac82; }
+  .data-table tr:hover .rank-1 { box-shadow: 0 0 12px rgba(201, 172, 130,.3); }
 
   /* ===== Floating Particles (mouse follow) ===== */
   .particle-canvas {
@@ -533,7 +533,7 @@ if ($has_orders) {
     position: fixed;
     width: 350px; height: 350px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(124,92,252,.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(201, 172, 130,.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     transform: translate(-50%, -50%);
@@ -590,27 +590,27 @@ if ($has_orders) {
   </div>
 
   <div class="stats-grid">
-    <div class="stat-card tilt-card" style="--accent:rgba(124,92,252,.12); --card-accent:rgba(124,92,252,.4); --card-shadow:rgba(124,92,252,.15);">
+    <div class="stat-card tilt-card" style="--accent:rgba(201, 172, 130,.12); --card-accent:rgba(201, 172, 130,.4); --card-shadow:rgba(201, 172, 130,.15);">
       <div class="stat-header">
-        <div class="stat-icon" style="background:rgba(124,92,252,.15);color:var(--purple-lt)"><i class='bx bx-dollar-circle'></i></div>
+        <div class="stat-icon" style="background:rgba(201, 172, 130,.15);color:var(--purple-lt)"><i class='bx bx-dollar-circle'></i></div>
         <span class="stat-label">ยอดขายสุทธิ</span>
       </div>
       <div class="stat-value" data-count="<?= $revenue ?>">$<?= number_format($revenue, 2) ?></div>
       <span class="stat-badge badge-up"><i class='bx bx-trending-up'></i> อัปเดตล่าสุด</span>
     </div>
 
-    <div class="stat-card tilt-card" style="--accent:rgba(244,63,94,.1); --card-accent:rgba(244,63,94,.4); --card-shadow:rgba(244,63,94,.15);">
+    <div class="stat-card tilt-card" style="--accent:rgba(217, 138, 145,.1); --card-accent:rgba(217, 138, 145,.4); --card-shadow:rgba(217, 138, 145,.15);">
       <div class="stat-header">
-        <div class="stat-icon" style="background:rgba(244,63,94,.15);color:#fb7185"><i class='bx bx-time'></i></div>
+        <div class="stat-icon" style="background:rgba(217, 138, 145,.15);color:#d98a91"><i class='bx bx-time'></i></div>
         <span class="stat-label">Pending Orders</span>
       </div>
       <div class="stat-value"><?= number_format($pending_orders) ?></div>
       <a href="orders.php" class="stat-badge badge-warn" style="text-decoration:none;"><i class='bx bx-right-arrow-alt'></i> ตรวจสอบ</a>
     </div>
 
-    <div class="stat-card tilt-card" style="--accent:rgba(20,184,166,.1); --card-accent:rgba(20,184,166,.4); --card-shadow:rgba(20,184,166,.15);">
+    <div class="stat-card tilt-card" style="--accent:rgba(138, 111, 77,.1); --card-accent:rgba(138, 111, 77,.4); --card-shadow:rgba(138, 111, 77,.15);">
       <div class="stat-header">
-        <div class="stat-icon" style="background:rgba(20,184,166,.15);color:#2dd4bf"><i class='bx bx-package'></i></div>
+        <div class="stat-icon" style="background:rgba(138, 111, 77,.15);color:#8fbfa3"><i class='bx bx-package'></i></div>
         <span class="stat-label">สต็อกสินค้า</span>
       </div>
       <div class="stat-value"><?= $stock_pct ?>%</div>
@@ -620,9 +620,9 @@ if ($has_orders) {
       </div>
     </div>
 
-    <div class="stat-card tilt-card" style="--accent:rgba(245,158,11,.1); --card-accent:rgba(245,158,11,.4); --card-shadow:rgba(245,158,11,.15);">
+    <div class="stat-card tilt-card" style="--accent:rgba(201, 172, 130,.1); --card-accent:rgba(201, 172, 130,.4); --card-shadow:rgba(201, 172, 130,.15);">
       <div class="stat-header">
-        <div class="stat-icon" style="background:rgba(245,158,11,.15);color:#fbbf24"><i class='bx bx-group'></i></div>
+        <div class="stat-icon" style="background:rgba(201, 172, 130,.15);color:#c9ac82"><i class='bx bx-group'></i></div>
         <span class="stat-label">ลูกค้าทั้งหมด</span>
       </div>
       <div class="stat-value"><?= number_format($total_users) ?></div>
@@ -862,7 +862,7 @@ function animateParticles() {
 
   // Draw connections between nearby particles
   ctx.globalAlpha = 0.08;
-  ctx.strokeStyle = '#7c5cfc';
+  ctx.strokeStyle = '#c9ac82';
   ctx.lineWidth = 0.5;
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
@@ -898,7 +898,7 @@ const observer = new IntersectionObserver((entries) => {
 progFills.forEach(bar => observer.observe(bar));
 
 // ===== Charts =====
-const dark = { foreColor:'#94a3b8', grid:'rgba(255,255,255,.04)', tooltip:{theme:'dark'} };
+const dark = { foreColor:'#8d9098', grid:'rgba(255,255,255,.04)', tooltip:{theme:'dark'} };
 
 // Line Chart
 new ApexCharts(document.querySelector('#lineChart'), {
@@ -906,7 +906,7 @@ new ApexCharts(document.querySelector('#lineChart'), {
   labels: <?= $chart_labels ?>,
   chart:  { type:'area', height:200, toolbar:{show:false}, foreColor:dark.foreColor, background:'transparent', animations: { enabled:true, speed:1200, animateGradually: { enabled:true, delay:200 }, dynamicAnimation: { enabled:true, speed:500 } } },
   theme:  { mode:'dark' },
-  colors: ['#7c5cfc'],
+  colors: ['#c9ac82'],
   fill:   { type:'gradient', gradient:{ shadeIntensity:.5, opacityFrom:.45, opacityTo:0, stops:[0,90,100] } },
   stroke: { curve:'smooth', width:2.5 },
   grid:   { borderColor: dark.grid, padding:{left:0,right:0} },
@@ -922,9 +922,9 @@ new ApexCharts(document.querySelector('#catDonut'), {
   labels: <?= $cat_labels_json ?>,
   chart:  { type:'donut', height:200, foreColor:dark.foreColor, background:'transparent', animations: { enabled:true, speed:1500, animateGradually: { enabled:true, delay:250 } } },
   theme:  { mode:'dark' },
-  colors: ['#7c5cfc','#14b8a6','#f59e0b','#f43f5e','#3b82f6'],
+  colors: ['#c9ac82','#8a6f4d','#c9ac82','#d98a91','#8a6f4d'],
   stroke: { show:false },
-  plotOptions: { pie:{ donut:{ size:'72%', labels: { show:true, name:{fontSize:'13px',color:'#94a3b8'}, value:{fontSize:'20px',fontWeight:700,color:'#f1f5f9'}, total: { show:true, label:'ทั้งหมด', color:'#94a3b8', fontSize:'12px' } } } } },
+  plotOptions: { pie:{ donut:{ size:'72%', labels: { show:true, name:{fontSize:'13px',color:'#8d9098'}, value:{fontSize:'20px',fontWeight:700,color:'#f3f1ec'}, total: { show:true, label:'ทั้งหมด', color:'#8d9098', fontSize:'12px' } } } } },
   legend: { position:'bottom', fontSize:'12px' },
   dataLabels: { enabled:false },
   tooltip: { theme:'dark' },
@@ -936,9 +936,9 @@ new ApexCharts(document.querySelector('#orderDonut'), {
   labels: <?= $os_labels ?>,
   chart:  { type:'donut', height:200, foreColor:dark.foreColor, background:'transparent', animations: { enabled:true, speed:1500, animateGradually: { enabled:true, delay:250 } } },
   theme:  { mode:'dark' },
-  colors: ['#10b981','#f59e0b','#7c5cfc','#14b8a6','#f43f5e'],
+  colors: ['#7fae8f','#c9ac82','#c9ac82','#8a6f4d','#d98a91'],
   stroke: { show:false },
-  plotOptions: { pie:{ donut:{ size:'72%', labels: { show:true, name:{fontSize:'13px',color:'#94a3b8'}, value:{fontSize:'20px',fontWeight:700,color:'#f1f5f9'}, total: { show:true, label:'Orders', color:'#94a3b8', fontSize:'12px' } } } } },
+  plotOptions: { pie:{ donut:{ size:'72%', labels: { show:true, name:{fontSize:'13px',color:'#8d9098'}, value:{fontSize:'20px',fontWeight:700,color:'#f3f1ec'}, total: { show:true, label:'Orders', color:'#8d9098', fontSize:'12px' } } } } },
   legend: { position:'bottom', fontSize:'12px' },
   dataLabels: { enabled:false },
   tooltip: { theme:'dark' },

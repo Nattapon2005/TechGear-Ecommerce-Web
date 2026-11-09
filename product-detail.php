@@ -18,7 +18,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    echo "<div style='text-align:center; padding:150px; color:#fff;'><h2>Product not found.</h2><a href='products.php' class='btn'>Back to Shop</a></div>";
+    echo "<div style='text-align:center; padding:150px; color:#f3f1ec;'><h2>Product not found.</h2><a href='products.php' class='btn'>Back to Shop</a></div>";
     include 'page/footer.php';
     exit();
 }
@@ -59,7 +59,7 @@ if ($rev_q) {
 <style>
 .pd-wrapper {
     background: var(--bg-container-black);
-    color: #fff;
+    color: #f3f1ec;
     padding: 120px 0 80px 0;
     min-height: 80vh;
 }
@@ -74,13 +74,13 @@ if ($rev_q) {
 .pd-image-col {
     position: relative;
     border-radius: 20px;
-    background: #11162c;
-    border: 1px solid #1e2536;
+    background: #131518;
+    border: 1px solid #1c2025;
     padding: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 60px rgba(124, 58, 237, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 60px rgba(184, 149, 99, 0.1);
 }
 .pd-image-col img {
     width: 100%;
@@ -97,16 +97,16 @@ if ($rev_q) {
     top: 30px;
     left: 30px;
     padding: 8px 20px;
-    background: #00d2ff;
-    color: #000;
+    background: #c9ac82;
+    color: #17130d;
     font-weight: 800;
     border-radius: 8px;
     text-transform: uppercase;
     font-size: 14px;
 }
 .pd-discount {
-    background: #f43f5e;
-    color: #fff;
+    background: #d98a91;
+    color: #17130d;
 }
 .pd-info-col {
     display: flex;
@@ -114,7 +114,7 @@ if ($rev_q) {
     justify-content: center;
 }
 .pd-brand {
-    color: #8b5cf6;
+    color: #c9ac82;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 2px;
@@ -126,7 +126,7 @@ if ($rev_q) {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: #f8fafc;
+    color: #f3f1ec;
 }
 .pd-rating {
     display: flex;
@@ -135,11 +135,11 @@ if ($rev_q) {
     margin-bottom: 30px;
 }
 .pd-stars {
-    color: #fbbf24;
+    color: #c9ac82;
     font-size: 18px;
 }
 .pd-reviews {
-    color: #94a3b8;
+    color: #8d9098;
     font-size: 15px;
 }
 .pd-price-row {
@@ -151,15 +151,15 @@ if ($rev_q) {
 .pd-price {
     font-size: 36px;
     font-weight: 800;
-    color: #fff;
+    color: #f3f1ec;
 }
 .pd-old-price {
     font-size: 20px;
     text-decoration: line-through;
-    color: #64748b;
+    color: #7f838b;
 }
 .pd-desc {
-    color: #94a3b8;
+    color: #8d9098;
     line-height: 1.8;
     font-size: 16px;
     margin-bottom: 40px;
@@ -172,15 +172,15 @@ if ($rev_q) {
 .pd-qty {
     display: flex;
     align-items: center;
-    background: #1e293b;
+    background: #24282e;
     border-radius: 12px;
     padding: 5px;
-    border: 1px solid #334155;
+    border: 1px solid #3a3e45;
 }
 .pd-qty-btn {
     background: transparent;
     border: none;
-    color: #fff;
+    color: #f3f1ec;
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -188,22 +188,22 @@ if ($rev_q) {
     transition: 0.2s;
 }
 .pd-qty-btn:hover {
-    color: #8b5cf6;
+    color: #c9ac82;
 }
 .pd-qty-input {
     width: 50px;
     text-align: center;
     background: transparent;
     border: none;
-    color: #fff;
+    color: #f3f1ec;
     font-size: 18px;
     font-weight: bold;
     outline: none;
 }
 .pd-add-cart {
     flex: 1;
-    background: linear-gradient(90deg, #7c3aed, #4facfe);
-    color: #fff;
+    background: linear-gradient(90deg, #b89563, #8a6f4d);
+    color: #17130d;
     border: none;
     padding: 16px 30px;
     border-radius: 12px;
@@ -211,7 +211,7 @@ if ($rev_q) {
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 10px 20px rgba(184, 149, 99, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,41 +220,41 @@ if ($rev_q) {
 .pd-add-cart:hover {
     filter: brightness(1.1);
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.5);
+    box-shadow: 0 15px 30px rgba(184, 149, 99, 0.5);
 }
 .pd-wishlist {
     width: 60px;
     height: 60px;
     border-radius: 12px;
-    background: #1e293b;
-    border: 1px solid #334155;
+    background: #24282e;
+    border: 1px solid #3a3e45;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     cursor: pointer;
     transition: 0.3s;
-    color: #94a3b8;
+    color: #8d9098;
 }
 .pd-wishlist:hover {
-    border-color: #f43f5e;
+    border-color: #d98a91;
 }
 .pd-wished {
-    color: #f43f5e;
-    border-color: #f43f5e;
+    color: #d98a91;
+    border-color: #d98a91;
 }
 .pd-meta {
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 1px solid #232b3e;
-    color: #64748b;
+    border-top: 1px solid #24282e;
+    color: #7f838b;
     font-size: 14px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .pd-meta span strong {
-    color: #cbd5e1;
+    color: #d6d2c9;
     margin-right: 10px;
 }
 /* Reviews Section */
@@ -287,30 +287,30 @@ if ($rev_q) {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #7c3aed;
+    background: #b89563;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 18px;
-    color: #fff;
+    color: #f3f1ec;
 }
 .review-meta h4 {
     margin: 0;
     font-size: 15px;
-    color: #fff;
+    color: #f3f1ec;
 }
 .review-meta span {
     font-size: 12px;
-    color: #64748b;
+    color: #7f838b;
 }
 .review-stars {
-    color: #fbbf24;
+    color: #c9ac82;
     font-size: 14px;
     margin-bottom: 10px;
 }
 .review-text {
-    color: #94a3b8;
+    color: #8d9098;
     font-size: 14px;
     line-height: 1.6;
 }
@@ -322,13 +322,13 @@ if ($rev_q) {
 .review-form h3 {
     font-size: 18px;
     margin-bottom: 15px;
-    color: #fff;
+    color: #f3f1ec;
 }
 .review-form .form-control {
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #fff;
+    color: #f3f1ec;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -338,8 +338,8 @@ if ($rev_q) {
     padding-right: 30px;
 }
 .btn-submit-review {
-    background: linear-gradient(90deg, #7c3aed, #4facfe);
-    color: #fff;
+    background: linear-gradient(90deg, #b89563, #8a6f4d);
+    color: #17130d;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -418,10 +418,10 @@ if ($rev_q) {
     <!-- Reviews Section -->
     <div class="reviews-section">
         <div class="reviews-card">
-            <h2 style="font-size:24px; font-weight:800; margin-bottom:20px; color:#fff;">Customer Reviews</h2>
+            <h2 style="font-size:24px; font-weight:800; margin-bottom:20px; color:#f3f1ec;">Customer Reviews</h2>
             
             <?php if (empty($reviews)): ?>
-                <p style="color:#64748b; font-style:italic;">No reviews yet. Be the first to review this product!</p>
+                <p style="color:#7f838b; font-style:italic;">No reviews yet. Be the first to review this product!</p>
             <?php else: ?>
                 <?php foreach ($reviews as $r): ?>
                     <div class="review-item">
@@ -458,7 +458,7 @@ if ($rev_q) {
                         <button type="submit" class="btn-submit-review">Submit Review</button>
                     </form>
                 <?php else: ?>
-                    <p style="color:#94a3b8;">Please <a href="login.php" style="color:#7c3aed;">log in</a> to write a review.</p>
+                    <p style="color:#8d9098;">Please <a href="login.php" style="color:#b89563;">log in</a> to write a review.</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -506,12 +506,46 @@ function addDetailToCart(id, name, price, image) {
             if (typeof renderCart === "function") { 
                 renderCart(); 
             }
+
+            // Interactive feedback
+            const cartIcon = document.querySelector('.menu-login-icon-tow');
+            const countEl = document.querySelector('.count-cart');
+            [cartIcon, countEl].forEach((el) => {
+                if (!el) return;
+                el.classList.remove('cart-bump');
+                void el.offsetWidth;
+                el.classList.add('cart-bump');
+                setTimeout(() => el.classList.remove('cart-bump'), 650);
+            });
+
+            const addBtn = document.querySelector('.pd-add-cart');
+            if (addBtn && !addBtn.classList.contains('is-added')) {
+                const original = addBtn.innerHTML;
+                addBtn.classList.add('is-added');
+                addBtn.innerHTML = "<i class='bx bx-check'></i> Added!";
+                setTimeout(() => {
+                    addBtn.classList.remove('is-added');
+                    addBtn.innerHTML = original;
+                }, 1500);
+            }
+
+            if (window.showToast) {
+                window.showToast('Added to Cart!', name + ' is now in your cart.', 'success', 'bx-cart-add');
+            }
+
             toggleCart(true); // Open sidebar
         } else {
-            alert('Failed to add to cart: ' + data.message);
+            if (window.showToast) {
+                window.showToast('Could not add to cart', data.message || 'Please try again.', 'remove', 'bx-error-circle');
+            }
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        if (window.showToast) {
+            window.showToast('Connection problem', 'Could not reach the server. Please try again.', 'remove', 'bx-error-circle');
+        }
+    });
 }
 
 function toggleDetailWishlist(productId) {
@@ -528,7 +562,7 @@ function toggleDetailWishlist(productId) {
         btn.classList.add('pd-wished');
         icon.classList.remove('bx');
         icon.classList.add('bxs');
-        icon.style.setProperty('color', '#f43f5e', 'important');
+        icon.style.setProperty('color', '#d98a91', 'important');
     } else {
         btn.classList.remove('pd-wished');
         icon.classList.remove('bxs');
@@ -546,10 +580,26 @@ function toggleDetailWishlist(productId) {
     })
     .then(response => response.json())
     .then(data => {
+        const pdTitle = document.querySelector('.pd-title');
+        const productName = pdTitle ? pdTitle.textContent.trim() : 'Item';
+
         if (data.status === 'added') {
             updateWishlistBadge(true);
+
+            const wishIcon = document.querySelector('.menu-login-icon-one');
+            if (wishIcon) {
+                wishIcon.classList.remove('wishlist-bump');
+                void wishIcon.offsetWidth;
+                wishIcon.classList.add('wishlist-bump');
+            }
+
+            if (window.showToast) {
+                window.showToast('Added to Wishlist', productName + ' saved for later.', 'wishlist', 'bx-heart');
+            }
         } else if (data.status === 'removed') {
-            // Nothing extra needed
+            if (window.showToast) {
+                window.showToast('Removed from Wishlist', productName + ' removed from your wishlist.', 'remove', 'bx-trash');
+            }
         }
     })
     .catch(error => {
@@ -564,7 +614,7 @@ function toggleDetailWishlist(productId) {
             btn.classList.add('pd-wished');
             icon.classList.remove('bx');
             icon.classList.add('bxs');
-            icon.style.setProperty('color', '#f43f5e', 'important');
+            icon.style.setProperty('color', '#d98a91', 'important');
         }
     });
 }

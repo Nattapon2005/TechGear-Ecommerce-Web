@@ -3,7 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 include 'config/db.php';
-include 'page/navbar.php';
 
 $cat_id = isset($_GET['cat_id']) ? $_GET['cat_id'] : 'all';
 $search = isset($_GET['search']) ? $_GET['search'] : '';
@@ -32,13 +31,29 @@ switch($sort) {
 
 $result = mysqli_query($conn, $sql);
 $product_count = mysqli_num_rows($result);
+
+// AJAX filtering: return only the product grid so the page never reloads.
+if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
+    ob_start();
+    include 'page/products-grid.php';
+    $grid_html = ob_get_clean();
+
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode([
+        'html' => $grid_html,
+        'count' => (int)$product_count
+    ]);
+    exit;
+}
+
+include 'page/navbar.php';
 ?>
 
 <div class="product-body">
     <div class="container mt-100">
         <div class="product-head">
             <h1>All Products</h1>
-            <p><?= $product_count ?> items available</p>
+            <p><span id="product-count"><?= $product_count ?></span> items available</p>
         </div>
 
         <div class="products-layout">
@@ -72,8 +87,8 @@ $product_count = mysqli_num_rows($result);
                         <?php } ?>
 
                         <div class="filter-product-con">
-                            <h3>Max Price ($<?= htmlspecialchars($max_price) ?>)</h3>
-                            <input type="range" name="max_price" min="0" max="1000" value="<?= htmlspecialchars($max_price) ?>" style="width: 100%; margin: .9375rem 0;" onchange="this.form.submit()">
+                            <h3 id="priceTitle">Max Price ($<?= htmlspecialchars($max_price) ?>)</h3>
+                            <input type="range" name="max_price" id="priceRange" min="0" max="1000" value="<?= htmlspecialchars($max_price) ?>" style="width: 100%; margin: .9375rem 0;">
                             <div class="filter-product-price">
                                 <span>$0</span>
                                 <span>$1000</span>
@@ -81,7 +96,7 @@ $product_count = mysqli_num_rows($result);
                         </div>
                     </form>
 
-                    <button class="filter-button" onclick="window.location.href='products.php'">
+                    <button class="filter-button" id="clearFilters" type="button">
                         Clear All Filters
                     </button>
                 </div>
@@ -141,74 +156,7 @@ $product_count = mysqli_num_rows($result);
                 <div class="product-grid-lg">
                     <div class="container">
                         <div class="product-item-con-grid grid-view" id="productsGrid">
-                        <?php
-                        if ($product_count == 0) {
-                            echo "<div style='width: 100%; grid-column: 1 / -1; text-align: center; padding: 50px 0; color: #94a3b8;'><h3>No products found</h3><p>Try adjusting your filters</p></div>";
-                        }
-                        while($row = mysqli_fetch_assoc($result)) {
-                            $p_tag = $row['p_tag'] ?? null;
-                            $tag_class = ($p_tag === 'NEW') ? 'show-new-product-box' : 'discount-product-box';
-                            $prod_id = $row['id'] ?? 0;
-                            $is_wished = in_array($prod_id, $wishlist);
-                        ?>
-                            <div class="product-item-grid">
-                                <div class="product-item-img " id="">
-                                    <a href="product-detail.php?id=<?php echo $prod_id; ?>" class="product-img-g img-grid">
-                                        <img src="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>" alt="">
-                                    </a>
-                                    <div class="cat-overlay"></div>
-                                </div>
-
-                                <div class="product-item-title-con">
-                                    <div class="product-item-title">
-                                        <p><?php echo htmlspecialchars($row['p_brand'] ?? ''); ?></p>
-                                        <h4><?php echo htmlspecialchars($row['p_name'] ?? ''); ?></h4>
-                                        <div class="product-show-title">
-                                            <span class="star-con">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star star-bg"></span>
-                                            </span>
-                                            <span class="star-cont">(234)</span>
-                                        </div>
-
-                                        <div class="product-price">
-                                            <span class="product-price-w">
-                                                $<?php echo number_format($row['p_price'] ?? 0, 2); ?>
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <form onsubmit="addToCartAsync(event, this)" style="margin: 0;">
-                                        <div class="btn-product-item">
-                                            <input type="hidden" name="product_id" value="<?php echo $prod_id; ?>">
-                                            <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>">
-                                            <input type="hidden" name="product_price" value="<?php echo $row['p_price'] ?? 0; ?>">
-                                            <input type="hidden" name="product_image" value="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>">
-                                            <button type="submit">Add to cart</button>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="show-discount-product">
-                                    <div class="new-product">
-                                        <?php if(!empty($p_tag) && $p_tag !== 'NULL') { ?>
-                                            <span class="show-product-box <?= $tag_class ?>">
-                                                <?php echo htmlspecialchars($p_tag); ?>
-                                            </span>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-
-                                <div class="show-icon-love" onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist(<?= $prod_id ?>, this)" style="cursor:pointer; z-index: 10;">
-                                    <div class="icon-love">
-                                        <i class="<?= $is_wished ? 'bxf' : 'bx' ?> bx-heart" style="<?= $is_wished ? 'color: #f43f5e;' : '' ?>"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
+                        <?php include 'page/products-grid.php'; ?>
                         </div>
                     </div>
                 </div>
@@ -218,17 +166,5 @@ $product_count = mysqli_num_rows($result);
 </div>
 
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-<script>
-// Handle Sort Dropdown Logic
-document.querySelectorAll('.options-box').forEach(item => {
-    item.addEventListener('click', function(e) {
-        let sortVal = this.getAttribute('data-value');
-        let currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('sort', sortVal);
-        window.location.href = currentUrl.href;
-    });
-});
-</script>
 
 <?php include 'page/footer.php'; ?>

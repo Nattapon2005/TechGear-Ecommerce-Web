@@ -70,5 +70,6 @@
     <script src="src/navbar.js?v=<?= time() ?>"></script>
     <script src="src/account.js?v=<?= time() ?>"></script>
     <script src="src/products.js?v=<?= time() ?>"></script>
+    <script src="src/animations.js?v=<?= time() ?>"></script>
 </body>
 </html>
