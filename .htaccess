@@ -1,0 +1,14 @@
+# ให้ Apache เสิร์ฟ index.php เป็นหน้าแรก (สำหรับ hosting ที่ไม่ผ่าน Dockerfile)
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html
+</IfModule>
+
+# ปิดการแสดงรายการไฟล์ในโฟลเดอร์
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# ไม่ให้เข้าถึงไฟล์ config / sql โดยตรง
+<FilesMatch "\.(sql|md|env|ini|log)$">
+    Require all denied
+</FilesMatch>

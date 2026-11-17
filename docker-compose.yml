@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build: .
@@ -7,6 +5,13 @@ services:
       - "8090:80"
     volumes:
       - .:/var/www/html
+    environment:
+      # ถ้าไม่ตั้งค่าใน .env จะใช้ค่าเริ่มต้นของ docker-compose (db / root / root)
+      DB_HOST: ${DB_HOST:-db}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_USER: ${DB_USER:-root}
+      DB_PASS: ${DB_PASS:-root}
+      DB_NAME: ${DB_NAME:-techgear_v2_db}
     depends_on:
       - db
     networks:

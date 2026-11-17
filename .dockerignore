@@ -1,0 +1,11 @@
+.git
+.gitignore
+.github
+.vscode
+.idea
+node_modules
+npm-debug.log*
+*.md
+imgs/image.png
+.env
+.env.*
