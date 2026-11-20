@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS product_reviews (
     id         INT AUTO_INCREMENT PRIMARY KEY,
     p_id       INT           NOT NULL,
     user_id    INT           NOT NULL,
-    rating     INT           NOT NULL CHECK (rating >= 1 AND rating <= 5),
+    rating     INT           NOT NULL DEFAULT 5,
     comment    TEXT          NULL,
     created_at TIMESTAMP     DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (p_id) REFERENCES products(id) ON DELETE CASCADE,
