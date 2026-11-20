@@ -20,10 +20,10 @@ CREATE TABLE IF NOT EXISTS categories (
 
 INSERT INTO categories (cat_id, cat_name, cat_image_url, cat_icon, product_count) VALUES
 (1, 'Keyboards', 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&q=80', 'bx-keyboard', 2),
-(2, 'Mice', 'https://images.unsplash.com/photo-1527814050087-179f0011abf4?w=800&q=80', 'bx-mouse', 2),
+(2, 'Mice', 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80', 'bx-mouse', 2),
 (3, 'Headsets', 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&q=80', 'bx-headphone', 2),
 (4, 'Monitors', 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80', 'bx-desktop', 1),
-(5, 'Controllers', 'https://images.unsplash.com/photo-1600080972464-8e5f2840d437?w=800&q=80', 'bx-joystick', 1),
+(5, 'Controllers', 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?w=800&q=80', 'bx-joystick', 1),
 (6, 'Accessories', 'https://images.unsplash.com/photo-1616423640778-28d1b53229bd?w=800&q=80', 'bx-devices', 3);
 
 -- ─── PRODUCTS ────────────────────────────────────────────────
@@ -46,18 +46,18 @@ INSERT INTO products (cat_id, p_brand, p_name, p_price, p_desc, p_image_url, p_t
 (1, 'RAZER', 'Razer Huntsman V3 Pro', 249.99, NULL, 'https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=500', 'NEW'),
 (1, 'CORSAIR', 'Corsair K100 RGB', 199.99, NULL, 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=500', NULL),
 -- Mice
-(2, 'LOGITECH', 'Logitech G Pro X Superlight', 159.99, NULL, 'https://images.unsplash.com/photo-1615663245857-ac9310031881?q=80&w=500', 'NEW'),
-(2, 'RAZER', 'Razer DeathAdder V3', 149.99, NULL, 'https://images.unsplash.com/photo-1527814050087-179f0011abf4?q=80&w=500', '-15%'),
+(2, 'LOGITECH', 'Logitech G Pro X Superlight', 159.99, NULL, 'https://images.unsplash.com/photo-1617233083187-be4925d699d6?q=80&w=500', 'NEW'),
+(2, 'RAZER', 'Razer DeathAdder V3', 149.99, NULL, 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500', '-15%'),
 -- Headsets
 (3, 'STEELSERIES', 'Arctis Nova Pro Wireless', 349.99, NULL, 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=500', 'NEW'),
 (3, 'HYPERX', 'HyperX Cloud Alpha', 119.99, NULL, 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=500', NULL),
 -- Monitors
 (4, 'ASUS', 'ROG Swift PG279QM 240Hz', 699.99, NULL, 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=500', '-10%'),
 -- Controllers
-(5, 'SONY', 'DualSense Edge', 199.99, NULL, 'https://images.unsplash.com/photo-1600080972464-8e5f2840d437?q=80&w=500', 'NEW'),
+(5, 'SONY', 'DualSense Edge', 199.99, NULL, 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?q=80&w=500', 'NEW'),
 -- Accessories
 (6, 'ELGATO', 'Elgato Stream Deck MK.2', 149.99, NULL, 'https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=500', 'HOT'),
-(6, 'RAZER', 'Razer Gigantus V2 XXL Desk Mat', 39.99, NULL, 'https://images.unsplash.com/photo-1615663245857-ac9310031881?q=80&w=500', 'NEW'),
+(6, 'RAZER', 'Razer Gigantus V2 XXL Desk Mat', 39.99, NULL, 'https://images.unsplash.com/photo-1649197811770-756bb5f4a57f?q=80&w=500', 'NEW'),
 (6, 'CORSAIR', 'Corsair ST100 RGB Headset Stand', 69.99, NULL, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=500', NULL);
 
 -- ─── USERS ───────────────────────────────────────────────────
