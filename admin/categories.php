@@ -79,14 +79,14 @@ if ($qc) while($r = mysqli_fetch_assoc($qc)) $categories[] = $r;
 <title>TechGear Admin — Categories</title>
 <?php include 'admin-header.php'; ?>
 <style>
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:16px;}
-.cat-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .3s;animation:fadeSlideUp .5s both;display:flex;align-items:stretch;}
-.cat-card:hover{border-color:rgba(201, 172, 130,.3);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3);}
-.cat-card-img{width:100px;min-height:100px;flex-shrink:0;background:var(--bg3);overflow:hidden;}
-.cat-card-img img{width:100%;height:100%;object-fit:cover;}
-.cat-card-body{padding:16px;flex:1;display:flex;flex-direction:column;justify-content:center;}
-.cat-card-name{font-size:16px;font-weight:700;margin-bottom:4px;}
-.cat-card-count{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:16px;}
+.cat-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);animation:fadeSlideUp .5s both;display:flex;align-items:stretch;height:115px;}
+.cat-card:hover{border-color:rgba(201, 172, 130,.4);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.4);}
+.cat-card-img{width:115px;height:115px;flex-shrink:0;background:var(--bg3);overflow:hidden;position:relative;}
+.cat-card-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0 !important;}
+.cat-card-body{padding:14px 18px;flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.cat-card-name{font-size:15px;font-weight:700;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cat-card-count{font-size:12px;color:var(--muted);margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 </style>
 </head>
 <body>
