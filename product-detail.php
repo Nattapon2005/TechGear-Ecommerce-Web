@@ -357,7 +357,7 @@ if ($rev_q) {
                     <?= htmlspecialchars($product['p_tag']) ?>
                 </div>
             <?php } ?>
-            <img src="<?= htmlspecialchars($product['p_image_url']) ?>" alt="<?= htmlspecialchars($product['p_name']) ?>">
+            <img src="<?= htmlspecialchars(fixImageUrl($product['p_image_url'])) ?>" alt="<?= htmlspecialchars($product['p_name']) ?>" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80'">
         </div>
 
         <!-- Right Info -->

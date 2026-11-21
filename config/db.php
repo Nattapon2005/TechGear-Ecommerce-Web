@@ -27,6 +27,18 @@ try {
     }
 
     mysqli_set_charset($conn, 'utf8mb4');
+
+    // Self-healing: ซ่อมแซม URL รูปที่เสียใน Database อัตโนมัติในเบื้องหลัง
+    $dead_urls_update = "
+        UPDATE categories SET cat_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80' WHERE cat_id = 2 AND cat_image_url LIKE '%photo-1527814050087-179f0011abf4%';
+        UPDATE categories SET cat_image_url = 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?w=800&q=80' WHERE cat_id = 5 AND cat_image_url LIKE '%photo-1600080972464-8e5f2840d437%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1617233083187-be4925d699d6?q=80&w=500' WHERE p_image_url LIKE '%photo-1615663245857-ac9310031881%' AND p_name LIKE '%Logitech%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500' WHERE p_image_url LIKE '%photo-1527814050087-179f0011abf4%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?q=80&w=500' WHERE p_image_url LIKE '%photo-1600080972464-8e5f2840d437%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1649197811770-756bb5f4a57f?q=80&w=500' WHERE p_image_url LIKE '%photo-1615663245857-ac9310031881%' AND p_name LIKE '%Desk Mat%';
+    ";
+    @mysqli_multi_query($conn, $dead_urls_update);
+    while (@mysqli_next_result($conn)) {;}
 } catch (mysqli_sql_exception $e) {
     error_log('DB connection failed: ' . $e->getMessage());
     http_response_code(500);

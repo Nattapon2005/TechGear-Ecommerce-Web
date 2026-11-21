@@ -11,7 +11,7 @@ while($row = mysqli_fetch_assoc($result)) {
     <div class="product-item-grid">
         <div class="product-item-img " id="">
             <a href="product-detail.php?id=<?php echo $prod_id; ?>" class="product-img-g img-grid">
-                <img src="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>" alt="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>" loading="lazy">
+                <img src="<?php echo htmlspecialchars(fixImageUrl($row['p_image_url'] ?? '')); ?>" alt="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80'">
             </a>
             <div class="cat-overlay"></div>
         </div>

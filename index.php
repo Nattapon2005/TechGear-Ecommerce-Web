@@ -445,7 +445,7 @@ $cat_query = mysqli_query($conn, $sql);
                 <?php while($record = mysqli_fetch_assoc($cat_query)) { ?>
                     <div class="show-category-menu-con img1">
                         <a href="products.php?cat_id=<?php echo $record['cat_id'] ?>">
-                            <img src="<?php echo $record['cat_image_url']; ?>" alt="">
+                            <img src="<?php echo htmlspecialchars(fixImageUrl($record['cat_image_url'] ?? '')); ?>" alt="<?php echo htmlspecialchars($record['cat_name'] ?? ''); ?>" onerror="this.src='https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80'">
                             <div class="cat-overlay"></div>
                             <div class="show-cat-content">
                                 <div class="show-category-title">
@@ -527,7 +527,7 @@ $cat_query = mysqli_query($conn, $sql);
                 <div class="product-item-grid">
                     <div class="product-item-img">
                         <a href="product-detail.php?id=<?php echo $prod_id; ?>" class="product-img-g img-grid">
-                            <img src="<?php echo htmlspecialchars($row['p_image_url'] ?? ''); ?>" alt="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>" loading="lazy">
+                            <img src="<?php echo htmlspecialchars(fixImageUrl($row['p_image_url'] ?? '')); ?>" alt="<?php echo htmlspecialchars($row['p_name'] ?? ''); ?>" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80'">
                         </a>
                         <div class="cat-overlay"></div>
 

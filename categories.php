@@ -138,8 +138,9 @@ if ($cat_query) {
                    class="cat-card" 
                    style="--delay: <?= $index * 0.1 ?>s">
                     <div class="cat-card-img">
-                        <img src="<?php echo htmlspecialchars($record['cat_image_url']); ?>" 
-                             alt="<?php echo htmlspecialchars($record['cat_name']); ?>">
+                        <img src="<?php echo htmlspecialchars(fixImageUrl($record['cat_image_url'] ?? '')); ?>" 
+                             alt="<?php echo htmlspecialchars($record['cat_name']); ?>"
+                             onerror="this.src='https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80'">
                         <div class="cat-card-overlay"></div>
                     </div>
                     <div class="cat-card-content">
