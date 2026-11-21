@@ -111,6 +111,9 @@ if (!isset($_SESSION['cart'])) {
 
                             <div id="pDropdown" class="profile-dropdown">
                                 <div class="box-profile-drop">
+                                    <?php if(!empty($_SESSION['admin_logged_in'])): ?>
+                                        <a href="admin/index.php" style="color: #c9ac82; font-weight: 600;"><i class='bx bxs-dashboard' style="color: #c9ac82;"></i> Admin Dashboard</a>
+                                    <?php endif; ?>
                                     <a href="account.php"><i class='bx bx-cog'></i> Account</a>
                                     <a href="orders.php"><i class='bx bx-package'></i> My Orders</a>
                                     <a class="box-profile-line" href="logout.php"><i class="bx bx-arrow-out-right-square-half " ></i> Logout</a>

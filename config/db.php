@@ -36,6 +36,9 @@ try {
         UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500' WHERE p_image_url LIKE '%photo-1527814050087-179f0011abf4%';
         UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?q=80&w=500' WHERE p_image_url LIKE '%photo-1600080972464-8e5f2840d437%';
         UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1649197811770-756bb5f4a57f?q=80&w=500' WHERE p_image_url LIKE '%photo-1615663245857-ac9310031881%' AND p_name LIKE '%Desk Mat%';
+        INSERT IGNORE INTO users (username, email, password, role, phone, address) VALUES 
+        ('Admin TechGear', 'admin@techgear.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', '0999999999', 'Admin HQ'),
+        ('Demo Customer', 'demo@techgear.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'customer', '0812345678', '123 Sukhumvit Road, Bangkok');
     ";
     @mysqli_multi_query($conn, $dead_urls_update);
     while (@mysqli_next_result($conn)) {;}
