@@ -667,8 +667,11 @@ if ($has_orders) {
           <td>
             <div class="prod-row">
               <div class="prod-img-placeholder">
-                  <?php if(!empty($p['p_image_url'])): ?>
-                      <img src="<?= str_starts_with($p['p_image_url'],'http') ? $p['p_image_url'] : '../'.$p['p_image_url'] ?>">
+                  <?php if(!empty($p['p_image_url'])): 
+                      $dash_img = fixImageUrl($p['p_image_url']);
+                      $dash_src = str_starts_with($dash_img, 'http') ? $dash_img : '../' . $dash_img;
+                  ?>
+                      <img src="<?= htmlspecialchars($dash_src) ?>" alt="" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80'">
                   <?php else: ?>
                       <i class='bx bx-package'></i>
                   <?php endif; ?>

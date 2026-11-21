@@ -1,4 +1,7 @@
 <?php
+// โหลดฟังก์ชันส่วนกลาง
+require_once __DIR__ . '/../page/functions.php';
+
 // บังคับเปิด Session ตั้งแต่บรรทัดแรกสุดของทุกหน้า
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -30,12 +33,12 @@ try {
 
     // Self-healing: ซ่อมแซม URL รูปที่เสียใน Database อัตโนมัติในเบื้องหลัง
     $dead_urls_update = "
-        UPDATE categories SET cat_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80' WHERE cat_id = 2 AND cat_image_url LIKE '%photo-1527814050087-179f0011abf4%';
-        UPDATE categories SET cat_image_url = 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?w=800&q=80' WHERE cat_id = 5 AND cat_image_url LIKE '%photo-1600080972464-8e5f2840d437%';
-        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1617233083187-be4925d699d6?q=80&w=500' WHERE p_image_url LIKE '%photo-1615663245857-ac9310031881%' AND p_name LIKE '%Logitech%';
-        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500' WHERE p_image_url LIKE '%photo-1527814050087-179f0011abf4%';
-        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?q=80&w=500' WHERE p_image_url LIKE '%photo-1600080972464-8e5f2840d437%';
-        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1649197811770-756bb5f4a57f?q=80&w=500' WHERE p_image_url LIKE '%photo-1615663245857-ac9310031881%' AND p_name LIKE '%Desk Mat%';
+        UPDATE categories SET cat_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80' WHERE cat_name LIKE '%Mice%' OR cat_image_url LIKE '%photo-1527814050087%';
+        UPDATE categories SET cat_image_url = 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80' WHERE cat_name LIKE '%Controller%' OR cat_image_url LIKE '%photo-1600080972464%' OR cat_image_url LIKE '%photo-1612287233002%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1617233083187-be4925d699d6?q=80&w=500' WHERE p_name LIKE '%Logitech%' AND (p_image_url LIKE '%photo-1615663245857%' OR p_image_url LIKE '%photo-1527814050087%');
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500' WHERE p_name LIKE '%DeathAdder%' OR p_image_url LIKE '%photo-1527814050087%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500' WHERE p_name LIKE '%DualSense%' OR p_image_url LIKE '%photo-1600080972464%' OR p_image_url LIKE '%photo-1612287233002%';
+        UPDATE products SET p_image_url = 'https://images.unsplash.com/photo-1649197811770-756bb5f4a57f?q=80&w=500' WHERE p_name LIKE '%Desk Mat%' OR (p_image_url LIKE '%photo-1615663245857%' AND p_name NOT LIKE '%Logitech%');
         INSERT IGNORE INTO users (username, email, password, role, phone, address) VALUES 
         ('Admin TechGear', 'admin@techgear.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', '0999999999', 'Admin HQ'),
         ('Demo Customer', 'demo@techgear.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'customer', '0812345678', '123 Sukhumvit Road, Bangkok');

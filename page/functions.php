@@ -45,9 +45,10 @@ function fixImageUrl($url) {
     }
     // แก้ไข URL รูปที่ตาย/หมดอายุจาก Unsplash
     $broken_maps = [
-        'photo-1527814050087-179f0011abf4' => 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80',
-        'photo-1600080972464-8e5f2840d437' => 'https://images.unsplash.com/photo-1612287233002-91d0bc5367ff?w=800&q=80',
-        'photo-1615663245857-ac9310031881' => 'https://images.unsplash.com/photo-1617233083187-be4925d699d6?q=80&w=500',
+        'photo-1527814050087' => 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80',
+        'photo-1600080972464' => 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80',
+        'photo-1612287233002' => 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80',
+        'photo-1615663245857' => 'https://images.unsplash.com/photo-1617233083187-be4925d699d6?q=80&w=500',
     ];
     foreach ($broken_maps as $broken => $fixed) {
         if (str_contains($url, $broken)) {

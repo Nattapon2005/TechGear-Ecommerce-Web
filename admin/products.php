@@ -165,8 +165,11 @@ $total = count($products);
         <div class="prod-card" style="animation-delay:<?= $i * 0.05 ?>s;">
             <div class="prod-card-img-wrap">
                 <div class="prod-card-img">
-                    <?php if(!empty($p['p_image_url'])): ?>
-                        <img src="<?= str_starts_with($p['p_image_url'],'http') ? $p['p_image_url'] : '../'.$p['p_image_url'] ?>" alt="<?= htmlspecialchars($p['p_name']) ?>">
+                    <?php if(!empty($p['p_image_url'])): 
+                        $p_img = fixImageUrl($p['p_image_url']);
+                        $p_src = str_starts_with($p_img, 'http') ? $p_img : '../' . $p_img;
+                    ?>
+                        <img src="<?= htmlspecialchars($p_src) ?>" alt="<?= htmlspecialchars($p['p_name']) ?>" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80'">
                     <?php else: ?>
                         <i class='bx bx-image' style="font-size:40px;color:var(--muted);"></i>
                     <?php endif; ?>

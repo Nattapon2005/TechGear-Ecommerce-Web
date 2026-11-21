@@ -121,9 +121,11 @@ if ($qc) while($r = mysqli_fetch_assoc($qc)) $categories[] = $r;
         <?php foreach($categories as $i => $c): ?>
         <div class="cat-card" style="animation-delay:<?= $i * 0.08 ?>s;">
             <div class="cat-card-img">
-                <?php if(!empty($c['cat_image_url'])): ?>
-                    <img src="<?= str_starts_with($c['cat_image_url'],'http') ? $c['cat_image_url'] : '../'.$c['cat_image_url'] ?>">
-                <?php endif; ?>
+                <?php 
+                $cat_img = fixImageUrl($c['cat_image_url'] ?? '');
+                $cat_src = str_starts_with($cat_img, 'http') ? $cat_img : '../' . $cat_img;
+                ?>
+                <img src="<?= htmlspecialchars($cat_src) ?>" alt="<?= htmlspecialchars($c['cat_name']) ?>" onerror="this.src='https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80'">
             </div>
             <div class="cat-card-body">
                 <div class="cat-card-name">
